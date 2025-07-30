@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/assets/css/newHeaderStyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <header>
+      <div class="menu-name">
+        <button class="menu-icon" onclick="onMenuClicked(this)">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="name-title style-crystal-container">
+          {% include styleCrystals.html start=5 end=8 %}
+          <a href="/"> Hugo Thollon </a>
+        </div>
+      </div>
+      <ul class="navbar-container">
+        <li class="navbar-el style-crystal-container about">
+          {% include styleCrystals.html %}
+          <a href="#"> About </a>
+        </li>
+        <li class="navbar-el style-crystal-container portfolio">
+          {% include styleCrystals.html %}
+          <a href="#"> Portfolio </a>
+        </li>
+      </ul>
+    </header>
+
+    <main>{{ content }}</main>
+    <footer></footer>
+  </body>
+</html>
+
+<script>
+  function setStyleVariables() {
+    document.querySelectorAll(".style-crystal-container").forEach((button) => {
+      const width = button.offsetWidth + "px";
+      const height = button.offsetHeight + "px";
+      button.style.setProperty("--banner-width", width);
+      button.style.setProperty("--banner-height", height);
+      console.log("properties changed after resize");
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", (event) => {
+    window.addEventListener("resize", setStyleVariables);
+
+    setStyleVariables();
+  });
+</script>

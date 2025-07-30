@@ -1,0 +1,69 @@
+<div class="crystal-container header-container">
+  <!-- As an alternative remove the crystals and replace background of container with: rgb(8, 203, 233) -->
+  <!-- Crystal styling -->
+  <div class="crystal c4"></div>
+  <div class="crystal c7"></div>
+  <div class="crystal c9"></div>
+
+  <div class="menu-name">
+    <button class="menu-icon" onclick="onMenuClicked(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="name-title"><a href="/">Hugo Thollon</a></div>
+  </div>
+  <ul class="navbar-container">
+    <li class="navbar-el about"><a href="#"> About </a></li>
+    <li class="navbar-el portfolio"><a href="#">Portfolio</a></li>
+  </ul>
+</div>
+
+<script src="/assets/js/variablesResize.js"></script>
+
+<script>
+  let count = 0;
+  let crystalUpdateTimeout = null;
+  let menuOpen = false;
+
+  function runCrystalUpdate() {
+    if (count < 65) {
+      count++;
+      setStyleVariables();
+      crystalUpdateTimeout = setTimeout(runCrystalUpdate, 10);
+    }
+  }
+
+  function stopCrystalUpdate() {
+    clearTimeout(crystalUpdateTimeout);
+  }
+
+  function onMenuClicked(button) {
+    button.classList.toggle("cross");
+    const navBar = document.querySelector(".navbar-container");
+    const header = document.querySelector(".header-container");
+
+    if (button.classList.contains("cross")) {
+      menuOpen = true;
+
+      if (!navBar.classList.contains("opened")) navBar.classList.add("opened");
+      if (!header.classList.contains("expanded"))
+        header.classList.add("expanded");
+
+      console.log("navbar menu opened");
+    } else {
+      menuOpen = false;
+
+      setTimeout(() => {
+        if (!menuOpen) navBar.classList.remove("opened");
+      }, 600);
+      header.classList.remove("expanded");
+      console.log("navbar menu closed");
+    }
+
+    count = 0;
+    stopCrystalUpdate();
+    runCrystalUpdate();
+  }
+</script>

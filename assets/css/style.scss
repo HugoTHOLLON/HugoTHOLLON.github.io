@@ -1,0 +1,13 @@
+---
+---
+
+@import "crystalBanner";
+@import "header";
+
+body {
+  margin: 0;
+  // same font family as in bootswatch Cosmo theme
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+}

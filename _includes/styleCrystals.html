@@ -1,0 +1,7 @@
+<!-- prettier-ignore -->
+{% assign start = include.start | default: 1 %}
+{% assign end = include.end | default: 4 %} 
+
+{% for i in (start..end) %}
+<div class="style-crystal cry{{ i }}"></div>
+{% endfor %}
