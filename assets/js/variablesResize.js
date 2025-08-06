@@ -1,5 +1,5 @@
 function setStyleVariables() {
-  document.querySelectorAll(".crystal-container").forEach((container) => {
+  document.querySelectorAll(".style-crystal-container").forEach((container) => {
     const width = container.offsetWidth + "px";
     const height = container.offsetHeight + "px";
     container.style.setProperty("--banner-width", width);

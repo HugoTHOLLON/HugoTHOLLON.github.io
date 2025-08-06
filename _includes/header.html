@@ -1,13 +1,16 @@
-<header>
-  <div class="menu-name">
+<div class="header">
+  <div class="header-background style-crystal-container">
+    {% include styleCrystals.html start=5 end=8 %}
+  </div>
+  <div class="menu-name style-crystal-container">
+    {% include styleCrystals.html start=5 end=8 %}
     <button class="menu-icon" onclick="onMenuClicked(this)">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <div class="name-title style-crystal-container">
-      {% include styleCrystals.html start=5 end=8 %}
+    <div class="name-title">
       <a href="/"> Hugo Thollon </a>
     </div>
   </div>
@@ -21,22 +24,31 @@
       <a href="#"> Portfolio </a>
     </li>
   </ul>
-</header>
+</div>
+
+<script src="/assets/js/variablesResize.js"></script>
 
 <script>
-  function setStyleVariables() {
-    document.querySelectorAll(".style-crystal-container").forEach((button) => {
-      const width = button.offsetWidth + "px";
-      const height = button.offsetHeight + "px";
-      button.style.setProperty("--banner-width", width);
-      button.style.setProperty("--banner-height", height);
-      console.log("properties changed after resize");
-    });
+  function addClass(element, className) {
+    if (!element.classList.contains(className))
+      element.classList.add(className);
   }
 
-  document.addEventListener("DOMContentLoaded", (event) => {
-    window.addEventListener("resize", setStyleVariables);
+  function onMenuClicked(button) {
+    button.classList.toggle("cross");
+    const navBar = document.querySelector(".navbar-container");
+    const headerBackground = document.querySelector(".header-background");
 
-    setStyleVariables();
-  });
+    if (button.classList.contains("cross")) {
+      menuOpen = true;
+      addClass(navBar, "opened");
+      addClass(headerBackground, "opened");
+      console.log("navbar menu opened");
+    } else {
+      menuOpen = false;
+      navBar.classList.remove("opened");
+      headerBackground.classList.remove("opened");
+      console.log("navbar menu closed");
+    }
+  }
 </script>

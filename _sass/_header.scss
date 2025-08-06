@@ -1,4 +1,11 @@
+$headerHeightClosed: 60px;
+$headerHeightOpened: 164px;
+
 header {
+  height: $headerHeightClosed;
+}
+
+.header {
   flex-direction: row;
   display: flex;
   width: 100%;
@@ -7,17 +14,36 @@ header {
 
   color: #f1f1f1;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+  overflow-y: hidden;
+  position: absolute;
+  top: 0;
+
+  .header-background {
+    position: absolute;
+    width: 100%;
+    height: $headerHeightOpened;
+    z-index: 0;
+  }
 }
 
 .menu-name {
   display: flex;
   flex-direction: row;
 
-  /* Code for the hamburger menu/cross button */
+  //////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+  //////////////// Code for the hamburger menu/cross button ////////////////////
+  height: $headerHeightClosed;
+  ///
+  ///
+  /// ///////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
   .menu-icon {
     width: fit-content;
-    height: 56px;
-    padding: 18px;
+    padding: 19px 10px;
     margin: 0;
     border: none;
     background: none;
@@ -27,7 +53,7 @@ header {
     justify-content: space-between;
 
     span {
-      background-color: black;
+      background-color: #f1f1f1;
       align-self: center;
       margin: 0;
       padding: 0;
@@ -39,27 +65,36 @@ header {
       transform-origin: center;
       transition: transform 0.6s, opacity 0.6s;
     }
+
+    &.cross {
+      span:nth-child(1) {
+        transform: translateY(200%) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        transform: rotate(270deg);
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-200%) rotate(-45deg);
+      }
+    }
   }
 
-  .menu-icon.cross {
-    span:nth-child(1) {
-      transform: translateY(200%) rotate(45deg);
-    }
-
-    span:nth-child(2) {
-      transform: rotate(270deg);
-      opacity: 0;
-    }
-
-    span:nth-child(3) {
-      transform: translateY(-200%) rotate(-45deg);
-    }
-  }
-  /* End of code for the hamburger menu/cross button */
+  //////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+  ////////////////// Code for the name and different routes ////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+  height: $headerHeightClosed;
+  ///
+  ///
+  /// ///////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
 
   .name-title {
     width: fit-content;
-    height: 60px;
 
     display: flex;
     align-items: center;
@@ -92,12 +127,13 @@ header {
 
   .navbar-el {
     width: fit-content;
-    height: 60px;
+    height: $headerHeightClosed;
 
     display: flex;
     align-items: center;
 
     a {
+      width: fit-content;
       z-index: 2;
       height: 100%;
 
@@ -115,32 +151,15 @@ header {
   }
 }
 
-@media screen and (max-width: 360px) {
-  header {
-    flex-direction: column;
-  }
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+////////////////////////// Code for crystals style ///////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 
-  header.expanded {
-    height: 164px;
-  }
-
-  .menu-icon {
-    display: flex;
-  }
-
-  .navbar-container {
-    display: none;
-  }
-
-  .navbar-container.opened {
-    display: flex;
-    flex-direction: column;
-    overflow-y: hidden;
-  }
-}
-
-// Code for crystals style
-.style-crystal-container {
+@mixin crystal-style-placeholder {
   position: relative;
 
   .style-crystal {
@@ -219,7 +238,7 @@ header {
   }
 }
 
-.style-crystal-container:hover {
+@mixin crystal-style-hover-placeholder {
   .cry1 {
     border-top-width: calc(var(--banner-height) / 3);
     border-right-width: calc(calc(var(--banner-width) * 4) / 5);
@@ -260,5 +279,58 @@ header {
     width: calc(calc(var(--banner-width) * 5) / 8);
     border-top-width: calc(var(--banner-height));
     border-right-width: calc(calc(var(--banner-width) * 2) / 8);
+  }
+}
+
+.style-crystal-container {
+  @include crystal-style-placeholder;
+
+  @media screen and (min-width: 361px) {
+    &:hover:not(.header-background) {
+      @include crystal-style-hover-placeholder;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+////////////////////////// Code for responsiveness ///////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: 360px) {
+  .header {
+    flex-direction: column;
+
+    .header-background.opened {
+      @include crystal-style-hover-placeholder;
+    }
+  }
+
+  .menu-name {
+    .menu-icon {
+      display: flex;
+    }
+  }
+
+  .navbar-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    max-height: 0px;
+    transition: max-height 0.7s;
+
+    &.opened {
+      max-height: $headerHeightOpened - $headerHeightClosed;
+    }
+
+    .navbar-el {
+      width: 100%;
+      a {
+        width: 100%;
+      }
+    }
   }
 }
