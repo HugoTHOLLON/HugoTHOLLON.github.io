@@ -1,7 +1,17 @@
 ---
 ---
 
-@import "header";
+@use "header";
+@use "homeStyle";
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("/assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf")
+    format("truetype");
+  /* Range of supported weights */
+  font-weight: 400 900;
+  font-style: normal;
+}
 
 body {
   margin: 0;

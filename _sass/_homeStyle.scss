@@ -1,0 +1,98 @@
+main.home {
+  .section {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .profile-Hugo {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: start;
+    justify-content: left;
+
+    .image-Hugo {
+      max-width: 310px;
+      height: fit-content;
+      padding: 20px;
+      background: linear-gradient(to right, #39b5f2, #00bfff);
+      border-radius: 40px;
+      overflow: hidden;
+
+      img {
+        border-radius: 8px;
+        width: 100%;
+      }
+    }
+
+    .profile-text {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      .name {
+        font-size: 3rem;
+        font-family: "Orbitron", sans-serif;
+        font-weight: 500;
+        color: rgb(104, 225, 255); /* icy blue */
+        text-shadow: 1px 1px 0px #fff, 2px 2px 3px rgba(0, 255, 255, 0.3),
+          -1px -1px 1px rgb(85, 181, 255);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .description-Hugo {
+        font-size: 1.1rem;
+        max-width: 600px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main.home {
+    .profile-Hugo {
+      padding: 40px 40px;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+
+      .profile-text {
+        gap: 15px;
+
+        .name {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main.home {
+    .profile-Hugo {
+      padding: 40px 20px;
+      gap: 15px;
+
+      .profile-text {
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  main.home {
+    .profile-Hugo {
+      padding: 40px 10px;
+
+      .profile-text {
+        .name {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}

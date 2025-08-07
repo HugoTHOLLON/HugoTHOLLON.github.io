@@ -7,7 +7,35 @@
 
   <body>
     <header>{% include header.html %}</header>
-    <main>{{ content }}</main>
+    <main class="home">
+      <div class="section profile-Hugo">
+        <div
+          class="image-Hugo style-crystal-container style-crystal-always-visible no-hover"
+        >
+          {% include styleCrystals.html start=9 end=16 %}
+          <img
+            src="/assets/images/photo_Hugo_THOLLON.jpg"
+            alt="photo Hugo THOLLON"
+          />
+        </div>
+        <div class="profile-text">
+          <div class="name">Hugo THOLLON</div>
+          <div class="description-Hugo">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque sit amet tincidunt nisi, vel dapibus nulla. Cras ac
+            nisi at ex convallis iaculis vitae ac nunc. Aenean varius arcu in
+            pharetra dignissim. Phasellus vulputate luctus nunc, nec tempor quam
+            maximus id. Vivamus ut diam risus. Integer nisl leo, sollicitudin
+            luctus quam semper, tempus posuere leo. Phasellus turpis nibh,
+            faucibus vitae quam non, condimentum interdum ipsum. Duis faucibus,
+            elit vel pellentesque congue, nulla magna elementum purus, nec
+            sollicitudin arcu felis vitae elit. Integer a lacus efficitur,
+            efficitur elit et, tempor est. Praesent eget urna vel ante mollis
+            consectetur. Integer elementum egestas lacus in malesuada.
+          </div>
+        </div>
+      </div>
+    </main>
     <footer></footer>
   </body>
 </html>
