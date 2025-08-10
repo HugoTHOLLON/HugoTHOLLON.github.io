@@ -5,6 +5,7 @@ $headerHeightOpened: 164px;
 
 header {
   height: $headerHeightClosed;
+  font-family: "Orbitron", sans-serif;
 }
 
 .outside-menu {
@@ -180,7 +181,7 @@ header {
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 460px) {
   .header {
     flex-direction: column;
 

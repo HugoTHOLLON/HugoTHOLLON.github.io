@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <link rel="stylesheet" href="/assets/css/style.css" />
@@ -8,31 +8,90 @@
   <body>
     <header>{% include header.html %}</header>
     <main class="home">
+      <!-- ----------------------------------------------------------------------------
+        --------------------------------------------------------------------------------
+        ---------------------------------- Section 1 -----------------------------------
+        --------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------- -->
       <div class="section profile-Hugo">
-        <div
-          class="image-Hugo style-crystal-container style-crystal-always-visible no-hover"
-        >
+        <div class="image-Hugo style-crystal-container style-crystal-always-visible no-hover">
           {% include styleCrystals.html start=9 end=16 %}
-          <img
-            src="/assets/images/photo_Hugo_THOLLON.jpg"
-            alt="photo Hugo THOLLON"
-          />
+          <img src="/assets/images/photo_Hugo_THOLLON.jpg" alt="photo Hugo THOLLON" />
         </div>
         <div class="profile-text">
           <div class="name">Hugo THOLLON</div>
           <div class="description-Hugo">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque sit amet tincidunt nisi, vel dapibus nulla. Cras ac
-            nisi at ex convallis iaculis vitae ac nunc. Aenean varius arcu in
-            pharetra dignissim. Phasellus vulputate luctus nunc, nec tempor quam
-            maximus id. Vivamus ut diam risus. Integer nisl leo, sollicitudin
-            luctus quam semper, tempus posuere leo. Phasellus turpis nibh,
-            faucibus vitae quam non, condimentum interdum ipsum. Duis faucibus,
-            elit vel pellentesque congue, nulla magna elementum purus, nec
-            sollicitudin arcu felis vitae elit. Integer a lacus efficitur,
-            efficitur elit et, tempor est. Praesent eget urna vel ante mollis
-            consectetur. Integer elementum egestas lacus in malesuada.
+            Greetings, I am a
+            <b>computer science student</b>
+            at Blagnac's IUT in France. I am currently undertaking my third year at the IUT.
+            <br/>
+            I love video games and I am passionate about
+            <b>game development</b>. I am also a big fan of parkour.
+            <br/>
+            <br/>
+            You will find below some of my
+            <b>best work</b>
+            and my
+            <b>work experience</b>.
+            <br/>You can check the rest of my
+            <b>projects</b>
+            in the
+            <a href="#">Portfolio</a>
+            section.
+            <br/>
+            You will find my
+            <b>resume</b>,
+            <b>education</b>, and
+            <b>skills</b>
+            inside the
+            <a href="#">About</a>
+            section.
           </div>
+        </div>
+      </div>
+      <!-- ----------------------------------------------------------------------------
+        --------------------------------------------------------------------------------
+        ---------------------------------- Section 2 -----------------------------------
+        --------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------- -->
+      <div class="section best-work">
+        <div class="section-background style-crystal-container style-crystal-always-visible no-hover">
+          {% include styleCrystals.html start=9 end=16 %}
+        </div>
+
+        <div class="section-title">My best work</div>
+
+        <div class="work-list">
+          {% for post in site.tags.best-work %}
+            <div class="card">
+              <div class="card-title">{{ post.title }}</div>
+              <div class="card-categories">
+                {% for category in post.categories %}
+                  {{ category | replace: '-', ' ' }}{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+              </div>
+              <div class="card-date">
+                {{ post.date | date: "%-d %B %Y" }}
+              </div>
+              <div class="card-extract">{{ post.excerpt | strip }}</div>
+              <a class="card-link style-crystal-container" href="{{ post.url }}">
+                {% include styleCrystals.html start=5 end=8 %}
+                <div class="text">
+                  See more
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- -----------------------------------------------------------------------------
+        --------------------------------------------------------------------------------
+        ---------------------------------- Section 3 -----------------------------------
+        --------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------- -->
+      <div class="section work-experience">
+        <div class="section-title">
+          My work experience
         </div>
       </div>
     </main>
