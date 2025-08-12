@@ -5,7 +5,9 @@
     position: absolute;
     width: 0;
     height: 0;
-    transition: border 0.7s, width 0.7s;
+    transition:
+      border 0.7s ease,
+      width 0.7s ease;
     z-index: 0;
   }
 
@@ -139,6 +141,46 @@
     bottom: 0;
     right: 0;
   }
+
+  .cry17 {
+    border-top: $hiddenBorder;
+    border-right: $hiddenBorder;
+    border-top-color: #39b5f2;
+    top: 0;
+    right: calc(calc(var(--banner-width) * 1) / 8);
+
+    width: calc(calc(var(--banner-width) * 5) / 8);
+    border-top-width: calc(var(--banner-height));
+    border-right-width: calc(calc(var(--banner-width) * 2) / 8);
+
+    transform: translate(30%, -100%);
+
+    transition: transform 0.7s ease-in;
+  }
+
+  .cry18 {
+    border-bottom: $hiddenBorder;
+    border-left: $hiddenBorder;
+    border-bottom-color: rgba(37, 197, 242, 1);
+    bottom: 0;
+    right: 0;
+  }
+
+  .cry19 {
+    border-top: $hiddenBorder;
+    border-right: $hiddenBorder;
+    border-top-color: rgba(42, 208, 248, 1);
+    top: 0;
+    left: 0;
+  }
+
+  .cry20 {
+    border-bottom: $hiddenBorder;
+    border-right: $hiddenBorder;
+    border-bottom-color: rgba(37, 197, 242, 1);
+    bottom: 0;
+    left: 0;
+  }
 }
 
 @mixin crystal-style-hover-placeholder {
@@ -223,6 +265,26 @@
     border-bottom-width: calc(var(--banner-height) * 1 / 6);
     border-left-width: calc(calc(var(--banner-width) * 4) / 5);
   }
+
+  .cry17 {
+    transform: translate(0, 0);
+  }
+
+  .cry18 {
+    width: calc(calc(var(--banner-width) * 1) / 8);
+    border-bottom-width: calc(var(--banner-height));
+    border-left-width: calc(calc(var(--banner-width) * 2) / 8);
+  }
+
+  .cry19 {
+    border-top-width: calc(var(--banner-height));
+    border-right-width: calc(calc(var(--banner-width) * 4) / 5);
+  }
+
+  .cry20 {
+    border-bottom-width: calc(var(--banner-height));
+    border-right-width: calc(calc(var(--banner-width) * 1) / 2);
+  }
 }
 
 .style-crystal-container {
@@ -231,4 +293,10 @@
 
 .style-crystal-always-visible {
   @include crystal-style-hover-placeholder;
+
+  &.no-animation {
+    .style-crystal {
+      transition: none;
+    }
+  }
 }

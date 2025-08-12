@@ -14,7 +14,7 @@
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
       <div class="section profile-Hugo">
-        <div class="image-Hugo style-crystal-container style-crystal-always-visible no-hover">
+        <div class="image-Hugo style-crystal-container style-crystal-always-visible no-animation no-hover">
           {% include styleCrystals.html start=9 end=16 %}
           <img src="/assets/images/photo_Hugo_THOLLON.jpg" alt="photo Hugo THOLLON" />
         </div>
@@ -55,7 +55,7 @@
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
       <div class="section best-work">
-        <div class="section-background style-crystal-container style-crystal-always-visible no-hover">
+        <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
           {% include styleCrystals.html start=9 end=16 %}
         </div>
 
@@ -93,8 +93,55 @@
         <div class="section-title">
           My work experience
         </div>
+        <div class="timeline">
+
+          {% assign work_experience_items = site.work_experience | sort: "date" | reverse %}
+          {% for experience in work_experience_items %}
+            {% assign left = forloop.index0 | modulo: 2 %}
+            {% if left == 0 %}
+              {% assign containerClass = "left" %}
+            {% else %}
+              {% assign containerClass = "right" %}
+            {% endif %}
+
+            <div class="timeline-item-container {{ containerClass }}">
+              <div class="exp-content style-crystal-container style-crystal-always-visible no-hover">
+                {% include styleCrystals.html start=17 end=21 %}
+                <div class="exp-type">
+                  {{ experience.type }}
+                </div>
+                <div class="exp-organization">
+                  At
+                  <span class="orga-name">
+                    {% if experience.orga-url %}
+                      <a href="{{experience.orga-url}}" target="_blank">
+                        {{ experience.organization }}
+                      </a>
+                    {% else %}
+                      {{ experience.organization }}
+                    {% endif %}
+                  </span>
+                </div>
+                <div class="exp-date">
+                  From {{ experience.date | date: "%-d %B %Y" }} to {{ experience.end | date: "%-d %B %Y" }}
+                </div>
+                <div class="exp-description">
+                  {{ experience.content | strip }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </main>
-    <footer></footer>
+    <footer>{% include footer.html %}</footer>
+
+    <script src="/assets/js/displayElementOnScroll.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const expContent =  document.querySelectorAll(".exp-content");
+        removeClassToElementsOnScrollVisible(expContent, "style-crystal-always-visible")
+        });
+    </script>
   </body>
 </html>
