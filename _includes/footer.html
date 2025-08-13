@@ -1,1 +1,42 @@
-<div class="footer"></div>
+<div class="footer">
+  <div class="contact">
+    Contact me:
+    <div class="mail">
+      hugo.thollon@gmail.com
+    </div>
+
+    <div class="contact-links">
+      <a
+        class="contact-link"
+        href="mailto:hugo.thollon[at]gmail[dot]com"
+        onclick="this.href=this.href.replace('[at]','@').replace('[dot]','.');">
+        {% include envelope-icon.svg %}
+      </a>
+      <a
+        class="contact-link"
+        href="https://github.com/HugoTHOLLON"
+        target="_blank">
+        {% include github-icon.svg %}
+      </a>
+      <a
+        class="contact-link"
+        href="https://www.linkedin.com/in/hugo-thollon-70a842260/"
+        target="_blank">
+        {% include linkedin-icon.svg %}
+      </a>
+    </div>
+  </div>
+  <div class="build-copyright">
+    <div class="built-with">
+      Built with
+      <a href="https://jekyllrb.com/docs/" target="_blank">Jekyll</a>
+      and hosted on GitHub Pages.
+    </div>
+    <div class="copyright">
+      &copy;2025 Hugo THOLLON
+    </div>
+  </div>
+  <div class="last-update">
+    Last updated: 13 August 2025
+  </div>
+</div>

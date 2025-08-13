@@ -1,3 +1,13 @@
+// Usable classes:
+// - style-crystal-container: use on everything with crystals inside. It sets their origin.
+// - style-crystal-always-visible: use to always display the crystals.
+// - no-animation: use to remove crystal animation when they open or close.
+// - no-hover: use to disable the hover effect on the crystals.
+
+// Inside a class:
+// @include crystalStyle.crystal-style-hover-placeholder;
+// To open the crystals
+
 @mixin crystal-style-placeholder {
   position: relative;
 
@@ -289,6 +299,14 @@
 
 .style-crystal-container {
   @include crystal-style-placeholder;
+}
+
+.style-crystal-container {
+  @media screen and (min-width: 461px) {
+    &:hover:not(.no-hover) {
+      @include crystal-style-hover-placeholder;
+    }
+  }
 }
 
 .style-crystal-always-visible {
