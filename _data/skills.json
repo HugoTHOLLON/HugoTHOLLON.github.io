@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Languages",
+    "skills": [
+      { "name": "Java", "image": "/assets/images/skills/java.png" },
+      { "name": "SQL", "image": "/assets/images/skills/sql.png" },
+      { "name": "HTML", "image": "/assets/images/skills/html.png" },
+      { "name": "CSS", "image": "/assets/images/skills/css.png" },
+      { "name": "Sass", "image": "/assets/images/skills/sass.png" },
+      { "name": "JS", "image": "/assets/images/skills/js.png" },
+      { "name": "Jekyll", "image": "/assets/images/skills/jekyll.png" },
+      { "name": "PHP", "image": "/assets/images/skills/php.png" },
+      { "name": "Bash", "image": "/assets/images/skills/bash.png" },
+      { "name": "VueJS", "image": "/assets/images/skills/vueJS.png" },
+      { "name": "Angular", "image": "/assets/images/skills/angular.png" },
+      { "name": "Python", "image": "/assets/images/skills/python.png" },
+      { "name": "GDScript", "image": "/assets/images/skills/godot.png" }
+    ]
+  },
+  {
+    "name": "Tools",
+    "skills": [
+      { "name": "VSCode", "image": "/assets/images/skills/vscode.png" },
+      { "name": "Godot Engine", "image": "/assets/images/skills/godot.png" },
+      {
+        "name": "Android Studio",
+        "image": "/assets/images/skills/android studio.png"
+      },
+      { "name": "Linux", "image": "/assets/images/skills/linux.png" },
+      {
+        "name": "Command prompt",
+        "image": "/assets/images/skills/command prompt.png"
+      },
+      { "name": "Git", "image": "/assets/images/skills/git.png" },
+      { "name": "Github", "image": "/assets/images/skills/github.png" },
+      { "name": "Docker", "image": "/assets/images/skills/docker.png" },
+      {
+        "name": "Bluetooth Low Energy",
+        "image": "/assets/images/skills/bluetooth.png"
+      },
+      { "name": "Figma", "image": "/assets/images/skills/figma.png" },
+      { "name": "Canva", "image": "/assets/images/skills/canva.png" },
+      { "name": "OpenShot", "image": "/assets/images/skills/openshot.png" }
+    ]
+  }
+]

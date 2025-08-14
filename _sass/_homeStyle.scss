@@ -1,6 +1,9 @@
 main.home {
   .section {
     width: 100%;
+    min-height: 80vh;
+    /* When scrolling down on a section, snap 60px higher */
+    scroll-margin-top: 60px;
     margin: 0;
     box-sizing: border-box;
     position: relative;
@@ -23,7 +26,7 @@ main.home {
 
     &.white-section {
       box-sizing: border-box;
-      padding-top: 40px;
+      padding-top: 60px;
       padding-bottom: 40px;
 
       .section-title {
@@ -50,7 +53,7 @@ main.home {
     }
 
     &.crystal-section {
-      padding-top: 40px;
+      padding-top: 60px;
       padding-bottom: 100px;
       display: flex;
       flex-direction: column;
@@ -70,11 +73,12 @@ main.home {
   ############################################################################### */
 
   .profile-Hugo {
+    min-height: calc(100vh - 60px);
     padding: 60px 40px;
     display: flex;
-    flex-direction: row;
-    gap: 50px;
-    align-items: start;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
     justify-content: center;
 
     .image-Hugo {
@@ -107,9 +111,12 @@ main.home {
           -1px -1px 1px rgb(85, 181, 255);
         letter-spacing: 1px;
         text-transform: uppercase;
+        text-align: center;
       }
 
       .description-Hugo {
+        text-align: center;
+
         font-size: 1.2rem;
         max-width: 625px;
 
@@ -147,12 +154,31 @@ main.home {
         border-radius: 15px;
         background: linear-gradient(to bottom right, #39b5f2, #00a9ff);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
         z-index: 1;
         color: white;
 
         display: flex;
         flex-direction: column;
+
+        transition:
+          box-shadow 0.3s,
+          opacity 1s,
+          filter 1s,
+          transform 1s;
+
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+
+        &:hover {
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        &.off-screen {
+          opacity: 0;
+          filter: blur(5px);
+          transform: translateY(50%);
+        }
 
         .card-title {
           font-size: 1.2rem;
@@ -194,10 +220,6 @@ main.home {
             background-color: rgba(0, 0, 0, 0.04);
           }
         }
-      }
-
-      .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -257,6 +279,104 @@ main.home {
   ##################################################################################
   ############################################################################### */
 
+  .skills {
+    box-sizing: border-box;
+    .skill-list-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 0 40px;
+      gap: 20px;
+
+      .skill-category {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        color: white;
+
+        .skill-categ-title {
+          text-align: center;
+          font-size: 1.7rem;
+          font-weight: bold;
+          font-family: "Orbitron", sans-serif;
+        }
+
+        .skill-list {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          display: grid;
+          gap: 40px;
+          grid-template-columns: repeat(auto-fit, 120px);
+          grid-auto-rows: max-content;
+
+          justify-content: center;
+
+          li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .skill-container {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+
+              justify-content: start;
+              align-items: center;
+
+              text-align: center;
+              font-size: 1.1rem;
+
+              width: fit-content;
+
+              transition: all 1s;
+
+              opacity: 1;
+              filter: blur(0);
+              transform: translateY(0);
+
+              &.off-screen {
+                opacity: 0;
+                filter: blur(5px);
+                transform: translateY(50%);
+              }
+
+              .skill-image {
+                transition: filter 0.5s;
+                filter: drop-shadow(0 0 5px rgb(255, 162, 2));
+
+                &:hover {
+                  filter: drop-shadow(0 0 20px rgb(255, 162, 2));
+                }
+
+                .hexagon {
+                  background-color: rgb(104, 225, 255);
+
+                  aspect-ratio: cos(30deg);
+                  clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
+
+                  padding: 15px;
+
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+
+                  img {
+                    width: 64px;
+                    height: 64px;
+                    object-fit: contain;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   /* ###############################################################################
   ##################################################################################
   ################################### Section 5 ####################################
@@ -309,16 +429,10 @@ main.home {
   main.home {
     .profile-Hugo {
       padding: 40px 40px;
-      flex-direction: column;
-      align-items: center;
       gap: 25px;
 
       .profile-text {
         gap: 15px;
-
-        .name {
-          text-align: center;
-        }
       }
     }
   }
@@ -340,6 +454,20 @@ main.home {
         gap: 10px;
       }
     }
+
+    .skills {
+      .skill-list-container {
+        padding: 0 20px;
+
+        .skill-category {
+          .skill-list {
+            .skill-container {
+              transition: all 0.1s;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -356,6 +484,12 @@ main.home {
         .description-Hugo {
           padding: 0px 10px;
         }
+      }
+    }
+
+    .skills {
+      .skill-list-container {
+        padding: 0 5px;
       }
     }
   }

@@ -13,7 +13,7 @@
         ---------------------------------- Section 1 -----------------------------------
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
-      <div class="section profile-Hugo">
+      <section class="section profile-Hugo">
         <div class="image-Hugo style-crystal-container style-crystal-always-visible no-animation no-hover">
           {% include styleCrystals.html start=9 end=16 %}
           <img src="/assets/images/photo_Hugo_THOLLON.jpg" alt="photo Hugo THOLLON" />
@@ -30,7 +30,9 @@
             <br/>
             <br/>
             You will find below some of my
-            <b>best work</b>
+            <a href="#best-work">
+              <b>best work</b>
+            </a>
             and my
             <b>work experience</b>.
             <br/>You can check the rest of my
@@ -48,13 +50,13 @@
             section.
           </div>
         </div>
-      </div>
+      </section>
       <!-- ----------------------------------------------------------------------------
         --------------------------------------------------------------------------------
         ---------------------------------- Section 2 -----------------------------------
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
-      <div class="section crystal-section best-work">
+      <section class="section crystal-section best-work" id="best-work">
         <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
           {% include styleCrystals.html start=9 end=16 %}
         </div>
@@ -63,7 +65,7 @@
 
         <div class="work-list">
           {% for post in site.tags.best-work %}
-            <div class="card">
+            <div class="card off-screen">
               <div class="card-title">{{ post.title }}</div>
               <div class="card-categories">
                 {% for category in post.categories %}
@@ -83,13 +85,13 @@
             </div>
           {% endfor %}
         </div>
-      </div>
+      </section>
       <!-- -----------------------------------------------------------------------------
         --------------------------------------------------------------------------------
         ---------------------------------- Section 3 -----------------------------------
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
-      <div class="section white-section education" id="education">
+      <section class="section white-section education" id="education">
         <div class="section-title">
           Education
         </div>
@@ -151,26 +153,47 @@
             </div>
           {% endfor %}
         </div>
-      </div>
+      </section>
       <!-- -----------------------------------------------------------------------------
         --------------------------------------------------------------------------------
         ---------------------------------- Section 4 -----------------------------------
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
-      <div class="section crystal-section skills" id="skills">
+      <section class="section crystal-section skills" id="skills">
         <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
           {% include styleCrystals.html start=9 end=16 %}
         </div>
 
         <div class="section-title">My skills</div>
 
-      </div>
+        <div class="skill-list-container">
+          {% for skillCateg in site.data.skills %}
+            <div class="skill-category">
+              <div class="skill-categ-title">{{ skillCateg.name }}</div>
+              <ul class="skill-list">
+                {% for skill in skillCateg.skills %}
+                  <li>
+                    <div class="skill-container off-screen">
+                      <div class="skill-image">
+                        <div class="hexagon">
+                          <img src="{{skill.image}}" alt="{{skill.name}} logo">
+                        </div>
+                      </div>
+                      {{ skill.name }}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
       <!-- -----------------------------------------------------------------------------
         --------------------------------------------------------------------------------
         ---------------------------------- Section 5 -----------------------------------
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
-      <div class="section white-section work-experience" id="work-experience">
+      <section class="section white-section work-experience" id="work-experience">
         <div class="section-title">
           My work experience
         </div>
@@ -219,7 +242,7 @@
             </div>
           {% endfor %}
         </div>
-      </div>
+      </section>
     </main>
     <footer>{% include footer.html %}</footer>
 
@@ -227,7 +250,11 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const expContent =  document.querySelectorAll(".timeline-content");
-        removeClassToElementsOnScrollVisible(expContent, "style-crystal-always-visible", true)
+        removeClassToElementsOnScrollVisible(expContent, "style-crystal-always-visible", true);
+        const cards =  document.querySelectorAll(".card");
+        removeClassToElementsOnScrollVisible(cards, "off-screen");
+        const skills =  document.querySelectorAll(".skill-container");
+        removeClassToElementsOnScrollVisible(skills, "off-screen", true);
         });
     </script>
   </body>
