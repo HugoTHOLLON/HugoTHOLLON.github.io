@@ -54,12 +54,12 @@
         ---------------------------------- Section 2 -----------------------------------
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
-      <div class="section best-work">
+      <div class="section crystal-section best-work">
         <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
           {% include styleCrystals.html start=9 end=16 %}
         </div>
 
-        <div class="section-title">My best work</div>
+        <div class="section-title">My best projects</div>
 
         <div class="work-list">
           {% for post in site.tags.best-work %}
@@ -89,7 +89,88 @@
         ---------------------------------- Section 3 -----------------------------------
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
-      <div class="section work-experience">
+      <div class="section white-section education" id="education">
+        <div class="section-title">
+          Education
+        </div>
+        <div class="timeline">
+          {% assign education_items = site.education | sort: "date" | reverse %}
+          {% for edu in education_items %}
+            {% assign left = forloop.index0 | modulo: 2 %}
+            {% if left == 0 %}
+              {% assign containerClass = "left" %}
+            {% else %}
+              {% assign containerClass = "right" %}
+            {% endif %}
+
+            <div class="timeline-item-container {{ containerClass }}">
+              <div class="timeline-content style-crystal-container style-crystal-always-visible no-hover">
+                {% include styleCrystals.html start=17 end=21 %}
+                <div class="edu-title">
+                  {{ edu.title }}
+                </div>
+                {% if edu.specialties %}
+                  <div class="edu-specialties">
+                    <b>
+                      {% if edu.specialties.size > 1 %}
+                        Specialties:
+                      {% else %}
+                        Specialty:
+                      {% endif %}
+                    </b>
+                    {% for specialty in edu.specialties %}
+                      {{ specialty }}{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                <div class="edu-school">
+                  {% if edu.school-url %}
+                    <a href="{{edu.school-url}}" target="_blank">
+                      {{ edu.school }}
+                    </a>
+                  {% else %}
+                    {{ edu.school }}
+                  {% endif %}
+                </div>
+                <div class="edu-date">
+                  {{ edu.date | date: "%Y" }} - {{ edu.end | date: "%Y" }}
+                  {% if edu.in-progress %}
+                    {{ edu.in-progress }}
+                  {% endif %}
+                </div>
+                <div class="edu-description">
+                  {{ edu.content | strip }}
+                </div>
+                {% if edu.image-path %}
+                  <img
+                    class="edu-image"
+                    src="{{edu.image-path}}"
+                    alt="{{edu.image-alt}}">
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- -----------------------------------------------------------------------------
+        --------------------------------------------------------------------------------
+        ---------------------------------- Section 4 -----------------------------------
+        --------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------- -->
+      <div class="section crystal-section skills" id="skills">
+        <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
+          {% include styleCrystals.html start=9 end=16 %}
+        </div>
+
+        <div class="section-title">My skills</div>
+
+      </div>
+      <!-- -----------------------------------------------------------------------------
+        --------------------------------------------------------------------------------
+        ---------------------------------- Section 5 -----------------------------------
+        --------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------- -->
+      <div class="section white-section work-experience" id="work-experience">
         <div class="section-title">
           My work experience
         </div>
@@ -105,7 +186,7 @@
             {% endif %}
 
             <div class="timeline-item-container {{ containerClass }}">
-              <div class="exp-content style-crystal-container style-crystal-always-visible no-hover">
+              <div class="timeline-content style-crystal-container style-crystal-always-visible no-hover">
                 {% include styleCrystals.html start=17 end=21 %}
                 <div class="exp-type">
                   {{ experience.type }}
@@ -128,6 +209,12 @@
                 <div class="exp-description">
                   {{ experience.content | strip }}
                 </div>
+                {% if experience.image-path %}
+                  <img
+                    class="exp-image"
+                    src="{{experience.image-path}}"
+                    alt="{{experience.image-alt}}">
+                {% endif %}
               </div>
             </div>
           {% endfor %}
@@ -139,8 +226,8 @@
     <script src="/assets/js/displayElementOnScroll.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const expContent =  document.querySelectorAll(".exp-content");
-        removeClassToElementsOnScrollVisible(expContent, "style-crystal-always-visible")
+        const expContent =  document.querySelectorAll(".timeline-content");
+        removeClassToElementsOnScrollVisible(expContent, "style-crystal-always-visible", true)
         });
     </script>
   </body>

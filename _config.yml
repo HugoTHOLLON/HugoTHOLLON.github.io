@@ -61,3 +61,5 @@ sass:
 collections:
   work_experience:
     output: false
+  education:
+    output: false
