@@ -13,41 +13,50 @@
         ---------------------------------- Section 1 -----------------------------------
         --------------------------------------------------------------------------------
         ----------------------------------------------------------------------------- -->
-      <section class="section profile-Hugo">
-        <div class="image-Hugo style-crystal-container style-crystal-always-visible no-animation no-hover">
-          {% include styleCrystals.html start=9 end=16 %}
-          <img src="/assets/images/photo_Hugo_THOLLON.jpg" alt="photo Hugo THOLLON" />
+      <section class="section profile-Hugo loading" id="profile-Hugo">
+        <div class="image-Hugo">
+          <div class="image-Hugo-background style-crystal-container style-crystal-always-visible no-animation no-hover">
+            {% include styleCrystals.html start=9 end=16 %}
+            <img src="/assets/images/photo_Hugo_THOLLON.jpg" alt="photo Hugo THOLLON" />
+          </div>
+          <div class="loading-crystals style-crystal-container no-animation no-hover">
+            {% include styleCrystals.html start=21 end=28 %}
+          </div>
         </div>
         <div class="profile-text">
-          <div class="name">Hugo THOLLON</div>
-          <div class="description-Hugo">
-            Greetings, I am a
-            <b>computer science student</b>
-            at Blagnac's IUT in France. I am currently undertaking my third year at the IUT.
-            <br/>
-            I love video games and I am passionate about
-            <b>game development</b>. I am also a big fan of parkour.
-            <br/>
-            <br/>
-            You will find below some of my
-            <a href="#best-work">
-              <b>best work</b>
-            </a>
-            and my
-            <b>work experience</b>.
-            <br/>You can check the rest of my
-            <b>projects</b>
-            in the
-            <a href="#">Portfolio</a>
-            section.
-            <br/>
-            You will find my
-            <b>resume</b>,
-            <b>education</b>, and
-            <b>skills</b>
-            inside the
-            <a href="#">About</a>
-            section.
+          <div class="wrapper">
+            <div class="name">Hugo THOLLON</div>
+          </div>
+          <div class="wrapper">
+            <div class="description-Hugo">
+              Greetings, I am a
+              <b>computer science student</b>
+              at Blagnac's IUT in France. I am currently undertaking my third year at the IUT.
+              <br/>
+              I love video games and I am passionate about
+              <b>game development</b>. I am also a big fan of parkour.
+              <br/>
+              <br/>
+              You will find below some of my
+              <a href="#best-work">
+                <b>best work</b>
+              </a>
+              and my
+              <b>work experience</b>.
+              <br/>You can check the rest of my
+              <b>projects</b>
+              in the
+              <a href="#">Portfolio</a>
+              section.
+              <br/>
+              You will find my
+              <b>resume</b>,
+              <b>education</b>, and
+              <b>skills</b>
+              inside the
+              <a href="#">About</a>
+              section.
+            </div>
           </div>
         </div>
       </section>
@@ -107,7 +116,7 @@
 
             <div class="timeline-item-container {{ containerClass }}">
               <div class="timeline-content style-crystal-container style-crystal-always-visible no-hover">
-                {% include styleCrystals.html start=17 end=21 %}
+                {% include styleCrystals.html start=17 end=20 %}
                 <div class="edu-title">
                   {{ edu.title }}
                 </div>
@@ -210,7 +219,7 @@
 
             <div class="timeline-item-container {{ containerClass }}">
               <div class="timeline-content style-crystal-container style-crystal-always-visible no-hover">
-                {% include styleCrystals.html start=17 end=21 %}
+                {% include styleCrystals.html start=17 end=20 %}
                 <div class="exp-type">
                   {{ experience.type }}
                 </div>
@@ -248,7 +257,12 @@
 
     <script src="/assets/js/displayElementOnScroll.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
+      window.addEventListener("load", () => {
+        const profile = document.getElementById("profile-Hugo");
+        const loadCrystals = document.querySelector(".loading-crystals");
+        loadCrystals.classList.remove("no-animation");
+        profile.classList.remove("loading");
+      
         const expContent =  document.querySelectorAll(".timeline-content");
         removeClassToElementsOnScrollVisible(expContent, "style-crystal-always-visible", true);
         const cards =  document.querySelectorAll(".card");

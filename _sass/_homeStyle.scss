@@ -1,3 +1,5 @@
+@use "crystalStyle" as crystalStyle;
+
 main.home {
   .section {
     width: 100%;
@@ -73,6 +75,9 @@ main.home {
   ############################################################################### */
 
   .profile-Hugo {
+    // the animation delay first set inside .loading-crystals and then used in .profile-text
+    $delay: 0s;
+
     min-height: calc(100vh - 60px);
     padding: 60px 40px;
     display: flex;
@@ -81,17 +86,79 @@ main.home {
     align-items: center;
     justify-content: center;
 
-    .image-Hugo {
-      max-width: 310px;
-      height: fit-content;
-      padding: 20px;
-      background: linear-gradient(to right, #39b5f2, #00bfff);
-      border-radius: 40px;
-      overflow: hidden;
+    &.loading {
+      .image-Hugo {
+        .loading-crystals {
+          @include crystalStyle.crystal-style-hover-placeholder;
+        }
+      }
 
-      img {
-        border-radius: 8px;
+      .profile-text {
+        gap: 0;
+
+        .wrapper {
+          .name {
+            opacity: 0;
+            transform: translateY(50%);
+          }
+
+          .description-Hugo {
+            opacity: 0;
+            transform: translateY(-100%);
+            filter: blur(6px);
+          }
+        }
+      }
+    }
+
+    .image-Hugo {
+      overflow: hidden;
+      border-radius: 40px;
+      position: relative;
+
+      .image-Hugo-background {
+        max-width: 310px;
+        height: fit-content;
+        padding: 20px;
+        background: linear-gradient(to right, #39b5f2, #00bfff);
+
+        img {
+          border-radius: 8px;
+          width: 100%;
+        }
+      }
+
+      .loading-crystals {
         width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        pointer-events: none;
+
+        .style-crystal {
+          transition-timing-function: ease-in;
+          transition-duration: 1.5s;
+        }
+
+        $offsets: (
+          "cry21": 0.5s,
+          "cry23": 1s,
+          "cry22": 0.7s,
+          "cry24": 0.5s,
+          "cry25": 0.5s,
+          "cry26": 0.5s,
+          "cry27": 0.5s,
+          "cry28": 0.2s,
+        );
+
+        @each $name, $offset in $offsets {
+          .#{$name} {
+            $delay: $delay + $offset;
+            transition-delay: $delay;
+          }
+        }
+
+        $delay: $delay + 0.2s;
       }
     }
 
@@ -100,30 +167,57 @@ main.home {
       flex-direction: column;
       gap: 20px;
 
-      .name {
-        font-size: 2.8rem;
-        font-family: "Orbitron", sans-serif;
-        font-weight: 500;
-        color: rgb(104, 225, 255);
-        text-shadow:
-          1px 1px 0px #fff,
-          2px 2px 3px rgba(0, 191, 255, 0.538),
-          -1px -1px 1px rgb(85, 181, 255);
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        text-align: center;
-      }
+      transition: gap 1s;
+      transition-delay: $delay + 1.7s;
 
-      .description-Hugo {
-        text-align: center;
+      .wrapper {
+        overflow: hidden;
 
-        font-size: 1.2rem;
-        max-width: 625px;
+        .name {
+          font-size: 2.8rem;
+          font-family: "Orbitron", sans-serif;
+          font-weight: 500;
+          color: rgb(104, 225, 255);
+          text-shadow:
+            1px 1px 0px #fff,
+            2px 2px 3px rgba(0, 191, 255, 0.538),
+            -1px -1px 1px rgb(85, 181, 255);
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          text-align: center;
 
-        a {
-          text-decoration: none;
-          font-weight: bold;
-          color: #31bcf4;
+          transition:
+            transform 0.5s ease-in,
+            opacity 0.5s;
+
+          transition-delay: $delay;
+          $delay: $delay + 0.9s;
+
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        .description-Hugo {
+          text-align: center;
+
+          font-size: 1.2rem;
+          max-width: 625px;
+
+          transition:
+            transform 0.8s ease-in,
+            opacity 0.8s,
+            filter 0.8s;
+          transition-delay: $delay;
+
+          transform: translateY(0);
+          opacity: 1;
+          filter: blur(0);
+
+          a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #31bcf4;
+          }
         }
       }
     }
@@ -331,7 +425,7 @@ main.home {
 
               width: fit-content;
 
-              transition: all 1s;
+              transition: all 1.5s;
 
               opacity: 1;
               filter: blur(0);

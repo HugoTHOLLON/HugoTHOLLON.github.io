@@ -15,3 +15,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   setStyleVariables();
 });
+
+window.addEventListener("load", () => {
+  setStyleVariables();
+});

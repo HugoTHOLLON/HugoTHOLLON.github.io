@@ -8,6 +8,14 @@
 // @include crystalStyle.crystal-style-hover-placeholder;
 // To open the crystals
 
+$bg-color1: #39b5f2;
+$bg-color2: #00a9ff;
+$blue1: rgba(42, 208, 248, 1);
+$blue2: rgba(37, 197, 242, 1);
+$blue3: rgba(49, 188, 244, 1);
+$blue4: rgba(34, 189, 231, 1);
+$blue5: rgba(40, 175, 228, 1);
+
 @mixin crystal-style-placeholder {
   position: relative;
 
@@ -19,6 +27,12 @@
       border 0.7s ease,
       width 0.7s ease;
     z-index: 0;
+  }
+
+  &.no-animation {
+    .style-crystal {
+      transition: none;
+    }
   }
 
   $hiddenBorder: 0 solid transparent;
@@ -91,7 +105,7 @@
   .cry9 {
     border-top: $hiddenBorder;
     border-right: $hiddenBorder;
-    border-top-color: rgba(42, 208, 248, 1);
+    border-top-color: $blue1;
     top: 0;
     left: 0;
   }
@@ -99,7 +113,7 @@
   .cry10 {
     border-top: $hiddenBorder;
     border-right: $hiddenBorder;
-    border-top-color: rgba(37, 197, 242, 1);
+    border-top-color: $blue2;
     top: 0;
     left: 0;
   }
@@ -107,7 +121,7 @@
   .cry11 {
     border-top: $hiddenBorder;
     border-left: $hiddenBorder;
-    border-top-color: rgba(49, 188, 244, 1);
+    border-top-color: $blue3;
     top: 0;
     right: 0;
   }
@@ -115,7 +129,7 @@
   .cry12 {
     border-bottom: $hiddenBorder;
     border-left: $hiddenBorder;
-    border-bottom-color: rgba(42, 208, 248, 1);
+    border-bottom-color: $blue1;
     bottom: 0;
     right: 0;
   }
@@ -123,7 +137,7 @@
   .cry13 {
     border-top: $hiddenBorder;
     border-left: $hiddenBorder;
-    border-top-color: rgba(40, 175, 228, 1);
+    border-top-color: $blue5;
     top: 0;
     right: 0;
   }
@@ -131,7 +145,7 @@
   .cry14 {
     border-bottom: $hiddenBorder;
     border-right: $hiddenBorder;
-    border-bottom-color: rgba(40, 175, 228, 1);
+    border-bottom-color: $blue5;
     bottom: 0;
     left: 0;
   }
@@ -139,7 +153,7 @@
   .cry15 {
     border-bottom: $hiddenBorder;
     border-right: $hiddenBorder;
-    border-bottom-color: rgba(42, 208, 248, 1);
+    border-bottom-color: $blue1;
     bottom: 0;
     left: 0;
   }
@@ -147,7 +161,7 @@
   .cry16 {
     border-bottom: $hiddenBorder;
     border-left: $hiddenBorder;
-    border-bottom-color: rgba(34, 189, 231, 1);
+    border-bottom-color: $blue4;
     bottom: 0;
     right: 0;
   }
@@ -155,7 +169,7 @@
   .cry17 {
     border-top: $hiddenBorder;
     border-right: $hiddenBorder;
-    border-top-color: #39b5f2;
+    border-top-color: $bg-color1;
     top: 0;
     right: calc(calc(var(--banner-width) * 1) / 8);
 
@@ -171,7 +185,7 @@
   .cry18 {
     border-bottom: $hiddenBorder;
     border-left: $hiddenBorder;
-    border-bottom-color: rgba(37, 197, 242, 1);
+    border-bottom-color: $blue2;
     bottom: 0;
     right: 0;
   }
@@ -179,7 +193,7 @@
   .cry19 {
     border-top: $hiddenBorder;
     border-right: $hiddenBorder;
-    border-top-color: rgba(42, 208, 248, 1);
+    border-top-color: $blue1;
     top: 0;
     left: 0;
   }
@@ -187,9 +201,96 @@
   .cry20 {
     border-bottom: $hiddenBorder;
     border-right: $hiddenBorder;
-    border-bottom-color: rgba(37, 197, 242, 1);
+    border-bottom-color: $blue2;
     bottom: 0;
     left: 0;
+  }
+
+  .cry21 {
+    border-top: $hiddenBorder;
+    border-bottom: $hiddenBorder;
+    border-left: $hiddenBorder;
+
+    border-left-color: $bg-color1;
+    border-top-color: $bg-color1;
+    top: 0;
+    right: 0;
+  }
+
+  .cry22 {
+    border-top: $hiddenBorder;
+    border-bottom: $hiddenBorder;
+    border-right: $hiddenBorder;
+
+    border-right-color: $blue4;
+    border-bottom-color: $blue4;
+    bottom: 0;
+    right: 0;
+  }
+
+  .cry23 {
+    border-top: $hiddenBorder;
+    border-right: $hiddenBorder;
+
+    border-top-color: $blue1;
+
+    top: 0;
+    left: 0;
+  }
+
+  .cry24 {
+    border-bottom: $hiddenBorder;
+    border-left: $hiddenBorder;
+    border-bottom-color: $blue1;
+    top: 0;
+    right: 0;
+  }
+
+  .cry25 {
+    border-top: $hiddenBorder;
+    border-bottom: $hiddenBorder;
+    border-left: $hiddenBorder;
+    border-right: $hiddenBorder;
+
+    border-top-color: $blue5;
+    border-left-color: $blue5;
+
+    top: 0;
+    left: 0;
+  }
+
+  .cry26 {
+    border-bottom: $hiddenBorder;
+    border-right: $hiddenBorder;
+    border-bottom-color: $blue3;
+    bottom: 0;
+    left: 0;
+  }
+
+  .cry27 {
+    border-top: $hiddenBorder;
+    border-bottom: $hiddenBorder;
+    border-left: $hiddenBorder;
+    border-right: $hiddenBorder;
+
+    border-left-color: $blue1;
+    border-bottom-color: $blue1;
+
+    bottom: 0;
+    left: 0;
+  }
+
+  .cry28 {
+    border-top: $hiddenBorder;
+    border-bottom: $hiddenBorder;
+    border-left: $hiddenBorder;
+    border-right: $hiddenBorder;
+
+    border-right-color: $blue3;
+    border-bottom-color: $blue3;
+
+    bottom: 0;
+    right: 0;
   }
 }
 
@@ -295,6 +396,55 @@
     border-bottom-width: calc(var(--banner-height));
     border-right-width: calc(calc(var(--banner-width) * 1) / 2);
   }
+
+  .cry21 {
+    border-top-width: calc(calc(var(--banner-height) * 3.6) / 8);
+    border-bottom-width: calc(var(--banner-height) / 8);
+    border-left-width: calc(calc(var(--banner-width)));
+  }
+
+  .cry22 {
+    border-bottom-width: calc(calc(var(--banner-height) * 3.6) / 8);
+    border-top-width: calc(var(--banner-height) / 8);
+    border-right-width: calc(calc(var(--banner-width)));
+  }
+
+  .cry23 {
+    border-top-width: calc(var(--banner-height));
+    border-right-width: calc(calc(var(--banner-width) * 6) / 8);
+  }
+
+  .cry24 {
+    width: calc(var(--banner-width) / 8);
+    border-bottom-width: calc(var(--banner-height));
+    border-left-width: calc(calc(var(--banner-width) * 2) / 8);
+  }
+
+  .cry25 {
+    border-left-width: calc(calc(var(--banner-width) * 4.81) / 8);
+    border-top-width: calc(var(--banner-height) / 5);
+    border-bottom-width: calc(var(--banner-height) / 5);
+    border-right-width: calc(calc(var(--banner-width) * 1) / 6);
+  }
+
+  .cry26 {
+    border-bottom-width: calc(calc(var(--banner-height) * 4) / 5);
+    border-right-width: calc(calc(var(--banner-width) * 4) / 8);
+  }
+
+  .cry27 {
+    border-right-width: calc(calc(var(--banner-width) * 1) / 8);
+    border-bottom-width: calc(var(--banner-height) / 5);
+    border-top-width: calc(var(--banner-height) / 16);
+    border-left-width: calc(calc(var(--banner-width) * 3) / 8);
+  }
+
+  .cry28 {
+    border-bottom-width: calc(var(--banner-height) / 4);
+    border-top-width: calc(var(--banner-height) / 8);
+    border-right-width: calc(calc(var(--banner-width) * 5) / 16);
+    border-left-width: calc(calc(var(--banner-width) * 1) / 16);
+  }
 }
 
 .style-crystal-container {
@@ -311,10 +461,4 @@
 
 .style-crystal-always-visible {
   @include crystal-style-hover-placeholder;
-
-  &.no-animation {
-    .style-crystal {
-      transition: none;
-    }
-  }
 }
