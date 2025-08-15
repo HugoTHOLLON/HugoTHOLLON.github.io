@@ -1,10 +1,12 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
+title: Hugo Thollon | Portfolio
 layout: home
 ---
 
-# My title
+Greetings, I am a **computer science student**
+at Blagnac's IUT in France. I am currently undertaking my third year at the IUT.  
+I love video games and I am passionate about **game development**. I am also a big fan of parkour.
 
-there is some content here it's good LOOOOOL
+You will find below some of my [best work](#best-work) as well as my [education](#education), [skills](#skills) and [work experience](#work-experience).  
+You can check the rest of the **projects** I've done in the [Portfolio](#) section.  
+You will find my **resume**, inside the [Résumé](#) section.

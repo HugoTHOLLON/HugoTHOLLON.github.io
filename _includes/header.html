@@ -11,17 +11,23 @@
     </button>
 
     <div class="name-title">
-      <a href="/"> Hugo THOLLON </a>
+      <a href="/">
+        Hugo THOLLON
+      </a>
     </div>
   </div>
   <ul class="navbar-container">
-    <li class="navbar-el style-crystal-container about">
+    <li class="navbar-el style-crystal-container resume">
       {% include styleCrystals.html %}
-      <a href="#"> About </a>
+      <a href="#">
+        Résumé
+      </a>
     </li>
     <li class="navbar-el style-crystal-container portfolio">
       {% include styleCrystals.html %}
-      <a href="#"> Portfolio </a>
+      <a href="#">
+        Portfolio
+      </a>
     </li>
   </ul>
 </div>
@@ -32,12 +38,12 @@
 
 <script>
   let menuOpen = false;
-
+  
   function addClass(element, className) {
     if (!element.classList.contains(className))
       element.classList.add(className);
   }
-
+  
   function openMenu() {
     menuOpen = true;
     button.classList.add("cross");
@@ -46,7 +52,7 @@
     outside.classList.add("menu-open");
     console.log("navbar menu opened");
   }
-
+  
   function closeMenu() {
     menuOpen = false;
     button.classList.remove("cross");
@@ -55,7 +61,7 @@
     outside.classList.remove("menu-open");
     console.log("navbar menu closed");
   }
-
+  
   function toggleMenu() {
     if (menuOpen) {
       closeMenu();
@@ -63,13 +69,13 @@
       openMenu();
     }
   }
-
+  
   document.addEventListener("DOMContentLoaded", () => {
     button = document.querySelector(".menu-icon");
     navBar = document.querySelector(".navbar-container");
     headerBackground = document.querySelector(".header-background");
     outside = document.querySelector(".outside-menu");
-
+  
     closeMenu();
     outside.addEventListener("click", closeMenu);
     outside.addEventListener("touchstart", closeMenu);

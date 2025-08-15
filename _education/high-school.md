@@ -4,6 +4,7 @@ specialties: ["Mathematics", "Contemporary World English"]
 school: "Lycée Polyvalent Marie Louise Dissard Françoise"
 location: "Tournefeuille, France"
 school-url: https://dissard-francoise.mon-ent-occitanie.fr/
+results: ["Baccalauréat with high honours"]
 image-path: "/assets/images/lycee_francoise.jpg"
 image-alt: "Lycée françoise's picture"
 date: 2020-09-07

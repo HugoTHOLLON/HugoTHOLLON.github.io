@@ -103,9 +103,11 @@ main.home {
           }
 
           .description-Hugo {
-            opacity: 0;
-            transform: translateY(-100%);
-            filter: blur(6px);
+            p {
+              opacity: 0;
+              transform: translateY(-100%);
+              filter: blur(6px);
+            }
           }
         }
       }
@@ -168,7 +170,7 @@ main.home {
       gap: 20px;
 
       transition: gap 1s;
-      transition-delay: $delay + 1.7s;
+      transition-delay: $delay + 2.5s;
 
       .wrapper {
         overflow: hidden;
@@ -198,25 +200,40 @@ main.home {
         }
 
         .description-Hugo {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
           text-align: center;
 
           font-size: 1.2rem;
           max-width: 625px;
 
-          transition:
-            transform 0.8s ease-in,
-            opacity 0.8s,
-            filter 0.8s;
-          transition-delay: $delay;
-
-          transform: translateY(0);
-          opacity: 1;
-          filter: blur(0);
-
           a {
             text-decoration: none;
             font-weight: bold;
             color: #31bcf4;
+          }
+
+          p {
+            position: relative;
+            margin: 0;
+            z-index: 2;
+            background-color: white;
+
+            transition:
+              transform 0.8s ease-in,
+              opacity 0.8s,
+              filter 0.8s;
+            transition-delay: $delay;
+
+            &:nth-child(2) {
+              z-index: 1;
+              transition-delay: $delay + 0.8s;
+            }
+
+            transform: translateY(0);
+            opacity: 1;
+            filter: blur(0);
           }
         }
       }
@@ -351,6 +368,16 @@ main.home {
       .edu-date {
         font-size: 1.1rem;
         margin-top: 5px;
+      }
+
+      .edu-results {
+        margin-top: 5px;
+        font-size: 1.05rem;
+
+        ul {
+          margin: 0;
+          padding-left: 20px;
+        }
       }
 
       .edu-description {

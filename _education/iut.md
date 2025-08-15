@@ -4,6 +4,8 @@ specialties: ["Software Development"]
 school: "Blagnac's IUT - Toulouse University II"
 location: "Blagnac, France"
 school-url: https://www.iut-blagnac.fr/fr/
+results:
+  ["<b>1st year</b>: top of the class", "<b>2nd year</b>: 11th out of 77"]
 image-path: "/assets/images/logo_iut_blagnac.png"
 image-alt: "Blagnac's IUT logo"
 date: 2023-07-04

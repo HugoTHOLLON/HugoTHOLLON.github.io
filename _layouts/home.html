@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -29,33 +30,7 @@
           </div>
           <div class="wrapper">
             <div class="description-Hugo">
-              Greetings, I am a
-              <b>computer science student</b>
-              at Blagnac's IUT in France. I am currently undertaking my third year at the IUT.
-              <br/>
-              I love video games and I am passionate about
-              <b>game development</b>. I am also a big fan of parkour.
-              <br/>
-              <br/>
-              You will find below some of my
-              <a href="#best-work">
-                <b>best work</b>
-              </a>
-              and my
-              <b>work experience</b>.
-              <br/>You can check the rest of my
-              <b>projects</b>
-              in the
-              <a href="#">Portfolio</a>
-              section.
-              <br/>
-              You will find my
-              <b>resume</b>,
-              <b>education</b>, and
-              <b>skills</b>
-              inside the
-              <a href="#">About</a>
-              section.
+              {{ content }}
             </div>
           </div>
         </div>
@@ -149,6 +124,16 @@
                     {{ edu.in-progress }}
                   {% endif %}
                 </div>
+                {% if edu.results %}
+                  <div class="edu-results">
+                    <b>Results:</b>
+                    <ul>
+                      {% for result in edu.results %}
+                        <li>{{ result }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
                 <div class="edu-description">
                   {{ edu.content | strip }}
                 </div>
