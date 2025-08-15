@@ -170,7 +170,7 @@ main.home {
       gap: 20px;
 
       transition: gap 1s;
-      transition-delay: $delay + 2.5s;
+      transition-delay: $delay + 2.4s;
 
       .wrapper {
         overflow: hidden;
@@ -228,7 +228,7 @@ main.home {
 
             &:nth-child(2) {
               z-index: 1;
-              transition-delay: $delay + 0.8s;
+              transition-delay: $delay + 0.7s;
             }
 
             transform: translateY(0);
