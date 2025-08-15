@@ -1,4 +1,6 @@
-@use "crystalStyle" as crystalStyle;
+// new version too recent for github pages
+// @use "crystalStyle" as crystalStyle;
+@import "crystalStyle";
 
 main.home {
   .section {
@@ -89,7 +91,7 @@ main.home {
     &.loading {
       .image-Hugo {
         .loading-crystals {
-          @include crystalStyle.crystal-style-hover-placeholder;
+          @include crystal-style-hover-placeholder;
         }
       }
 
