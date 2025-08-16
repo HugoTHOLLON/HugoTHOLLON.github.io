@@ -1,12 +1,11 @@
 ---
-title: IRIT Internship
-type: Internship
+title: Developer Intern
 organization: IRIT (Computer Science Research Institute of Toulouse)
 orga-url: https://www.irit.fr/
-image-path: "/assets/images/irit_logo.webp"
-image-alt: "IRIT's logo"
 date: 2025-03-10
 end: 2025-05-02
+tags: ["Android", "Python", "Bluetooth Low Energy", "Raspberry Pi"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus eget sem ultrices molestie. Etiam rhoncus magna metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus ultrices nibh a nibh feugiat tempor. Aliquam accumsan porttitor ligula. Vestibulum viverra fringilla orci, nec placerat leo lacinia sed. Etiam sed odio ac eros ornare pharetra.
+Developed an **Android** application and a **Python** application that communicate via **Bluetooth Low Energy (BLE)**.
+The goal was to send commands from the Android app to a **Raspberry Pi** (running the Python app), which controlled the streetlights of a **smart city model** to monitor and optimize energy consumption.

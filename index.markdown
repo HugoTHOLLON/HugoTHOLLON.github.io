@@ -3,10 +3,9 @@ title: Hugo Thollon | Portfolio
 layout: home
 ---
 
-Greetings, I am a **computer science student**
-at Blagnac's IUT in France. I am currently undertaking my third year at the IUT.  
-I love video games and I am passionate about **game development**. I am also a big fan of parkour.
+Hello, I am a **Computer Science student** at the IUT of Blagnac in France, currently in my third year.
+I have a passion for video games and **game development**, and I am also an enthusiastic parkour practitioner.
 
-You will find below some of my [best work](#best-work) as well as my [education](#education), [skills](#skills) and [work experience](#work-experience).  
-You can check the rest of the **projects** I've done in the [Portfolio](#) section.  
-You will find my **resume**, inside the [Résumé](#) section.
+Below, you will find a selection of my [best works](#best-work), along with my [education](#education), [skills](#skills), and [professional experience](#work-experience).  
+Additional **projects** are available in the [Portfolio](#) section.  
+My full **résumé** can be found in the [Résumé](#) section.

@@ -10,6 +10,7 @@
   <body>
     <header>{% include header.html %}</header>
     <main class="home">
+      {% assign dateFormat = "%B %-d, %Y" %}
       <!-- ----------------------------------------------------------------------------
         --------------------------------------------------------------------------------
         ---------------------------------- Section 1 -----------------------------------
@@ -58,7 +59,7 @@
                 {% endfor %}
               </div>
               <div class="card-date">
-                {{ post.date | date: "%-d %B %Y" }}
+                {{ post.date | date: dateFormat }}
               </div>
               <div class="card-extract">{{ post.excerpt | strip }}</div>
               <a class="card-link style-crystal-container" href="{{ post.url }}">
@@ -90,11 +91,22 @@
               {% assign containerClass = "right" %}
             {% endif %}
 
-            <div class="timeline-item-container {{ containerClass }}">
-              <div class="timeline-content style-crystal-container style-crystal-always-visible no-hover">
+            <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-content style-crystal-container no-hover">
                 {% include styleCrystals.html start=17 end=20 %}
                 <div class="edu-title">
                   {{ edu.title }}
+                </div>
+                <div class="edu-school">
+                  {% if edu.school-url %}
+                    <a href="{{edu.school-url}}" target="_blank">
+                      {{ edu.school }}
+                    </a>
+                  {% else %}
+                    {{ edu.school }}
+                  {% endif %}
                 </div>
                 {% if edu.specialties %}
                   <div class="edu-specialties">
@@ -110,21 +122,7 @@
                     {% endfor %}
                   </div>
                 {% endif %}
-                <div class="edu-school">
-                  {% if edu.school-url %}
-                    <a href="{{edu.school-url}}" target="_blank">
-                      {{ edu.school }}
-                    </a>
-                  {% else %}
-                    {{ edu.school }}
-                  {% endif %}
-                </div>
-                <div class="edu-date">
-                  {{ edu.date | date: "%Y" }} - {{ edu.end | date: "%Y" }}
-                  {% if edu.in-progress %}
-                    {{ edu.in-progress }}
-                  {% endif %}
-                </div>
+
                 {% if edu.results %}
                   <div class="edu-results">
                     <b>Results:</b>
@@ -135,16 +133,13 @@
                     </ul>
                   </div>
                 {% endif %}
-                <div class="edu-description">
-                  {{ edu.content | strip }}
-                </div>
-                {% if edu.image-path %}
-                  <img
-                    class="edu-image"
-                    src="{{edu.image-path}}"
-                    alt="{{edu.image-alt}}">
-                {% endif %}
               </div>
+
+              <span class="timeline-date">
+                <span>
+                  {% include format-date.html start=edu.date end=edu.end %}
+                </span>
+              </span>
             </div>
           {% endfor %}
         </div>
@@ -203,37 +198,32 @@
               {% assign containerClass = "right" %}
             {% endif %}
 
-            <div class="timeline-item-container {{ containerClass }}">
-              <div class="timeline-content style-crystal-container style-crystal-always-visible no-hover">
+            <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-content style-crystal-container no-hover">
                 {% include styleCrystals.html start=17 end=20 %}
-                <div class="exp-type">
-                  {{ experience.type }}
+                <div class="exp-title">
+                  {{ experience.title }}
                 </div>
                 <div class="exp-organization">
-                  At
-                  <span class="orga-name">
-                    {% if experience.orga-url %}
-                      <a href="{{experience.orga-url}}" target="_blank">
-                        {{ experience.organization }}
-                      </a>
-                    {% else %}
+                  {% if experience.orga-url %}
+                    <a href="{{experience.orga-url}}" target="_blank">
                       {{ experience.organization }}
-                    {% endif %}
-                  </span>
-                </div>
-                <div class="exp-date">
-                  From {{ experience.date | date: "%-d %B %Y" }} to {{ experience.end | date: "%-d %B %Y" }}
+                    </a>
+                  {% else %}
+                    {{ experience.organization }}
+                  {% endif %}
                 </div>
                 <div class="exp-description">
                   {{ experience.content | strip }}
                 </div>
-                {% if experience.image-path %}
-                  <img
-                    class="exp-image"
-                    src="{{experience.image-path}}"
-                    alt="{{experience.image-alt}}">
-                {% endif %}
               </div>
+              <span class="timeline-date">
+                <span>
+                  {% include format-date.html start=experience.date end=experience.end %}
+                </span>
+              </span>
             </div>
           {% endfor %}
         </div>
@@ -249,8 +239,8 @@
         loadCrystals.classList.remove("no-animation");
         profile.classList.remove("loading");
       
-        const expContent =  document.querySelectorAll(".timeline-content");
-        removeClassToElementsOnScrollVisible(expContent, "style-crystal-always-visible", true);
+        const timelineItem =  document.querySelectorAll(".timeline-item-container");
+        removeClassToElementsOnScrollVisible(timelineItem, "style-crystal-always-visible", true);
         const cards =  document.querySelectorAll(".card");
         removeClassToElementsOnScrollVisible(cards, "off-screen");
         const skills =  document.querySelectorAll(".skill-container");

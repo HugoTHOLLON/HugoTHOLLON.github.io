@@ -1,0 +1,23 @@
+{% assign startVar = include.start %}
+{% assign endVar = include.end %}
+
+{% if startVar %}
+
+  {% if endVar %}
+
+    {% assign start = startVar | date: "%Y" %}
+    {% assign end = endVar | date: "%Y" %}
+
+    {% if start == end %}
+      {% comment %} Same year: display months {% endcomment %}
+      {{ startVar | date: "%b" | capitalize }} - {{ endVar | date: "%b %Y" | capitalize }}
+    {% else %}
+      {% comment %} Different years, display years {% endcomment %}
+      {{ start }} - {{ end }}
+    {% endif %}
+
+  {% else %}
+    {{ startVar | date: "%Y" }} - Present
+  {% endif %}
+
+{% endif %}
