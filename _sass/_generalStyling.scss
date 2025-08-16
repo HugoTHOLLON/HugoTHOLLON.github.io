@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Orbitron";
+  src: url("/assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf")
+    format("truetype");
+  /* Range of supported weights */
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  // same font family as in bootswatch Cosmo theme
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
