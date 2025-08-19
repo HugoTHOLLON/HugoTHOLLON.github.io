@@ -2,14 +2,12 @@
 layout: post
 title: "Welcome to Jekyll 2!"
 date: 2025-07-08
-categories: jekyll update
-tag: best-work
-excerpt_separator: <!--more-->
+categories: jekyll update best-project
+project-type: "IUT project"
+description: "You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated."
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-<!--more-->
 
 Jekyll requires blog post files to be named according to the following format:
 

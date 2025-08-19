@@ -1,5 +1,5 @@
 .timeline {
-  $delayStart: 0s;
+  $delayStart: 0.4s;
 
   position: relative;
   max-width: 1200px;
@@ -59,11 +59,26 @@
         right: 52%;
         direction: rtl;
         text-align: left;
-
-        span {
-          direction: ltr;
-        }
       }
+    }
+
+    .timeline-date {
+      position: absolute;
+      top: 22px;
+
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #31bcf4;
+
+      overflow: hidden;
+      white-space: nowrap;
+      width: fit-content;
+      max-width: 30ch;
+
+      transition: max-width 1s ease-in;
+      transition-delay: $delayStart;
+
+      $delayStart: $delayStart + 0.2s;
     }
 
     .timeline-content {
@@ -76,15 +91,15 @@
       box-sizing: border-box;
 
       padding: 15px;
-      padding-bottom: 2.5rem;
 
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      // box-shadow: 0 4px 8px 0 #31bcf4;
       transition: 0.3s;
 
       color: black;
 
       &:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.5);
       }
 
       .style-crystal {
@@ -106,25 +121,7 @@
             transition-delay: $delayStart;
           }
         }
-
-        $delayStart: $delayStart + 0.5s;
       }
-    }
-
-    .timeline-date {
-      position: absolute;
-      top: 22px;
-
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #31bcf4;
-
-      overflow: hidden;
-      white-space: nowrap;
-      max-width: 30ch;
-
-      transition: max-width 1s ease-in;
-      transition-delay: $delayStart;
     }
 
     &.style-crystal-always-visible {
@@ -221,6 +218,7 @@
 
       .timeline-content {
         width: 100%;
+        padding-bottom: 2.5rem !important;
       }
     }
   }
