@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "Welcome to Jekyll 3!"
-date: 2025-07-08
-categories: ["Personal-project", "best-project"]
+title: "Seresville's birds"
+date: 2024-05-06
+end: 2024-08-03
+categories: ["personal-project", "best-project"]
 project-type: "Personal project"
 image-path: "/assets/images/projects/home_oiseaux_de_seresville_cropped.png"
 image-alt: "Game home page"
 tags: ["Godot engine", "GDScript"]
-description: "You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated."
+description: |
+  Developed an interactive quiz game in Godot Engine for a bird exhibition. Players identify bird species by either their picture or song. I designed and programmed the game mechanics using GDScript, created the user interface, and integrated audio/image assets. The game was showcased at the exhibition and used by visitors to test their knowledge of local birds.
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

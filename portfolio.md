@@ -1,4 +1,4 @@
 ---
-title: Hugo Thollon | Portfolio | Projects
+title: Projects
 layout: portfolio
 ---

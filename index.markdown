@@ -1,5 +1,5 @@
 ---
-title: Hugo Thollon | Portfolio
+title: Home
 layout: home
 ---
 

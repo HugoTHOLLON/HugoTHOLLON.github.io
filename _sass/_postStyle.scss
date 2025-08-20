@@ -1,4 +1,16 @@
 main {
+  margin: 0;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
   h1 {
     font-size: 80px;
   }
