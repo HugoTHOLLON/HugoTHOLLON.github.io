@@ -1,238 +1,7 @@
-<!doctype html>
-<html>
-  <head>
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/home.css" />
-    <link rel="icon" href="/assets/images/hugo_logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-
-  <body>
-    <header>{% include header.html %}</header>
-    <main class="home">
-      {% assign dateFormat = "%B %-d, %Y" %}
-      <!-- ----------------------------------------------------------------------------
-        --------------------------------------------------------------------------------
-        ---------------------------------- Section 1 -----------------------------------
-        --------------------------------------------------------------------------------
-        ----------------------------------------------------------------------------- -->
-      <section class="section profile-Hugo loading" id="profile-Hugo">
-        <div class="image-Hugo">
-          <div class="image-Hugo-background style-crystal-container style-crystal-always-visible no-animation no-hover">
-            {% include styleCrystals.html start=9 end=16 %}
-            <img src="/assets/images/photo_Hugo_THOLLON.jpg" alt="photo Hugo THOLLON" />
-          </div>
-          <div class="loading-crystals style-crystal-container no-animation no-hover">
-            {% include styleCrystals.html start=21 end=28 %}
-          </div>
-        </div>
-        <div class="profile-text">
-          <div class="wrapper">
-            <div class="name">Hugo THOLLON</div>
-          </div>
-          <div class="wrapper">
-            <div class="description-Hugo">
-              {{ content }}
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ----------------------------------------------------------------------------
-        --------------------------------------------------------------------------------
-        ---------------------------------- Section 2 -----------------------------------
-        --------------------------------------------------------------------------------
-        ----------------------------------------------------------------------------- -->
-      <section class="section crystal-section best-work" id="best-work">
-        <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
-          {% include styleCrystals.html start=9 end=16 %}
-        </div>
-
-        <div class="section-title">My best projects</div>
-
-        <div class="work-list">
-          {% for post in site.categories.best-project %}
-            <div class="card off-screen">
-              <div class="card-title">{{ post.title }}</div>
-              <div class="card-project-type">
-                {% if post.project-type %}
-                  {{ post.project-type }}
-                {% endif %}
-              </div>
-              <div class="card-date">
-                {{ post.date | date: dateFormat }}
-              </div>
-              <div class="card-extract">
-                <p>{{ post.description | strip }}</p>
-              </div>
-              <a class="card-link style-crystal-container" href="{{ post.url }}">
-                {% include styleCrystals.html start=5 end=8 %}
-                <div class="text">
-                  See more &rarr;
-                </div>
-              </a>
-            </div>
-          {% endfor %}
-        </div>
-      </section>
-      <!-- -----------------------------------------------------------------------------
-        --------------------------------------------------------------------------------
-        ---------------------------------- Section 3 -----------------------------------
-        --------------------------------------------------------------------------------
-        ----------------------------------------------------------------------------- -->
-      <section class="section white-section education" id="education">
-        <div class="section-title">
-          Education
-        </div>
-        <div class="timeline">
-          {% assign education_items = site.education | sort: "date" | reverse %}
-          {% for edu in education_items %}
-            {% assign left = forloop.index0 | modulo: 2 %}
-            {% if left == 0 %}
-              {% assign containerClass = "left" %}
-            {% else %}
-              {% assign containerClass = "right" %}
-            {% endif %}
-
-            <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
-              <div class="timeline-dot"></div>
-
-              <div class="timeline-content style-crystal-container no-hover">
-                {% include styleCrystals.html start=17 end=20 %}
-                <div class="edu-title">
-                  {{ edu.title }}
-                </div>
-                <div class="edu-school">
-                  {% if edu.school-url %}
-                    <a href="{{edu.school-url}}" target="_blank">
-                      {{ edu.school }}
-                    </a>
-                  {% else %}
-                    {{ edu.school }}
-                  {% endif %}
-                </div>
-                {% if edu.specialties %}
-                  <div class="edu-specialties">
-                    <b>
-                      {% if edu.specialties.size > 1 %}
-                        Specialties:
-                      {% else %}
-                        Specialty:
-                      {% endif %}
-                    </b>
-                    {% for specialty in edu.specialties %}
-                      {{ specialty }}{% unless forloop.last %},{% endunless %}
-                    {% endfor %}
-                  </div>
-                {% endif %}
-
-                {% if edu.results %}
-                  <div class="edu-results">
-                    <b>Results:</b>
-                    <ul>
-                      {% for result in edu.results %}
-                        <li>{{ result }}</li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-                {% endif %}
-              </div>
-
-              <span class="timeline-date">
-                <span dir="ltr">
-                  {% include format-date.html start=edu.date end=edu.end %}
-                </span>
-              </span>
-            </div>
-          {% endfor %}
-        </div>
-      </section>
-      <!-- -----------------------------------------------------------------------------
-        --------------------------------------------------------------------------------
-        ---------------------------------- Section 4 -----------------------------------
-        --------------------------------------------------------------------------------
-        ----------------------------------------------------------------------------- -->
-      <section class="section crystal-section skills" id="skills">
-        <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
-          {% include styleCrystals.html start=9 end=16 %}
-        </div>
-
-        <div class="section-title">My skills</div>
-
-        <div class="skill-list-container">
-          {% for skillCateg in site.data.skills %}
-            <div class="skill-category">
-              <div class="skill-categ-title">{{ skillCateg.name }}</div>
-              <ul class="skill-list">
-                {% for skill in skillCateg.skills %}
-                  <li>
-                    <div class="skill-container off-screen">
-                      <div class="skill-image">
-                        <div class="hexagon">
-                          <img src="{{skill.image}}" alt="{{skill.name}} logo">
-                        </div>
-                      </div>
-                      {{ skill.name }}
-                    </div>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endfor %}
-        </div>
-      </section>
-      <!-- -----------------------------------------------------------------------------
-        --------------------------------------------------------------------------------
-        ---------------------------------- Section 5 -----------------------------------
-        --------------------------------------------------------------------------------
-        ----------------------------------------------------------------------------- -->
-      <section class="section white-section work-experience" id="work-experience">
-        <div class="section-title">
-          My work experience
-        </div>
-        <div class="timeline">
-
-          {% assign work_experience_items = site.work_experience | sort: "date" | reverse %}
-          {% for experience in work_experience_items %}
-            {% assign left = forloop.index0 | modulo: 2 %}
-            {% if left == 0 %}
-              {% assign containerClass = "left" %}
-            {% else %}
-              {% assign containerClass = "right" %}
-            {% endif %}
-
-            <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
-              <div class="timeline-dot"></div>
-
-              <div class="timeline-content style-crystal-container no-hover">
-                {% include styleCrystals.html start=17 end=20 %}
-                <div class="exp-title">
-                  {{ experience.title }}
-                </div>
-                <div class="exp-organization">
-                  {% if experience.orga-url %}
-                    <a href="{{experience.orga-url}}" target="_blank">
-                      {{ experience.organization }}
-                    </a>
-                  {% else %}
-                    {{ experience.organization }}
-                  {% endif %}
-                </div>
-                <div class="exp-description">
-                  {{ experience.content | strip }}
-                </div>
-              </div>
-              <span class="timeline-date">
-                <span>
-                  {% include format-date.html start=experience.date end=experience.end %}
-                </span>
-              </span>
-            </div>
-          {% endfor %}
-        </div>
-      </section>
-    </main>
-    <footer>{% include footer.html %}</footer>
-
+---
+  layout: default
+  stylesheet: /assets/css/home.css
+  scripts: |
     <script src="/assets/js/displayElementOnScroll.js"></script>
     <script>
       window.addEventListener("load", () => {
@@ -249,5 +18,225 @@
         removeClassToElementsOnScrollVisible(skills, "off-screen", true);
         });
     </script>
-  </body>
-</html>
+---
+
+{% assign dateFormat = "%B %-d, %Y" %}
+<!-- ----------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
+  ---------------------------------- Section 1 -----------------------------------
+  --------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------- -->
+<section class="section profile-Hugo loading" id="profile-Hugo">
+  <div class="image-Hugo">
+    <div class="image-Hugo-background style-crystal-container style-crystal-always-visible no-animation no-hover">
+      {% include styleCrystals.html start=9 end=16 %}
+      <img src="/assets/images/photo_Hugo_THOLLON.jpg" alt="photo Hugo THOLLON" />
+    </div>
+    <div class="loading-crystals style-crystal-container no-animation no-hover">
+      {% include styleCrystals.html start=21 end=28 %}
+    </div>
+  </div>
+  <div class="profile-text">
+    <div class="wrapper">
+      <div class="name">Hugo THOLLON</div>
+    </div>
+    <div class="wrapper">
+      <div class="description-Hugo">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ----------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
+  ---------------------------------- Section 2 -----------------------------------
+  --------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------- -->
+<section class="section crystal-section best-work" id="best-work">
+  <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
+    {% include styleCrystals.html start=9 end=16 %}
+  </div>
+
+  <div class="section-title">My best projects</div>
+
+  <div class="work-list">
+    {% for post in site.categories.best-project %}
+      <div class="card off-screen">
+        <div class="card-title">{{ post.title }}</div>
+        <div class="card-project-type">
+          {% if post.project-type %}
+            {{ post.project-type }}
+          {% endif %}
+        </div>
+        <div class="card-date">
+          {{ post.date | date: dateFormat }}
+        </div>
+        <div class="card-extract">
+          <p>{{ post.description | strip }}</p>
+        </div>
+        <a class="card-link style-crystal-container" href="{{ post.url }}">
+          {% include styleCrystals.html start=5 end=8 %}
+          <div class="text">
+            See more &rarr;
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+<!-- -----------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
+  ---------------------------------- Section 3 -----------------------------------
+  --------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------- -->
+<section class="section white-section education" id="education">
+  <div class="section-title">
+    Education
+  </div>
+  <div class="timeline">
+    {% assign education_items = site.education | sort: "date" | reverse %}
+    {% for edu in education_items %}
+      {% assign left = forloop.index0 | modulo: 2 %}
+      {% if left == 0 %}
+        {% assign containerClass = "left" %}
+      {% else %}
+        {% assign containerClass = "right" %}
+      {% endif %}
+
+      <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content style-crystal-container no-hover">
+          {% include styleCrystals.html start=17 end=20 %}
+          <div class="edu-title">
+            {{ edu.title }}
+          </div>
+          <div class="edu-school">
+            {% if edu.school-url %}
+              <a href="{{edu.school-url}}" target="_blank">
+                {{ edu.school }}
+              </a>
+            {% else %}
+              {{ edu.school }}
+            {% endif %}
+          </div>
+          {% if edu.specialties %}
+            <div class="edu-specialties">
+              <b>
+                {% if edu.specialties.size > 1 %}
+                  Specialties:
+                {% else %}
+                  Specialty:
+                {% endif %}
+              </b>
+              {% for specialty in edu.specialties %}
+                {{ specialty }}{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if edu.results %}
+            <div class="edu-results">
+              <b>Results:</b>
+              <ul>
+                {% for result in edu.results %}
+                  <li>{{ result }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+
+        <span class="timeline-date">
+          <span dir="ltr">
+            {% include format-date.html start=edu.date end=edu.end %}
+          </span>
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+<!-- -----------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
+  ---------------------------------- Section 4 -----------------------------------
+  --------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------- -->
+<section class="section crystal-section skills" id="skills">
+  <div class="section-background style-crystal-container style-crystal-always-visible no-animation no-hover">
+    {% include styleCrystals.html start=9 end=16 %}
+  </div>
+
+  <div class="section-title">My skills</div>
+
+  <div class="skill-list-container">
+    {% for skillCateg in site.data.skills %}
+      <div class="skill-category">
+        <div class="skill-categ-title">{{ skillCateg.name }}</div>
+        <ul class="skill-list">
+          {% for skill in skillCateg.skills %}
+            <li>
+              <div class="skill-container off-screen">
+                <div class="skill-image">
+                  <div class="hexagon">
+                    <img src="{{skill.image}}" alt="{{skill.name}} logo">
+                  </div>
+                </div>
+                {{ skill.name }}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+<!-- -----------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
+  ---------------------------------- Section 5 -----------------------------------
+  --------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------- -->
+<section class="section white-section work-experience" id="work-experience">
+  <div class="section-title">
+    My work experience
+  </div>
+  <div class="timeline">
+
+    {% assign work_experience_items = site.work_experience | sort: "date" | reverse %}
+    {% for experience in work_experience_items %}
+      {% assign left = forloop.index0 | modulo: 2 %}
+      {% if left == 0 %}
+        {% assign containerClass = "left" %}
+      {% else %}
+        {% assign containerClass = "right" %}
+      {% endif %}
+
+      <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content style-crystal-container no-hover">
+          {% include styleCrystals.html start=17 end=20 %}
+          <div class="exp-title">
+            {{ experience.title }}
+          </div>
+          <div class="exp-organization">
+            {% if experience.orga-url %}
+              <a href="{{experience.orga-url}}" target="_blank">
+                {{ experience.organization }}
+              </a>
+            {% else %}
+              {{ experience.organization }}
+            {% endif %}
+          </div>
+          <div class="exp-description">
+            {{ experience.content | strip }}
+          </div>
+        </div>
+        <span class="timeline-date">
+          <span>
+            {% include format-date.html start=experience.date end=experience.end %}
+          </span>
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,4 +1,4 @@
-main.home {
+main {
   .section {
     width: 100%;
     min-height: 80vh;
@@ -514,7 +514,7 @@ main.home {
 ################################################################################# */
 
 @media screen and (max-width: 800px) {
-  main.home {
+  main {
     .profile-Hugo {
       padding: 40px 40px;
       gap: 25px;
@@ -527,7 +527,7 @@ main.home {
 }
 
 @media screen and (max-width: 500px) {
-  main.home {
+  main {
     .section {
       .section-title {
         font-size: 2rem;
@@ -560,7 +560,7 @@ main.home {
 }
 
 @media screen and (max-width: 360px) {
-  main.home {
+  main {
     .profile-Hugo {
       padding: 40px 10px;
 

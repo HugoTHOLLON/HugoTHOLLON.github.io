@@ -1,81 +1,7 @@
-<!doctype html>
-<html>
-  <head>
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/portfolio.css" />
-    <link rel="icon" href="/assets/images/hugo_logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-
-  <body>
-    <header>{% include header.html %}</header>
-    <main class="portfolio">
-      <section class="project-list">
-
-        <div class="timeline">
-          {% assign projects = site.categories.projects %}
-          {% for project in projects %}
-            {% assign left = forloop.index0 | modulo: 2 %}
-            {% if left == 0 %}
-              {% assign containerClass = "left" %}
-            {% else %}
-              {% assign containerClass = "right" %}
-            {% endif %}
-
-            <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
-              <div class="timeline-dot"></div>
-
-              <div class="timeline-content style-crystal-container no-hover">
-                {% include styleCrystals.html start=17 end=20 %}
-
-                <div class="project-content">
-                  {% if project.image-path %}
-                    <a class="project-image" href="{{ project.url }}">
-                      <img src="{{ project.image-path }}" alt="{{ project.image-alt }}">
-                    </a>
-                  {% endif %}
-                  <div class="project-container">
-                    <h1 class="project-title">
-                      <a href="{{ project.url }}">{{ project.title }}</a>
-                    </h1>
-                    <div class="project-type">{{ project.project-type }}</div>
-                    <div class="project-description">
-                      <p>{{ project.description | strip }}</p>
-                    </div>
-                    {% if project.tags.size > 0 %}
-                      <ul class="project-tag-list">
-                        {% for tag in project.tags %}
-                          <li class="project-tag-item">
-                            {{ tag }}
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-
-                    <a class="project-link style-crystal-container" href="{{ project.url }}">
-                      {% include styleCrystals.html start=5 end=8 %}
-                      <div class="text">
-                        See project &rarr;
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-
-              <span class="timeline-date">
-                <span dir="ltr">
-                  {% include format-date.html start=project.date %}
-                </span>
-              </span>
-            </div>
-          {% endfor %}
-        </div>
-      </section>
-
-    </main>
-    <footer>{% include footer.html %}</footer>
-
+---
+  layout: default
+  stylesheet: /assets/css/portfolio.css
+  scripts: |
     <script src="/assets/js/displayElementOnScroll.js"></script>
     <script>
       window.addEventListener("load", () => {
@@ -83,5 +9,66 @@
         removeClassToElementsOnScrollVisible(timelineItem, "style-crystal-always-visible", true);
         });
     </script>
-  </body>
-</html>
+---
+
+<section class="project-list">
+  <div class="timeline">
+    {% assign projects = site.categories.projects %}
+    {% for project in projects %}
+      {% assign left = forloop.index0 | modulo: 2 %}
+      {% if left == 0 %}
+        {% assign containerClass = "left" %}
+      {% else %}
+        {% assign containerClass = "right" %}
+      {% endif %}
+
+      <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content style-crystal-container no-hover">
+          {% include styleCrystals.html start=17 end=20 %}
+
+          <div class="project-content">
+            {% if project.image-path %}
+              <a class="project-image" href="{{ project.url }}">
+                <img src="{{ project.image-path }}" alt="{{ project.image-alt }}">
+              </a>
+            {% endif %}
+            <div class="project-container">
+              <h1 class="project-title">
+                <a href="{{ project.url }}">{{ project.title }}</a>
+              </h1>
+              <div class="project-type">{{ project.project-type }}</div>
+              <div class="project-description">
+                <p>{{ project.description | strip }}</p>
+              </div>
+              {% if project.tags.size > 0 %}
+                <ul class="project-tag-list">
+                  {% for tag in project.tags %}
+                    <li class="project-tag-item">
+                      {{ tag }}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+              <a class="project-link style-crystal-container" href="{{ project.url }}">
+                {% include styleCrystals.html start=5 end=8 %}
+                <div class="text">
+                  See project &rarr;
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <span class="timeline-date">
+          <span dir="ltr">
+            {% include format-date.html start=project.date %}
+          </span>
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
