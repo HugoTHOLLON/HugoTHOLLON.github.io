@@ -3,15 +3,121 @@ main {
   min-height: calc(100vh - 60px);
   box-sizing: border-box;
 
-  :first-child {
-    margin-top: 0;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  :last-child {
-    margin-bottom: 0;
-  }
+  .content {
+    width: 100%;
+    max-width: 850px;
+    padding: 40px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
 
-  h1 {
-    font-size: 80px;
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: "Orbitron", sans-serif;
+    }
+
+    .type {
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+
+    .tag-list {
+      margin: 0;
+      padding: 0;
+      margin-top: 20px;
+      margin-bottom: 10px;
+
+      list-style-type: none;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .tag-item {
+        font-size: 0.9rem;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 9999px;
+        background-color: #39b5f2;
+      }
+    }
+
+    .page-image {
+      margin-top: 10px;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////// The page real content ///////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+
+    .highlight {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    pre {
+      padding: 20px;
+      overflow-x: scroll;
+    }
+
+    figure {
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 0;
+
+      figcaption {
+        text-align: center;
+        font-style: italic;
+
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    a {
+      text-decoration: underline;
+      color: #31bcf4;
+    }
+
+    ul {
+      box-sizing: border-box;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  main {
+    .content {
+      figure {
+        // top, bottom: 10px; left, right: 0px;
+        padding: 10px 0px;
+      }
+    }
   }
 }

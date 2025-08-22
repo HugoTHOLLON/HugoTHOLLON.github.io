@@ -3,6 +3,30 @@
   stylesheet: /assets/css/post.css
 ---
 
-<h1>{{ page.title }}</h1>
+<div class="content">
+  <div class="title">{{ page.title }}</div>
+  {% if page.project-type %}
+    <div class="type">
+      {{ page.project-type }}
+    </div>
+  {% endif %}
+  {% if page.tags.size > 0 %}
+    <ul class="tag-list">
+      {% for tag in page.tags %}
+        <li class="tag-item">
+          {{ tag }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if page.image-path %}
+    <img
+      class="page-image"
+      src="{{ page.image-path }}"
+      alt="{{ page.image-alt }}">
+  {% else %}
+    <hr>
+  {% endif %}
 
-{{ content }}
+  {{ content }}
+</div>

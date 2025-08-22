@@ -12,26 +12,39 @@ description: |
   Developed an interactive quiz game in Godot Engine for a bird exhibition. Players identify bird species by either their picture or song. I designed and programmed the game mechanics using GDScript, created the user interface, and integrated audio/image assets. The game was showcased at the exhibition and used by visitors to test their knowledge of local birds.
 ---
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+# The Game
 
-Jekyll requires blog post files to be named according to the following format:
+This project is an interactive **French quiz game** about birds found in Seresville, a hamlet near Chartres, France.  
+Players must identify bird species by either their **picture** or **song**, depending on the chosen game mode. The game features **14 birds to identify**, with a **child mode** limited to the 5 most common species in the local woods.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+To ensure replayability, both the order in which birds are presented and the placement of the correct answers are randomized. In addition to the quiz, a **bird list mode** allows players to freely explore the birds’ pictures and songs without the need to guess correctly.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+{% include place-figure.html src="/assets/images/projects/gameplay_oiseaux_de_seresville.png" alt="Seresville's birds gameplay" figure="Figure 1: Gameplay, picture mode" %}
 
-Jekyll also offers powerful support for code snippets:
+{% include place-figure.html src="/assets/images/projects/bird_list_seresville_birds.png" alt="Seresville's birds bird list" figure="Figure 2: Bird list mode" %}
 
-{% highlight ruby %}
-def print_hi(name)
-puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+# Development Process
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+This was my **first personal project**, and an introduction to both **Godot Engine** and **game development**. It was also my first experience with **UI/UX design**.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]: https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+I worked independently on every aspect of the game logic and interface. My main contributions include:
+
+- Designing and implementing the user interface (buttons, menus, and navigation).
+- Building a lightweight **text-file database** in **GDScript** to manage images and audio files.
+- Implementing an **audio management system** to play, pause, and handle bird songs seamlessly.
+- Ensuring replayability through randomized question order and button placement.
+
+For the UI design, I combined my own interface elements with [Wenrexa’s Flower UI assets](https://wenrexa.itch.io/assets-ui-flowers) (used for background and decorative elements).  
+Bird photographs were kindly provided by **Michel Brugière**, and the bird songs by **Jacques Ménétrier**.
+
+{% include place-figure.html src="/assets/images/projects/parameters_seresvilles_birds.png" alt="Seresville's birds parameters" figure="Figure 3: Parameters menu with audio settings" %}
+
+# Exhibition & Impact
+
+The game was showcased at a **nature exhibition in Mainvilliers**, organized in partnership with the [Eure-et-Loir Nature Association](https://www.eln28.org/).  
+It was played by **both children and adults**, helping visitors discover and test their knowledge of local bird species in an engaging, interactive way.
+
+# Demo
+
+Currently, the game is available for **Windows**. An online playable version will be published soon.  
+Stay tuned for the link!

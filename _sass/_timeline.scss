@@ -118,6 +118,8 @@
         @each $name, $offset in $timelineOffsets {
           &.#{$name} {
             $delayStart: $delayStart + $offset;
+
+            --delay: #{$delayStart};
             transition-delay: $delayStart;
           }
         }
@@ -219,6 +221,14 @@
       .timeline-content {
         width: 100%;
         padding-bottom: 2.5rem !important;
+
+        .style-crystal {
+          @for $i from 17 through 20 {
+            &.cry#{$i} {
+              transition-delay: calc(var(--delay) - 0.6s);
+            }
+          }
+        }
       }
     }
   }
