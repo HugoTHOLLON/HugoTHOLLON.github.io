@@ -261,8 +261,8 @@ main {
       justify-items: center;
 
       .card {
+        height: fit-content;
         max-width: 400px;
-        padding: 10px;
         border: solid rgba(42, 208, 248, 1) 8px;
         border-radius: 15px;
         background: linear-gradient(to bottom right, #39b5f2, #00a9ff);
@@ -293,44 +293,75 @@ main {
           transform: translateY(50%);
         }
 
-        .card-title {
-          font-size: 1.2rem;
-          font-weight: bold;
-        }
-
-        .card-project-type {
-          font-size: 1.1rem;
-        }
-
-        .card-date {
-          margin-top: 5px;
-        }
-
-        .card-extract {
-          margin-top: 10px;
-          p {
-            margin: 0;
+        .card-image {
+          padding: 0;
+          img {
+            max-width: 100%;
+            object-fit: contain;
           }
         }
 
-        .card-link {
-          margin-top: auto;
-          align-self: flex-end;
-          overflow: hidden;
-          width: fit-content;
-          padding: 15px 20px;
-          text-decoration: none;
-          border-radius: 8px;
-          transition: background-color 0.7s;
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
 
-          .text {
-            color: #f1f1f1;
+          .card-title {
+            font-size: 1.2rem;
             font-weight: bold;
-            position: relative;
+
+            a {
+              color: white;
+
+              text-decoration: underline;
+
+              text-decoration-color: transparent;
+              /*for opera and mozilla support*/
+              -webkit-text-decoration-color: transparent;
+              -moz-text-decoration-color: transparent;
+
+              transition: text-decoration-color 0.5s;
+
+              &:hover {
+                text-decoration-color: currentColor;
+              }
+            }
           }
 
-          &:hover {
-            background-color: rgba(0, 0, 0, 0.04);
+          .card-project-type {
+            font-size: 1.1rem;
+          }
+
+          .card-date {
+            margin-top: 5px;
+          }
+
+          .card-extract {
+            margin-top: 10px;
+            p {
+              margin: 0;
+            }
+          }
+
+          .card-link {
+            margin-top: auto;
+            align-self: flex-end;
+            overflow: hidden;
+            width: fit-content;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.7s;
+
+            .text {
+              color: #f1f1f1;
+              font-weight: bold;
+              position: relative;
+            }
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.04);
+            }
           }
         }
       }

@@ -62,24 +62,34 @@
   <div class="work-list">
     {% for post in site.categories.best-project %}
       <div class="card off-screen">
-        <div class="card-title">{{ post.title }}</div>
-        <div class="card-project-type">
-          {% if post.project-type %}
-            {{ post.project-type }}
-          {% endif %}
-        </div>
-        <div class="card-date">
-          {{ post.date | date: dateFormat }}
-        </div>
-        <div class="card-extract">
-          <p>{{ post.description | strip }}</p>
-        </div>
-        <a class="card-link style-crystal-container" href="{{ post.url }}">
-          {% include styleCrystals.html start=5 end=8 %}
-          <div class="text">
-            See more &rarr;
+
+        {% if post.image-path %}
+          <a class="card-image" href="{{ post.url }}">
+            <img src="{{ post.image-path }}" alt="{{ post.image-alt }}">
+          </a>
+        {% endif %}
+        <div class="card-content">
+          <div class="card-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
           </div>
-        </a>
+          <div class="card-project-type">
+            {% if post.project-type %}
+              {{ post.project-type }}
+            {% endif %}
+          </div>
+          <div class="card-date">
+            {{ post.date | date: dateFormat }}
+          </div>
+          <div class="card-extract">
+            <p>{{ post.description | strip }}</p>
+          </div>
+          <a class="card-link style-crystal-container" href="{{ post.url }}">
+            {% include styleCrystals.html start=5 end=8 %}
+            <div class="text">
+              See more &rarr;
+            </div>
+          </a>
+        </div>
       </div>
     {% endfor %}
   </div>
