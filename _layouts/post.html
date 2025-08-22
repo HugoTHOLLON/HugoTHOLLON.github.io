@@ -10,6 +10,9 @@
       {{ page.project-type }}
     </div>
   {% endif %}
+  <div class="dates">
+    From {{ page.date | date: "%B %-d, %Y" }} to {{ page.end | date: "%B %-d, %Y" | default: "Today" }}
+  </div>
   {% if page.tags.size > 0 %}
     <ul class="tag-list">
       {% for tag in page.tags %}

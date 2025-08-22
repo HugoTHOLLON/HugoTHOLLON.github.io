@@ -34,14 +34,14 @@ I worked independently on every aspect of the game logic and interface. My main 
 - Implementing an **audio management system** to play, pause, and handle bird songs seamlessly.
 - Ensuring replayability through randomized question order and button placement.
 
-For the UI design, I combined my own interface elements with [Wenrexa’s Flower UI assets](https://wenrexa.itch.io/assets-ui-flowers) (used for background and decorative elements).  
+For the UI design, I combined my own interface elements with [Wenrexa’s Flower UI assets](https://wenrexa.itch.io/assets-ui-flowers){:target="\_blank"} (used for background and decorative elements).  
 Bird photographs were kindly provided by **Michel Brugière**, and the bird songs by **Jacques Ménétrier**.
 
 {% include place-figure.html src="/assets/images/projects/parameters_seresvilles_birds.png" alt="Seresville's birds parameters" figure="Figure 3: Parameters menu with audio settings" %}
 
 # Exhibition & Impact
 
-The game was showcased at a **nature exhibition in Mainvilliers**, organized in partnership with the [Eure-et-Loir Nature Association](https://www.eln28.org/).  
+The game was showcased at a **nature exhibition in Mainvilliers**, organized in partnership with the [Eure-et-Loir Nature Association](https://www.eln28.org/){:target="\_blank"}.  
 It was played by **both children and adults**, helping visitors discover and test their knowledge of local bird species in an engaging, interactive way.
 
 # Demo
