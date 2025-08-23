@@ -1,14 +1,7 @@
-{% assign figure = include.figure | split: ":" %}
-
-<figure>
+<figure id="fig{{ include.figure-nb }}">
   <img src="{{ include.src }}" alt="{{ include.alt }}">
   <figcaption>
-    {% for textPart in figure %}
-      {% if forloop.first %}
-        <span>{{ textPart }}:</span>
-      {% else %}
-        {{ textPart }}{% unless forloop.last %}:{% endunless %}
-      {% endif %}
-    {% endfor %}
+    <span>Figure {{ include.figure-nb }}:</span>
+    {{ include.figure-text }}
   </figcaption>
 </figure>
