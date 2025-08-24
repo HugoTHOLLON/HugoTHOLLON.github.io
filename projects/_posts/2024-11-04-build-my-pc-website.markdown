@@ -22,15 +22,16 @@ My group was selected by **BuildMyPC**, a fictional PC building company that wan
 The Website, only available in french, sells fully mounted **computer towers** for both Gaming and Desktop use, as well as separate **PC components**. It features:
 
 - **User authentication:** account creation and a login system.
-- **Account management:** change account informations like the mail, password, delivery address or payment informations. Access the order and article browsing history as well as the loyalty program.
-- **Product catalog:** browse articles with a menu or a search bar and filter them by category, brand, price and promotion. Articles can also be sorted by name, price, popularity or relevance (if using the search bar).
-- **Review system:** leave a comment and a grade on a bought product. If connected, an employee can answer these comments.
-- **Product suggestion:** each product details proposes a selection of similar products that could interest the user.
-- **Shopping cart:** add, remove, and update selected items.
-- **Checkout system:** simulated payment process (no real transactions). Buying items grants loyalty points usable to get reductions.
-- **Admin dashboard:** accessible with the right credentials, enabling product, promotion, employee and user management.
+- **Account management:** change account informations like the mail, password, delivery address or payment informations. Access the order and article browsing history as well as the loyalty program. See [figure 9](#fig9).
+- **Product catalog:** browse articles with a menu or a search bar and filter them by category, brand, price and promotion. Articles can also be sorted by name, price, popularity or relevance (if using the search bar). See [figure 6](#fig6).
+- **Product detail:** see details about a product (price, categorie, availability, description...). See [figure 7](#fig7).
+- **Review system:** leave a comment and a grade on a bought product. If connected, an employee can answer these comments. See [figures 7 and 8](#fig7).
+- **Product suggestion:** each product details proposes a selection of similar products that could interest the user. See [figure 8](#fig8).
+- **Shopping cart:** add, remove, and update selected items. See [figure 10](#fig10).
+- **Checkout system:** simulated payment process (no real transactions). Buying items grants loyalty points usable to get reductions. See [figure 11](#fig11).
+- **Admin dashboard:** accessible with the right credentials, enabling product, promotion, employee and user management. See [figures 13 to 17](#admin-pages).
 
-The website is responsive and adapts well to the screen size. Using Javascript, some menus shrinks when the screen is too small and can be opened by the user.
+The website is responsive and adapts well to the screen size. Using Javascript, some menus shrinks when the screen is too small and can be opened by the user. See [figure 12](#fig12).
 
 Go to the [Website screenshots](#website-screenshots) section to see what the above features look like.
 
@@ -54,7 +55,7 @@ With the client's approval, I remade the website's design using **Figma** to imp
 
 ### Product catalog page
 
-I entierly made the **Product catalog page**, from the style to the PHP logic. This pages displays a sorted list of products based on different filters and sorting options.
+I entierly made the **Product catalog page**, from the style to the PHP logic. This pages displays a sorted list of products based on different filters and sorting options. See [figure 6](#fig6).
 
 ### Search bar algorithm
 
@@ -81,17 +82,17 @@ Extra weight is added depending on where the words are found:
 
 ### Administation pages
 
-I designed and made half of the employee and administrator dashboard. I took care of the admin employee and client management pages.
+I designed and made half of the employee and administrator dashboard. I took care of the admin employee and client management pages See [figures 13 to 15](#fig13)..
 
 An employee can:
 
-- **Manage promotions:** create and remove promotions. Add and remove products from a promotion. Change the reduction applied to a product.
-- **Manage products:** create, update and delete products.
+- **Manage promotions:** create and remove promotions. Add and remove products from a promotion. Change the reduction applied to a product. See [figure 16](#fig16).
+- **Manage products:** create, update and delete products. See [figure 17](#fig17).
 
 An administator can do all of the above and:
 
-- **Manage employees account:** add a new employee, remove an employee or change an employee's informations. An administrator can create another administrator account.
-- **Manage a client account:** change some of the client informations (name, mail, address...). Activate or disable the account (to prevent the client from connecting). Access the client's order history.
+- **Manage employees account:** add a new employee, remove an employee or change an employee's informations. An administrator can create another administrator account. See [figure 13](#fig13).
+- **Manage a client account:** change some of the client informations (name, mail, address...). Activate or disable the account (to prevent the client from connecting). Access the client's order history. See [figures 14 and 15](#fig14).
 
 ### Database creation
 
@@ -109,3 +110,39 @@ The project website is available [here](http://193.54.227.208/~R2024SAE3007/){:t
 You can also explore the full project repository on [GitHub](https://github.com/IUT-Blagnac/sae-3-01-devapp-G1A-1){:target="\_blank"}.
 
 # Website screenshots {#website-screenshots}
+
+## Home page, product catalog
+
+{% include place-figure.html src="/assets/images/projects/home_page_wide_buildMyPC.png" alt="Home page" figure-nb="5" figure-text="Home page" %}
+
+{% include place-figure.html src="/assets/images/projects/product_catalog_buildMyPC.png" alt="Product catalog page" figure-nb="6" figure-text="Product catalog page when selecting 'Components'" %}
+
+## Product details
+
+{% include place-figure.html src="/assets/images/projects/product_details1_buildMyPC.png" alt="Product detail page screenshot 1" figure-nb="7" figure-text="Product detail page with it's informations and client review" %}
+
+{% include place-figure.html src="/assets/images/projects/product_details2_buildMyPC.png" alt="Product detail page screenshot 2" figure-nb="8" figure-text="Product detail page with it's informations and client review" %}
+
+## Account informations, shopping cart, payment
+
+{% include place-figure.html src="/assets/images/projects/account_management_buildMyPC.png" alt="Account management page" figure-nb="9" figure-text="Client's account management page" %}
+
+{% include place-figure.html src="/assets/images/projects/cart_buildMyPC.png" alt="Account management page" figure-nb="10" figure-text="A client's shopping cart" %}
+
+{% include place-figure.html src="/assets/images/projects/checkout_system_buildMyPC.png" alt="Checkout system" figure-nb="11" figure-text="Checkout system with prefilled informations" %}
+
+## Responsiveness
+
+{% include place-figure.html src="/assets/images/projects/responsive_buildMyPC.png" alt="Responsive screenshot" figure-nb="12" figure-text="Home page on mobile phone with menu opened and closed" %}
+
+## Admin and employee's pages {#admin-pages}
+
+{% include place-figure.html src="/assets/images/projects/admin_employee_manage_buildMyPC.png" alt="Employee management page" figure-nb="13" figure-text="Administrator's employee management page" %}
+
+{% include place-figure.html src="/assets/images/projects/admin_client_manage_buildMyPC.png" alt="Clients management page" figure-nb="14" figure-text="Administrator's client management page" %}
+
+{% include place-figure.html src="/assets/images/projects/admin_client_infos_buildMyPC.png" alt="Admin clients informations page" figure-nb="15" figure-text="Administrator's client details page" %}
+
+{% include place-figure.html src="/assets/images/projects/promotion_management_buildMyPC.png" alt="Promotion management page" figure-nb="16" figure-text="Administrator's and employee's promotions management page" %}
+
+{% include place-figure.html src="/assets/images/projects/product_creation_management_buildMyPC.png" alt="Product creation page" figure-nb="17" figure-text="Administrator's and employee's product creation page (with product management page in background)" %}
