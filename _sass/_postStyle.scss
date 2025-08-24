@@ -23,6 +23,8 @@ main {
     }
 
     .title {
+      scroll-margin-top: 60px;
+
       font-size: 2rem;
       font-weight: bold;
       font-family: "Orbitron", sans-serif;
@@ -78,14 +80,22 @@ main {
     h1 {
       font-size: 1.8rem;
       color: #31bcf4;
+      scroll-margin-top: 60px;
     }
 
     h2 {
       color: #31bcf4;
+      scroll-margin-top: 60px;
     }
 
     h3 {
       color: #31bcf4;
+      scroll-margin-top: 60px;
+    }
+
+    h4 {
+      color: #31bcf4;
+      scroll-margin-top: 60px;
     }
 
     pre {
@@ -94,6 +104,7 @@ main {
     }
 
     figure {
+      scroll-margin-top: 60px;
       box-sizing: border-box;
       padding: 10px;
       margin: 0;
