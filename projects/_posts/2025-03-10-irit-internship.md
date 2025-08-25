@@ -72,8 +72,20 @@ Below is the Python app class diagram. The **top section** shows the BLE-related
 
 # Development Process
 
-_(To be completed later)_
+To start the project, I first needed to understand how Bluetooth Low Energy (BLE) worked. I created a small prototype Android app that could toggle Bluetooth and scan for nearby devices. This helped me gain hands-on experience with BLE communication before tackling the main project.
+
+I then designed the Android app by creating a mockup and user flow diagram with each screen and interaction. The final implementation followed this design closely, with additional improvements for error handling.
+
+{% include place-figure.html src="/assets/images/projects/android_mockup_irit.png" alt="Android app mockup/user flow diagram" figure-nb="5" figure-text="Android app mockup" %}
+
+The Python app was developed in parallel with the Android app to ensure smooth communication between the two. One of the main challenges was the limited and outdated documentation available for using Python with BlueZ via D-Bus. I overcame this by carefully studying the BlueZ API and experimenting with small test programs until I achieved a stable solution.
+
+Looking back, I realized that languages like C had more resources and examples for this type of work, but implementing the system in Python ultimately provided greater flexibility and maintainability for future developers.
 
 # Impact
 
-_(To be completed later)_
+The apps were showcased during an IRIT exhibition to demonstrate the progress of the **My Smart Lighting** project. The Python app was designed with a modular structure, making it easier for future developers to extend it and connect it to real hardware.
+
+This project was also a major milestone in my professional growth. It gave me practical experience with technologies I had only studied in theory (Java and Python) as well as new ones I had never encountered before (Bluetooth Low Energy, D-Bus, BlueZ).
+
+Beyond the technical skills, I also learned how to work independently, organize my work, and seek out reliable resources when documentation was limited. The internship also gave me insight into how research organizations operate and how collaboration takes place within a project team.
