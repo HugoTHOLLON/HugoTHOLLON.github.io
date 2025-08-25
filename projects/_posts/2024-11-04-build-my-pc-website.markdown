@@ -3,7 +3,7 @@ layout: post
 title: "E-Commerce website for BuildMyPC"
 date: 2024-11-04
 end: 2025-01-21
-categories: jekyll update best-project
+categories: iut-project best-project
 project-type: "IUT project"
 image-path: "/assets/images/projects/home_page_buildMyPC.png"
 image-alt: "Website home page"
