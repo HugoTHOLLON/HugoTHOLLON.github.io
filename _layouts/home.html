@@ -78,7 +78,7 @@
             {% endif %}
           </div>
           <div class="card-date">
-            {{ post.date | date: dateFormat }}
+            {{ post.date | date: dateFormat }} - {{ post.end | date: dateFormat | default: "Present" }}
           </div>
           <div class="card-extract">
             <p>{{ post.description | strip }}</p>
