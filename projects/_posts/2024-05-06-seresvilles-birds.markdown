@@ -46,5 +46,4 @@ It was played by **both children and adults**, helping visitors discover and tes
 
 # Demo
 
-Currently, the game is available for **Windows**. An online playable version will be published soon.  
-Stay tuned for the link!
+Currently, the game is available for **Windows** and **Web**. You can play the online version [here](/projects/demos/les-oiseaux-de-seresville/game.html){:target="\_blank"}.
