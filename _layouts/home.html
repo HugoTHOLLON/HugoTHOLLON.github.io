@@ -4,6 +4,31 @@
   scripts: |
     <script src="/assets/js/displayElementOnScroll.js"></script>
     <script>
+    
+    document.addEventListener("DOMContentLoaded", (event) => {
+
+        function setDescriptionSize() {
+          const desc = document.querySelector('.description-Hugo');
+          const pChildren = desc.querySelectorAll('p');
+
+          let height = 0;
+
+          pChildren.forEach((child) => {
+            height += child.scrollHeight;
+
+            console.log(`Child height: ${child.scrollHeight}px`);
+            child.style.setProperty('--max-height', `${child.scrollHeight}px`);
+            });
+            
+          console.log(`Description height: calc(${height}px + ${getComputedStyle(desc).gap})`);
+          desc.style.height = `calc(${height}px + ${getComputedStyle(desc).gap})`;
+        }
+        
+        window.addEventListener("resize", setDescriptionSize);
+
+        setDescriptionSize();
+      });
+
       window.addEventListener("load", () => {
         const profile = document.getElementById("profile-Hugo");
         const loadCrystals = document.querySelector(".loading-crystals");

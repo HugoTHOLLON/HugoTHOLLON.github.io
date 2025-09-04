@@ -8,4 +8,4 @@ I have a passion for video games and **game development**, and I am also an enth
 
 Below, you will find a selection of my [best works](#best-work), along with my [education](#education), [skills](#skills), and [professional experience](#work-experience).  
 Additional **projects** are available in the [Portfolio](/portfolio) section.  
-My full **résumé** can be found in the [Résumé](/resume) section.
+My full **resume** can be found in the [Resume](/resume) section.
