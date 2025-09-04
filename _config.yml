@@ -60,3 +60,9 @@ collections:
     output: false
   education:
     output: false
+
+defaults:
+  - scope:
+      path: "projects/demos"
+    values:
+      layout: null
