@@ -5,7 +5,7 @@ date: 2024-05-06
 end: 2024-08-03
 categories: ["personal-project", "best-project"]
 project-type: "Personal project"
-image-path: "/assets/images/projects/home_oiseaux_de_seresville_cropped.png"
+image-path: "/assets/images/projects/home_oiseaux_de_seresville_cropped.webp"
 image-alt: "Game home page"
 tags: ["Godot engine", "GDScript"]
 description: |
@@ -19,9 +19,9 @@ Players must identify bird species by either their **picture** or **song**, depe
 
 To ensure replayability, both the order in which birds are presented and the placement of the correct answers are randomized. In addition to the quiz, a **bird list mode** allows players to freely explore the birds’ pictures and songs without the need to guess correctly.
 
-{% include place-figure.html src="/assets/images/projects/gameplay_oiseaux_de_seresville.png" alt="Seresville's birds gameplay" figure-nb="1" figure-text="Gameplay, picture mode" %}
+{% include place-figure.html src="/assets/images/projects/gameplay_oiseaux_de_seresville.webp" alt="Seresville's birds gameplay" figure-nb="1" figure-text="Gameplay, picture mode" %}
 
-{% include place-figure.html src="/assets/images/projects/bird_list_seresville_birds.png" alt="Seresville's birds bird list" figure-nb="2" figure-text="Bird list mode" %}
+{% include place-figure.html src="/assets/images/projects/bird_list_seresville_birds.webp" alt="Seresville's birds bird list" figure-nb="2" figure-text="Bird list mode" %}
 
 # Development Process
 
@@ -37,7 +37,7 @@ I worked independently on every aspect of the game logic and interface. My main 
 For the UI design, I combined my own interface elements with [Wenrexa’s Flower UI assets](https://wenrexa.itch.io/assets-ui-flowers){:target="\_blank"} (used for background and decorative elements).  
 Bird photographs were kindly provided by **Michel Brugière**, and the bird songs by **Jacques Ménétrier**.
 
-{% include place-figure.html src="/assets/images/projects/parameters_seresvilles_birds.png" alt="Seresville's birds parameters" figure-nb="3" figure-text="Parameters menu with audio settings" %}
+{% include place-figure.html src="/assets/images/projects/parameters_seresvilles_birds.webp" alt="Seresville's birds parameters" figure-nb="3" figure-text="Parameters menu with audio settings" %}
 
 # Exhibition & Impact
 

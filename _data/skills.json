@@ -8,23 +8,23 @@
       { "name": "CSS", "image": "/assets/images/skills/css.png" },
       { "name": "Sass", "image": "/assets/images/skills/sass.png" },
       { "name": "JS", "image": "/assets/images/skills/js.png" },
-      { "name": "Jekyll", "image": "/assets/images/skills/jekyll.png" },
+      { "name": "Jekyll", "image": "/assets/images/skills/jekyll.webp" },
       { "name": "PHP", "image": "/assets/images/skills/php.png" },
       { "name": "Bash", "image": "/assets/images/skills/bash.png" },
       { "name": "VueJS", "image": "/assets/images/skills/vueJS.png" },
       { "name": "Angular", "image": "/assets/images/skills/angular.png" },
       { "name": "Python", "image": "/assets/images/skills/python.png" },
-      { "name": "GDScript", "image": "/assets/images/skills/godot.png" }
+      { "name": "GDScript", "image": "/assets/images/skills/godot.webp" }
     ]
   },
   {
     "name": "Tools",
     "skills": [
       { "name": "VSCode", "image": "/assets/images/skills/vscode.png" },
-      { "name": "Godot Engine", "image": "/assets/images/skills/godot.png" },
+      { "name": "Godot Engine", "image": "/assets/images/skills/godot.webp" },
       {
         "name": "Android Studio",
-        "image": "/assets/images/skills/android studio.png"
+        "image": "/assets/images/skills/android studio.webp"
       },
       { "name": "Linux", "image": "/assets/images/skills/linux.png" },
       {
