@@ -1,0 +1,36 @@
+{
+  "home": {
+    "best-projects-title": "Mes meilleurs projets",
+    "see-more": "Voir plus",
+    "education-title": "Formation",
+    "specialties": "Specialités : ",
+    "specialty": "Specialité : ",
+    "results": "Resultats : ",
+    "skills-title": "Mes compétences",
+    "work-experience-title": "Mes expériences professionnelles"
+  },
+  "resume": {
+    "see-other-language": "Voir la version anglaise ",
+    "version": "Version Française",
+    "download-resume": "Télécharger le CV",
+    "resume-too-small": "Si le CV est trop petit, ",
+    "click-for-pdf-version": "cliquez ici pour voir la version pdf",
+    "img-alt": "CV Hugo THOLLON"
+  },
+  "header": {
+    "hugo-thollon": "Hugo THOLLON",
+    "resume": "CV",
+    "portfolio": "Portfolio"
+  },
+  "footer": {
+    "contact-me": "Me contacter :",
+    "mail": "hugo.thollon@gmail.com",
+    "built-with": "Site fait avec %s et hébergé sur GitHub Pages.",
+    "copyright": "©2025 Hugo THOLLON",
+    "last-update": "Dernière mise à jour : %s"
+  },
+  "page404": {
+    "title": "404 - Page Introuvable",
+    "message": "Désolé, la page que vous cherchez n'existe pas."
+  }
+}

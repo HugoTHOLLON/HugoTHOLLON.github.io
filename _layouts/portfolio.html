@@ -13,7 +13,7 @@
 
 <section class="project-list">
   <div class="timeline">
-    {% assign projects = site.categories.projects %}
+    {% assign projects = site.categories.projects | where: "lang", page.lang %}
     {% for project in projects %}
       {% assign left = forloop.index0 | modulo: 2 %}
       {% if left == 0 %}

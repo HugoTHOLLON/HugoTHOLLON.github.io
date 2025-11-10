@@ -14,34 +14,20 @@ main {
     display: flex;
     flex-direction: column;
 
-    .tab {
-      margin-left: 10px;
-      margin-right: 10px;
-      display: flex;
-      flex-direction: row;
-      overflow-x: auto;
-      gap: 10px;
-
-      .tab-links {
-        font-size: 1rem;
-        text-decoration: none;
-        background: transparent;
-        padding: 5px 10px;
-        border: solid rgba(42, 208, 248, 1) 4px;
-        border-bottom: 0;
-        border-radius: 10px 10px 0 0;
-
-        cursor: pointer;
-        text-wrap-mode: nowrap;
-
-        &.selected {
-          background: linear-gradient(to bottom right, #39b5f2, #00a9ff);
-          color: white;
-        }
-      }
+    a {
+      text-decoration: underline;
+      font-weight: bold;
+      color: #31bcf4;
     }
 
-    .tab-content {
+    .other-language {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      align-self: flex-end;
+      margin-right: 10px;
+    }
+
+    .resume-container {
       display: flex;
       flex-direction: column;
       padding: 20px;
@@ -53,44 +39,48 @@ main {
       max-width: 100%;
       width: 900px;
 
-      &.hidden {
-        display: none;
-      }
+      font-size: 1.05rem;
 
       .btn-download {
-        margin-top: 10px;
-        padding: 10px 10px;
+        padding: 15px 15px;
 
-        overflow: hidden;
         width: fit-content;
-
-        text-decoration: none;
-        background-color: #39b5f2;
-
         border-radius: 8px;
+        text-decoration: none;
+        font-size: 1rem;
+        background-color: #31bcf4;
 
-        color: #f1f1f1;
-        font-weight: bold;
+        align-self: flex-end;
+        overflow: hidden;
+        z-index: 1;
 
-        transition: background-color 0.3s;
+        transition: background-color 0.7s;
 
-        &:hover {
-          background-color: #0095ff;
+        .text {
+          display: flex;
+          color: #f1f1f1;
+          font-weight: bold;
+          position: relative;
+          align-items: center;
+          gap: 10px;
+
+          .svg-icon {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .style-crystal {
+          z-index: 0;
         }
       }
 
       .alt-pdf-view {
         margin-top: 20px;
-
-        a {
-          text-decoration: underline;
-          font-weight: bold;
-          color: #31bcf4;
-        }
       }
 
       .img-resume {
-        margin-top: 40px;
+        margin-top: 30px;
 
         align-self: center;
         object-fit: contain;

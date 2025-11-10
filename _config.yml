@@ -30,6 +30,7 @@ github_username: HugoTHOLLON
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -62,7 +63,50 @@ collections:
     output: false
 
 defaults:
+  # No layout for the game
   - scope:
       path: "projects/demos"
     values:
       layout: null
+
+  # Set lang for most files
+  - scope:
+      path: ""
+    values:
+      lang: "en"
+  - scope:
+      path: "en"
+    values:
+      lang: "en"
+  - scope:
+      path: "fr"
+    values:
+      lang: "fr"
+
+  # Default for all education items in English
+  - scope:
+      path: "_education/en"
+      type: "education"
+    values:
+      lang: "en"
+
+  # Default for all education items in French
+  - scope:
+      path: "_education/fr"
+      type: "education"
+    values:
+      lang: "fr"
+
+  # Default for all work experience items in English
+  - scope:
+      path: "_work_experience/en"
+      type: "work_experience"
+    values:
+      lang: "en"
+
+  # Default for all work experience items in French
+  - scope:
+      path: "_work_experience/fr"
+      type: "work_experience"
+    values:
+      lang: "fr"

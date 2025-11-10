@@ -1,8 +1,10 @@
+{% assign string = site.data[page.lang].footer %}
+
 <div class="footer">
   <div class="contact">
-    Contact me:
+    {{ string["contact-me"] }}
     <div class="mail">
-      hugo.thollon@gmail.com
+      {{ string["mail"] }}
     </div>
 
     <div class="contact-links">
@@ -28,15 +30,14 @@
   </div>
   <div class="build-copyright">
     <div class="built-with">
-      Built with
-      <a href="https://jekyllrb.com/docs/" target="_blank">Jekyll</a>
-      and hosted on GitHub Pages.
+      {{ string["built-with"] | replace: "%s", '<a href="https://jekyllrb.com/docs/" target="_blank">Jekyll</a>' | raw }}
     </div>
     <div class="copyright">
-      &copy;2025 Hugo THOLLON
+      {{ string["copyright"] }}
     </div>
   </div>
   <div class="last-update">
-    Last updated: November 5, 2025
+    {% assign formatted_date = site.time | date: "%d/%m/%Y" %}
+    {{ string["last-update"] | replace: "%s", formatted_date }}
   </div>
 </div>

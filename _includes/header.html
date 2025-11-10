@@ -1,3 +1,5 @@
+{% assign string = site.data[page.lang].header %}
+
 <div class="header">
   <div class="header-background style-crystal-container no-hover">
     {% include styleCrystals.html start=5 end=8 %}
@@ -11,22 +13,22 @@
     </button>
 
     <div class="name-title">
-      <a href="/">
-        Hugo THOLLON
+      <a href="/{{ page.lang }}">
+        {{ string["hugo-thollon"] }}
       </a>
     </div>
   </div>
   <ul class="navbar-container">
     <li class="navbar-el style-crystal-container resume">
       {% include styleCrystals.html %}
-      <a href="/resume">
-        Resume
+      <a href="/{{ page.lang }}/resume">
+        {{ string["resume"] }}
       </a>
     </li>
     <li class="navbar-el style-crystal-container portfolio">
       {% include styleCrystals.html %}
-      <a href="/portfolio">
-        Portfolio
+      <a href="/{{ page.lang }}/portfolio">
+        {{ string["portfolio"] }}
       </a>
     </li>
   </ul>

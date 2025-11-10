@@ -1,99 +1,41 @@
 ---
   layout: default
   stylesheet: /assets/css/resume.css
-  scripts: |
-    <script src="/assets/js/displayElementOnScroll.js"></script>
-    <script>
-      window.addEventListener("load", () => {
-        // const timelineItem =  document.querySelectorAll(".timeline-item-container");
-        // removeClassToElementsOnScrollVisible(timelineItem, "style-crystal-always-visible", true);
-        });
-    </script>
 ---
 
-{% assign resumeEn = "Resume Hugo THOLLON 2025 en" %}
-{% assign resumeFr = "CV Hugo THOLLON 2025 fr" %}
+{% assign string = site.data[page.lang].resume %}
 
-  <section class="resume">
-  <div class="tab">
-    <button class="tab-links selected" onclick="openLanguage(event, this, 'en')">English version</button>
-    <button class="tab-links" onclick="openLanguage(event, this, 'fr')">Version Française</button>
-  </div>
+{% if page.lang == "fr" %}
+  {% assign resumeFileName = "CV Hugo THOLLON 2025 fr" %}
+  {% assign urlPath = "/en/resume" %}
+{% else %}
+  {% assign resumeFileName = "Resume Hugo THOLLON 2025 en" %}
+  {% assign urlPath = "/fr/cv" %}
+{% endif %}
 
+<section class="resume">
 
-  <!-- English version -->
-  <div class="tab-content" id="en">
+  <a class="other-language" href="{{ urlPath }}">{{ string["see-other-language"] }} &rarr;</a>
+  <div class="resume-container">
     <a
-      class="btn-download"
-      href="/assets/pdf/{{ resumeEn }}.pdf"
+      class="btn-download style-crystal-container"
+      href="/assets/pdf/{{ resumeFileName }}.pdf"
       download>
-      Download Resume
+      {% include styleCrystals.html start=5 end=8 %}
+      <div class="text">
+        {% include download-icon.svg %}
+        {{ string["download-resume"] }}
+      </div>
     </a>
 
-    <div class="alt-pdf-view">If the resume is too small,
-      <a href="/assets/pdf/{{ resumeEn }}.pdf" target="_blank">click here to view the pdf version</a>.
+    <div class="alt-pdf-view">{{ string["resume-too-small"] }}
+      <a href="/assets/pdf/{{ resumeFileName }}.pdf" target="_blank">{{ string["click-for-pdf-version"] }}</a>.
     </div>
 
     <img
       class="img-resume"
-      src="/assets/images/resume/{{ resumeEn }}.png"
-      alt="Hugo THOLLON's resume">
+      src="/assets/images/resume/{{ resumeFileName }}.png"
+      alt="{{ string["img-alt"] }}">
   </div>
 
-  <!-- French version -->
-  <div class="tab-content hidden" id="fr">
-    <a
-      class="btn-download"
-      href="/assets/pdf/{{ resumeFr }}.pdf"
-      download>
-      Télécharger le CV
-    </a>
-
-    <div class="alt-pdf-view">Si le CV est trop petit,
-      <a href="/assets/pdf/{{ resumeFr }}.pdf" target="_blank">cliquez ici pour voir la version pdf</a>.
-    </div>
-
-    <img
-      class="img-resume"
-      src="/assets/images/resume/{{ resumeFr }}.png"
-      alt="CV Hugo THOLLON">
-  </div>
 </section>
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const tabLinks = document.querySelectorAll(".tab-links");
-      const tabContent = document.querySelectorAll(".tab-content");
-      
-      function addClass(element, className) {
-        if (!element.classList.contains(className))
-        element.classList.add(className);
-      }
-      
-      function removeClass(element, className){
-        if (element.classList.contains(className))
-        element.classList.remove(className);
-      }
-      
-      function openLanguage(event, button, lang){
-        tabLinks.forEach(link => {
-          if(link != button){
-            removeClass(link, "selected");
-          }
-        });
-        addClass(button, "selected")
-        
-        tabContent.forEach(elem => {
-          if(elem.id != lang){
-          addClass(elem, "hidden");
-        } else {
-          removeClass(elem, "hidden");
-        }
-      });
-    }
-
-    // make openLanguage global
-    window.openLanguage = openLanguage;
-  });
-</script>

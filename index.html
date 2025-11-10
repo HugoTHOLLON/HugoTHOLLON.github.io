@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=en/">
+    <script>
+          (function() {
+        const savedLang = localStorage.getItem('preferredLang');
+        if (savedLang) {
+          window.location.replace('/' + savedLang + '/');
+          return;
+        }
+
+        const lang = navigator.language || navigator.userLanguage;
+        const userLang = lang.substring(0, 2).toLowerCase();
+        const target = (userLang === 'fr') ? 'fr' : 'en';
+        localStorage.setItem('preferredLang', target);
+        window.location.replace('/' + target + '/');
+      })();
+    </script>
+    <title>Hugo THOLLON | Redirecting...</title>
+  </head>
+  <body>
+    <p>Redirecting to your preferred language...</p>
+  </body>
+</html>

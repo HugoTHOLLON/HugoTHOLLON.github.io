@@ -45,6 +45,7 @@
     </script>
 ---
 
+{% assign string = site.data[page.lang].home %}
 {% assign dateFormat = "%B %-d, %Y" %}
 <!-- ----------------------------------------------------------------------------
   --------------------------------------------------------------------------------
@@ -82,10 +83,11 @@
     {% include styleCrystals.html start=9 end=16 %}
   </div>
 
-  <div class="section-title">My best projects</div>
+  <div class="section-title">{{ string["best-projects-title"] }}</div>
 
   <div class="work-list">
-    {% for post in site.categories.best-project %}
+    {% assign best_projects = site.categories.best-project | where: "lang", page.lang %}
+    {% for post in best_projects %}
       <div class="card off-screen">
 
         {% if post.image-path %}
@@ -111,7 +113,7 @@
           <a class="card-link style-crystal-container" href="{{ post.url }}">
             {% include styleCrystals.html start=5 end=8 %}
             <div class="text">
-              See more &rarr;
+              {{ string["see-more"] }} &rarr;
             </div>
           </a>
         </div>
@@ -126,10 +128,10 @@
   ----------------------------------------------------------------------------- -->
 <section class="section white-section education" id="education">
   <div class="section-title">
-    Education
+    {{ string["education-title"] }}
   </div>
   <div class="timeline">
-    {% assign education_items = site.education | sort: "date" | reverse %}
+    {% assign education_items = site.education | where: "lang", page.lang | sort: "date" | reverse %}
     {% for edu in education_items %}
       {% assign left = forloop.index0 | modulo: 2 %}
       {% if left == 0 %}
@@ -159,9 +161,9 @@
             <div class="edu-specialties">
               <b>
                 {% if edu.specialties.size > 1 %}
-                  Specialties:
+                  {{ string["specialties"] }}
                 {% else %}
-                  Specialty:
+                  {{ string["specialty"] }}
                 {% endif %}
               </b>
               {% for specialty in edu.specialties %}
@@ -172,7 +174,7 @@
 
           {% if edu.results %}
             <div class="edu-results">
-              <b>Results:</b>
+              <b>{{ string["results"] }}</b>
               <ul>
                 {% for result in edu.results %}
                   <li>{{ result }}</li>
@@ -201,7 +203,7 @@
     {% include styleCrystals.html start=9 end=16 %}
   </div>
 
-  <div class="section-title">My skills</div>
+  <div class="section-title">{{ string["skills-title"] }}</div>
 
   <div class="skill-list-container">
     {% for skillCateg in site.data.skills %}
@@ -232,11 +234,11 @@
   ----------------------------------------------------------------------------- -->
 <section class="section white-section work-experience" id="work-experience">
   <div class="section-title">
-    My work experience
+    {{ string["work-experience-title"] }}
   </div>
   <div class="timeline">
 
-    {% assign work_experience_items = site.work_experience | sort: "date" | reverse %}
+    {% assign work_experience_items = site.work_experience | where: "lang", page.lang | sort: "date" | reverse %}
     {% for experience in work_experience_items %}
       {% assign left = forloop.index0 | modulo: 2 %}
       {% if left == 0 %}

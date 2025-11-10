@@ -1,0 +1,35 @@
+{
+  "home": {
+    "best-projects-title": "My best projects",
+    "see-more": "See more",
+    "education-title": "Education",
+    "specialties": "Specialties: ",
+    "specialty": "Specialty: ",
+    "results": "Results: ",
+    "skills-title": "My skills",
+    "work-experience-title": "My work experience"
+  },
+  "resume": {
+    "see-other-language": "See french version ",
+    "download-resume": "Download Resume",
+    "resume-too-small": "If the resume is too small, ",
+    "click-for-pdf-version": "click here to view the pdf version",
+    "img-alt": "Hugo THOLLON's resume"
+  },
+  "header": {
+    "hugo-thollon": "Hugo THOLLON",
+    "resume": "Resume",
+    "portfolio": "Portfolio"
+  },
+  "footer": {
+    "contact-me": "Contact me:",
+    "mail": "hugo.thollon@gmail.com",
+    "built-with": "Built with %s and hosted on GitHub Pages.",
+    "copyright": "©2025 Hugo THOLLON",
+    "last-update": "Last updated: %s"
+  },
+  "page404": {
+    "title": "404 - Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist."
+  }
+}
