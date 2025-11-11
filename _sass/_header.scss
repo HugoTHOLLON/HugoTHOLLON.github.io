@@ -1,5 +1,5 @@
 $headerHeightClosed: 60px;
-$headerHeightOpened: 164px;
+$headerHeightOpened: 236px; // 60px + 52px + 52px + 52px + 10px + 10px
 
 header {
   height: $headerHeightClosed;
@@ -138,6 +138,7 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-grow: 1;
 
   .navbar-el {
     width: fit-content;
@@ -162,6 +163,34 @@ header {
       color: #f1f1f1;
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
+
+    &.language {
+      margin-left: auto;
+      margin-right: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      .lang-container {
+        display: flex;
+        padding: 0;
+        height: 40px;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 50px;
+        align-items: center;
+        justify-content: center;
+
+        .style-crystal {
+          filter: brightness(120%);
+        }
+
+        .lang-icon {
+          z-index: 1;
+          width: 30px;
+        }
+      }
+    }
   }
 }
 
@@ -173,7 +202,7 @@ header {
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 559px) {
   .header {
     flex-direction: column;
 
@@ -203,6 +232,17 @@ header {
       width: 100%;
       a {
         width: 100%;
+      }
+
+      &.language {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
       }
     }
   }

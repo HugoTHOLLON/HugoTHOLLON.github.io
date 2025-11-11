@@ -453,7 +453,7 @@ $blue5: rgba(40, 175, 228, 1);
 }
 
 .style-crystal-container {
-  @media screen and (min-width: 461px) {
+  @media screen and (min-width: 560px) {
     &:hover:not(.no-hover) {
       @include crystal-style-hover-placeholder;
     }

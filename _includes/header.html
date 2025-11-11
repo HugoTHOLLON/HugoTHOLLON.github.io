@@ -31,6 +31,18 @@
         {{ string["portfolio"] }}
       </a>
     </li>
+    <li class="navbar-el language">
+
+      {% if page.lang == "fr" %}
+        {% assign url = page.url | replace_first: '/fr/', '/en/' %}
+        {% include language-button.html img_src="/assets/images/france.webp" %}
+        {% include language-button.html img_src="/assets/images/united-kingdom.webp" url=url %}
+      {% else %}
+        {% assign url = page.url | replace_first: '/en/', '/fr/' %}
+        {% include language-button.html img_src="/assets/images/france.webp" url=url %}
+        {% include language-button.html img_src="/assets/images/united-kingdom.webp" %}
+      {% endif %}
+    </li>
   </ul>
 </div>
 
