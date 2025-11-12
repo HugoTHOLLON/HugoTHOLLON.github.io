@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Communicating Android and Python apps for IRIT"
+title: "Applications Android et Python communicant en BLE pour l'IRIT"
 date: 2025-03-10
 end: 2025-05-02
 categories: internship best-project
 project-type: "Stage"
 image-path: "/assets/images/projects/city_model_irit.webp"
-image-alt: "City model"
+image-alt: "Maquette de ville connectée"
 tags:
   [
     "Android",
@@ -15,77 +15,85 @@ tags:
     "Raspberry Pi",
     "Android Studio",
   ]
-description: "Built an Android app in Java and a Python app on Raspberry Pi. The apps communicated over BLE to simulate and control smart city streetlights, with my Python code bridging BLE communication and hardware control (simulated)."
+description: "J’ai développé 2 applications, une Android en Java et une en Python sur un Raspberry Pi. Ces deux applications communiquaient entre elles via Bluetooth Low Energy (BLE) afin de simuler et de contrôler l’éclairage des lampadaires d’une ville connectée. L'application Python était une interface entre la communication BLE et la partie hardware."
 ---
 
-# Context
+# Contexte
 
-I completed an internship at **IRIT** (Computer Science Research Institute of Toulouse), where I worked on an **IEEE** (Institute of Electrical and Electronics Engineers) project called **"My Smart Lighting"**. This project was led by my internship supervisor, a research engineer at IRIT.
+J’ai réalisé un stage à l’**IRIT** (Institut de Recherche en Informatique de Toulouse), où j’ai participé à un projet de l'**IEEE** (Institute of Electrical and Electronics Engineers) intitulé **"My Smart Lighting"**. Ce projet était dirigé par mon tuteur de stage, ingénieur de recherche à l’IRIT.
 
-The goal of the project was to study and optimize the **energy consumption** of smart city streetlights.  
-To achieve this, a **smart city model** was built to simulate streetlight behavior, controlled by a **Python application** running on a **Raspberry Pi**.
+L’objectif du projet était d’étudier et d’optimiser la **consommation d'énergie** des lampadaires d'une ville connectée.  
+Pour cela, une **maquette de ville connectée** a été conçue afin de simuler le comportement de lampadaires. Cette dernière est contrôlée par une **application Python** tournant sur un **Raspberry Pi**.
 
-As part of my work, I developed two applications:
+Dans le cadre de ce projet, j’ai développé deux applications :
 
-- An **Android app** that allows users to visualize simulated energy consumption and send control commands (e.g., dimming lights, enabling lights only when a car passes).
-- A **Python app** on the Raspberry Pi, which I designed as an interface between **Bluetooth Low Energy (BLE) communication** and the **electronic control system** of the model. Since the electronic layer was to be developed later, I implemented a **simulation** of the hardware control to test and validate the communication flow.
+- Une **application Android** permettant de visualiser la consommation énergétique simulée et d’envoyer des commandes de contrôle (par exemple : réduire la luminosité, n’allumer les lampadaires qu’au passage d’un véhicule, etc.) ;
+- Une **application Python** sur le Raspberry Pi, servant d’interface entre la **communication Bluetooth Low Energy (BLE)** et le **système électronique** de la maquette. La partie électronique, développée par mon maitre de stage, a été mise en place après la fin de mon stage. J’ai mis en place une **simulation** de cette partie matérielle pour pouvoir tester et valider le flux de communication.
 
-The two applications communicate using **Bluetooth Low Energy (BLE)**.  
-BLE is a wireless communication protocol, similar to Wi-Fi or classic Bluetooth, but optimized for very low power usage. Devices communicate through **services** that expose specific **data** or **actions**. In this project, the Python app exposes a custom BLE Service (containing the simulation data and control modes), and the Android app connects to it to exchange information.
+Les deux applications communiquent via le protocole **Bluetooth Low Energy (BLE)**.
+Le BLE est un protocole de communication sans fil, similaire au Wi-Fi ou au Bluetooth classique, mais conçu pour une **consommation d’énergie minimale**. Les appareils échangent des informations à travers des **services**, qui exposent des **données** ou des **actions** précises.
+Dans ce projet, l’application Python propose un service BLE personnalisé (permettant d'accéder aux données de simulation et aux commandes de contrôle), auquel l’application Android se connecte pour échanger ces informations.
 
-# The Apps
+# Les applications
 
-## Android App
+## Application Android
 
-The Android app, built with Android Studio in **Java**, uses Android’s built-in support for **Bluetooth Low Energy (BLE)** to search for and connect to the Raspberry Pi.
+L’application Android, développée avec **Android Studio** en **Java**, utilise les fonctionnalités natives d’Android avec le **Bluetooth Low Energy (BLE)** afin de rechercher et se connecter au Raspberry Pi.
 
-In practice, the app scans for any nearby device that provides a specific **BLE Service** (a unique identifier for the smart lighting simulation). This service is implemented by the Python app running on the Raspberry Pi.
+Concrètement, l’application scanne les appareils disponible à proximité à la recherche d’un **Service BLE spécifique** (avec un identifiant unique associé aux contrôles de la maquette). Ce service est fourni par l’application Python exécutée sur le Raspberry Pi.
 
-The Android app is structured into three main states:
+L’application Android est structurée autour de trois états principaux :
 
-- **Connection state:** the app searches for a device that provides the target BLE Service. Once found, it attempts to connect. If the connection fails, it retries multiple times before going back to scanning.
-- **Data reception state:** once connected, the app requests the device’s data (such as energy consumption values). The data is then displayed to the user. If the values are updated, the Raspberry Pi notifies the app automatically.
-- **Data editing state:** while connected, the user can change the streetlight operating mode (e.g., reducing brightness). When they do, the app sends a command to the Raspberry Pi, which updates the simulation accordingly.
+- **État de connexion :** l’application scanne les alentours à la recherche d'un appareil proposant le service BLE cible. Une fois trouvé, elle tente de s’y connecter. En cas d’échec, plusieurs tentatives sont effectuées avant de relancer le scan.
+- **État de réception des données :** une fois connectée, l’application demande les données de l’appareil (par exemple, la consommation énergétique actuelle). Ces données sont ensuite affichées à l’utilisateur. Si elles changent, le Raspberry Pi envoie automatiquement une notification à l’application pour mettre à jour les données.
+- **État d’édition des données :** tant que la connexion est active, l’utilisateur peut modifier le mode de fonctionnement des lampadaires (par exemple : réduire la luminosité). Dans ce cas, l’application envoie une commande au Raspberry Pi, qui met à jour la simulation en conséquence.
 
-{% include place-figure.html src="/assets/images/projects/android_connection_screens_irit.png" alt="Android app connection screens" figure-nb="1" figure-text="The Android app screens when connecting to the Raspberry Pi" %}
+{% include place-figure.html src="/assets/images/projects/android_connection_screens_irit.png" alt="Écrans de connexion de l’application Android" figure-nb="1" figure-text="Écrans de l’application Android lors de la connexion au Raspberry Pi" %}
 
-{% include place-figure.html src="/assets/images/projects/android_data_received_irit.png" alt="Android app data reading screens" figure-nb="2" figure-text="The Android app screens when receiving and displaying simulation data from the Raspberry Pi" %}
+{% include place-figure.html src="/assets/images/projects/android_data_received_irit.png" alt="Écrans de lecture de données de l’application Android" figure-nb="2" figure-text="Écrans de l’application Android lors de la réception et de l’affichage des données de simulation depuis le Raspberry Pi" %}
 
-{% include place-figure.html src="/assets/images/projects/android_editor_irit.png" alt="Android app data edition screens" figure-nb="3" figure-text="The Android app screens when editing the streetlights operating mode (sending control commands)" %}
+{% include place-figure.html src="/assets/images/projects/android_editor_irit.png" alt="Écrans d’édition de l’application Android" figure-nb="3" figure-text="Écrans de l’application Android lors de la modification du mode de fonctionnement des lampadaires (envoi de commandes de contrôle)" %}
 
-## Python App
+## Application Python
 
-The Python app acts as the **bridge** between BLE communication and the electronic control system of the model.
+L’application Python joue le rôle de **pont** entre la communication BLE et le système électronique de la maquette.
 
-It uses the **BlueZ API** (the official Linux Bluetooth stack) to create a custom **BLE Service**. This Service exposes two things:
+Elle s’appuie sur l’**API BlueZ** (logiciel Bluetooth officiel de Linux) pour créer un **Service BLE personnalisé**.  
+Ce service expose deux éléments :
 
-- **Simulation data** (consumption, power usage, etc.)
-- **An editable operating mode** (which can be changed remotely by the Android app)
+- Les **données de la simulation** (consommation, puissance, etc.).
+- Un **mode de fonctionnement éditable** (permet de visualiser et modifier le mode à distance depuis l’application Android).
 
-To interact with BlueZ, the Python app uses **D-Bus**, an inter-process communication (IPC) system that allows applications on Linux to talk to each other. In this case, D-Bus lets Python manage BLE devices through BlueZ.
+Pour interagir avec BlueZ, l’application Python utilise **D-Bus**, un système de **communication interprocessus (IPC)** permettant aux applications Linux d’échanger entre elles. Dans notre cas, D-Bus permet au programme Python de gérer les appareils connectés via BLE à travers BlueZ.
 
-While I focused on the communication layer, I also designed the **software structure** for the electronic control system. I implemented different classes simulating the streetlight operating modes and a controller to manage switching between them. This way, the next developer will only need to expand these classes to connect to the real hardware.
+Bien que je me sois principalement concentré sur la partie communication BLE, j’ai également conçu l'**architecture** du futur système de contrôle électronique. J’ai mis en place différentes classes simulant les modes de fonctionnement des lampadaires, ainsi qu’un contrôleur chargé de gérer la transition entre ces modes.  
+Avec ceci, le développeur suivant pourra facilement étendre ces classes pour les connecter au matériel réel.
 
-Below is the Python app class diagram. The **top section** shows the BLE-related classes, while the **bottom section** represents the (currently simulated) electronic control classes.
+Le diagramme de classes ci-dessous illustre la structure de l’application Python :  
+la **partie supérieure** correspond aux classes liées au BLE, tandis que la **partie inférieure** regroupe les classes de simulation du contrôle électronique.
 
-{% include place-figure.html src="/assets/images/projects/python_class_diagram_irit.png" alt="Python app class diagram" figure-nb="4" figure-text="Python app class diagram" %}
+{% include place-figure.html src="/assets/images/projects/python_class_diagram_irit.png" alt="Diagramme de classes de l’application Python" figure-nb="4" figure-text="Diagramme de classes de l’application Python" %}
 
-# Development Process
+# Processus de développement
 
-To start the project, I first needed to understand how Bluetooth Low Energy (BLE) worked. I created a small prototype Android app that could toggle Bluetooth and scan for nearby devices. This helped me gain hands-on experience with BLE communication before tackling the main project.
+Pour démarrer le projet, j’ai d’abord cherché à bien comprendre le fonctionnement du Bluetooth Low Energy (BLE). J’ai pour cela réalisé un petit prototype d’application Android permettant d’activer/désactiver le Bluetooth et de détecter les appareils alentour. Cette étape m’a permis de me familiariser avec la communication BLE avant de m'attaquer au projet principal.
 
-I then designed the Android app by creating a mockup and user flow diagram with each screen and interaction. The final implementation followed this design closely, with additional improvements for error handling.
+J’ai ensuite designé l’application Android avec un mélange entre une **maquette et un user flow**, détaillant chaque écran et interaction possible dans l'application. L'application finale est fidèle à cette maquette, avec quelques changements et améliorations au niveau de la gestion des erreurs.
 
-{% include place-figure.html src="/assets/images/projects/android_mockup_irit.png" alt="Android app mockup/user flow diagram" figure-nb="5" figure-text="Android app mockup" %}
+{% include place-figure.html src="/assets/images/projects/android_mockup_irit.png" alt="Maquette et User flow de l’application Android" figure-nb="5" figure-text="Maquette de l’application Android" %}
 
-The Python app was developed in parallel with the Android app to ensure smooth communication between the two. One of the main challenges was the limited and outdated documentation available for using Python with BlueZ via D-Bus. I overcame this by carefully studying the BlueZ API and experimenting with small test programs until I achieved a stable solution.
+L’application Python a été développée **en parallèle** de l’application Android afin d’assurer que la communication entre les deux fonctionne correctement.  
+L’un des principaux défis de ce stage a été la **documentation limitée et parfois obsolète** concernant l’usage de Python avec BlueZ via D-Bus. J’ai réussi à surmonter cette difficulté en étudiant attentivement l’API BlueZ et en expérimentant avec de petits programmes de test jusqu’à obtenir une solution stable.
 
-Looking back, I realized that languages like C had more resources and examples for this type of work, but implementing the system in Python ultimately provided greater flexibility and maintainability for future developers.
+Avec le recul, je constate que le langage C disposait de plus de ressources et d’exemples à ce sujet, mais l’implémentation en Python a l'avantage d'être **plus flexible et facile à prendre en main** pour de futur développeurs.
 
 # Impact
 
-The apps were showcased during an IRIT exhibition to demonstrate the progress of the **My Smart Lighting** project. The Python app was designed with a modular structure, making it easier for future developers to extend it and connect it to real hardware.
+Les deux applications ont été présentées lors d’une exposition à l’IRIT pour illustrer l’avancement du projet **My Smart Lighting**.
 
-This project was also a major milestone in my professional growth. It gave me practical experience with technologies I had only studied in theory (Java and Python) as well as new ones I had never encountered before (Bluetooth Low Energy, D-Bus, BlueZ).
+Comme l’application Python a été conçue avec une structure **modulaire**, il sera facile d'y ajouter des extensions dans le futur et de la connecter au matériel réel.
 
-Beyond the technical skills, I also learned how to work independently, organize my work, and seek out reliable resources when documentation was limited. The internship also gave me insight into how research organizations operate and how collaboration takes place within a project team.
+Ce projet a également marqué une **étape clé** dans mon développement professionnel. Il m’a offert une expérience concrète avec des technologies que je connaissais surtout en théorie (**Java et Python**), ainsi que d’autres totalement nouvelles pour moi (**Bluetooth Low Energy, D-Bus, BlueZ**).
+
+Au-delà des compétences techniques, ce stage m’a appris à **travailler de manière autonome**, à **organiser efficacement mon travail**, et à **chercher les bonnes ressources** même lorsque la documentation est limitée.
+J’y ai aussi découvert le fonctionnement d’un **laboratoire de recherche** et la dynamique de **collaboration au sein d’une équipe de projet**.

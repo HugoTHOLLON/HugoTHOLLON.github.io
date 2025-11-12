@@ -1,49 +1,51 @@
 ---
 layout: post
-title: "Seresville's birds"
+title: "Les oiseaux de Seresville"
 date: 2024-05-06
 end: 2024-08-03
 categories: ["personal-project", "best-project"]
 project-type: "Projet Personnel"
 image-path: "/assets/images/projects/home_oiseaux_de_seresville.webp"
-image-alt: "Game home page"
+image-alt: "Page d'accueil du jeu"
 tags: ["Godot engine", "GDScript"]
 description: |
-  Developed an interactive quiz game in Godot Engine for a bird exhibition. Players identify bird species by either their picture or song. I designed and programmed the entire game. The game was showcased at the exhibition and used by visitors to test their knowledge of local birds.
+  J'ai développé un jeu de quiz avec Godot Engine pour une exposition sur les oiseaux. L'objectif est d'identifier l'espèce d'un oiseau à partir d'une photo ou de son chant. J'ai designé et programmé l'entièreté du jeu qui été disponible lors de exposition. Les visiteurs ont pu, à cette occasion, tester leur connaissances des oiseaux de la région.
 ---
 
-# The Game
+# Le Jeu
 
-This project is an interactive **French quiz game** about birds found in Seresville, a hamlet near Chartres, France.  
-Players must identify bird species by either their **picture** or **song**, depending on the chosen game mode. The game features **14 birds to identify**, with a **child mode** limited to the 5 most common species in the local woods.
+Ce projet est un **quiz interactif sur les oiseaux** de Seresville, un hameau situé près de Chartres, en France.  
+Le principe est simple : les joueurs doivent reconnaître différentes espèces d’oiseaux à partir de leur **photo** ou de leur **chant**, selon le mode de jeu choisi. Le jeu propose **14 espèces à identifier**, ainsi qu’un **mode enfant** limité aux 5 espèces les plus courantes dans les bois environnants.
 
-To ensure replayability, both the order in which birds are presented and the placement of the correct answers are randomized. In addition to the quiz, a **bird list mode** allows players to freely explore the birds’ pictures and songs without the need to guess correctly.
+Pour que le jeu soit rejouable, **l’ordre des oiseaux** ainsi que **la position des bonnes réponses** changent à chaque partie.  
+En plus du quiz, un **mode "liste des oiseaux"** permet d’explorer librement les photos et chants des oiseaux.
 
-{% include place-figure.html src="/assets/images/projects/gameplay_oiseaux_de_seresville.webp" alt="Seresville's birds gameplay" figure-nb="1" figure-text="Gameplay, picture mode" %}
+{% include place-figure.html src="/assets/images/projects/gameplay_oiseaux_de_seresville.webp" alt="Seresville's birds gameplay" figure-nb="1" figure-text="Gameplay – mode photo" %}
 
-{% include place-figure.html src="/assets/images/projects/bird_list_seresville_birds.webp" alt="Seresville's birds bird list" figure-nb="2" figure-text="Bird list mode" %}
+{% include place-figure.html src="/assets/images/projects/bird_list_seresville_birds.webp" alt="Seresville's birds bird list" figure-nb="2" figure-text="Mode liste des oiseaux" %}
 
-# Development Process
+# Processus de Développement
 
-This was my **first personal project**, and an introduction to both **Godot Engine** and **game development**. It was also my first experience with **UI/UX design**.
+Il s’agit de mon **tout premier projet personnel**, et la première fois que j'utilisait le **moteur de jeu Godot Engine**. Ce fut aussi ma première expérience en **conception UI/UX** (interface et expérience utilisateur).
 
-I worked independently on every aspect of the game logic and interface. My main contributions include:
+J’ai travaillé de manière autonome sur tout le projet, de la logique du jeu à son interface.  
+Mes travaux les plus importants sur ce projet sont les suivants :
 
-- Designing and implementing the user interface (buttons, menus, and navigation).
-- Building a lightweight **text-file database** in **GDScript** to manage images and audio files.
-- Implementing an **audio management system** to play, pause, and handle bird songs seamlessly.
-- Ensuring replayability through randomized question order and button placement.
+- Conception et implémentation de l’interface utilisateur (boutons, menus, navigation).
+- Création d’une **base de données légère** sous forme de **fichier texte**, gérée en **GDScript** (le langage de script de Godot), pour organiser les images et les fichiers audio.
+- Mise en place d’un **système de gestion de l'audio** permettant de lire, mettre en pause et manipuler les chants d’oiseaux de façon fluide.
+- Ajout d’aléatoire dans les questions et position des réponses, afin d’assurer la rejouabilité.
 
-For the UI design, I combined my own interface elements with [Wenrexa’s Flower UI assets](https://wenrexa.itch.io/assets-ui-flowers){:target="\_blank"} (used for background and decorative elements).  
-Bird photographs were kindly provided by **Michel Brugière**, and the bird songs by **Jacques Ménétrier**.
+Pour le design de l’interface, j’ai combiné mes propres éléments avec les [assets graphiques "Flower UI" de Wenrexa](https://wenrexa.itch.io/assets-ui-flowers){:target="\_blank"} (utilisées pour le fond et les éléments décoratifs).
+Les **photographies d’oiseaux** ont été gracieusement fournies par **Michel Brugière**, et les **enregistrements sonores** par **Jacques Ménétrier**.
 
-{% include place-figure.html src="/assets/images/projects/parameters_seresvilles_birds.webp" alt="Seresville's birds parameters" figure-nb="3" figure-text="Parameters menu with audio settings" %}
+{% include place-figure.html src="/assets/images/projects/parameters_seresvilles_birds.webp" alt="Seresville's birds parameters" figure-nb="3" figure-text="Menu des paramètres avec options audio" %}
 
-# Exhibition & Impact
+# Présentation & Impact
 
-The game was showcased at a **nature exhibition in Mainvilliers**, organized in partnership with the [Eure-et-Loir Nature Association](https://www.eln28.org/){:target="\_blank"}.  
-It was played by **both children and adults**, helping visitors discover and test their knowledge of local bird species in an engaging, interactive way.
+Le jeu a été présenté lors d’une **exposition à Mainvilliers**, organisée en partenariat avec l’[Association Eure-et-Loir Nature](https://www.eln28.org/){:target="\_blank"}. Il a été **testé par des enfants comme par des adultes**, permettant à chacun de découvrir les oiseaux locaux tout en testant leurs connaissances de manière ludique et interactive.
 
-# Demo
+# Démo
 
-Currently, the game is available for **Windows** and **Web**. You can play the online version [here](/projects/demos/les-oiseaux-de-seresville/game.html){:target="\_blank"}.
+Le jeu est actuellement disponible pour **Windows** et **navigateur Web**.
+Vous pouvez essayer la version en ligne [ici](/projects/demos/les-oiseaux-de-seresville/game.html){:target="\_blank"}.
