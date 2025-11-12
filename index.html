@@ -5,18 +5,14 @@
     <meta http-equiv="refresh" content="0; url=en/">
     <script>
           (function() {
-        const savedLang = localStorage.getItem('preferredLang');
-        if (savedLang) {
-          window.location.replace('/' + savedLang + '/');
-          return;
-        }
-
-        const lang = navigator.language || navigator.userLanguage;
-        const userLang = lang.substring(0, 2).toLowerCase();
-        const target = (userLang === 'fr') ? 'fr' : 'en';
-        localStorage.setItem('preferredLang', target);
-        window.location.replace('/' + target + '/');
-      })();
+            const lang = navigator.language || navigator.userLanguage;
+            const userLang = lang.substring(0, 2).toLowerCase();
+            if (userLang === 'fr') {
+              window.location.replace('/fr/');
+            } else {
+              window.location.replace('/en/');
+            }
+          })();
     </script>
     <title>Hugo THOLLON | Redirecting...</title>
   </head>
