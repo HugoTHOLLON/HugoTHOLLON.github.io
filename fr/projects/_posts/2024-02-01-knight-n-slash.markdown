@@ -8,57 +8,57 @@ image-path: "/assets/images/projects/KnS_SirGrognon.png"
 image-alt: "Knight 'n slash character"
 tags: ["Godot engine", "GDScript", "Game Design"]
 description: |
-  Co-developing a 3D top-down action RPG in Godot Engine with a small team of friends. I created the Game Design Document and implemented the game’s status effect system, allowing dynamic buffs, debuffs, and other effects.
+  Je co-développe un jeu d’action-RPG en vue du dessus en 3D avec une petite équipe d’amis sur le moteur Godot Engine. J’ai rédigé le Game Design Document et mis en place le système d’effets de statut (Status Effects) du jeu, permettant de gérer dynamiquement les bonus, malus et autres altérations des personnages.
 ---
 
-The art for the knight (Sir Grognon) was made by Sacha Mollet. You can find more of his work [here](https://www.artstation.com/sachamollet){:target="\_blank"}.
+L'artwork du chevalier (Sir Grognon) a été réalisé par Sacha Mollet. Vous pouvez trouver plus de ses réalisations [ici](https://www.artstation.com/sachamollet){:target="\_blank"}.
 
-# The Game
+# Le Jeu
 
-_Knight ’n Slash_ is a **3D top-down action RPG multiplayer game** developed in **Godot Engine**, where players embody **five heroes**, each with unique abilities.
+_Knight ’n Slash_ est un **jeu d’action-RPG multijoueur en 3D, vu de dessus**, développé avec le **moteur Godot Engine**. Les joueurs y incarnent **cinq héros**, chacun doté de compétences uniques.
 
-The Master of Evil threatens to conquer the world, and the heroes must embark on an epic journey across the continent to stop him. Along the way, they will encounter numerous enemies to defeat and allies willing to help... for the right price.
+Le **Maître du Mal** menace de conquérir le monde, et les héros doivent entreprendre un **voyage épique à travers le continent** pour l’en empêcher. En chemin, ils affronteront de nombreux ennemis et croiseront des alliés prêts à leur prêter main-forte... moyennant récompense.
 
-During the **day**, the heroes battle hordes of monsters across diverse environments. At **night**, they rest, heal, and train to improve their skills before continuing their quest.
+Pendant la **journée**, les héros combattent des hordes de monstres dans des environnements variés. La **nuit**, ils se reposent, se soignent et s’entraînent afin d’améliorer leurs compétences avant de poursuivre leur quête.
 
-# Development Process
+# Processus de Développement
 
-Creating this game takes time, as our team must balance the project with schoolwork and personal life. Most development progress happens during holidays when we can dedicate more time to the project.
+La création de ce jeu demande du temps : notre équipe doit jongler entre ce projet, les études et leur vie personnelle. La majorité des avancées se font donc pendant les vacances, lorsque nous pouvons nous y consacrer pleinement.
 
-# My Contribution So Far
+# Ma Contribution à ce Jour
 
-## Game Design Document
+## Document de Conception du Jeu (Game Design Document)
 
-I created the **Game Design Document (GDD)**, focusing mainly on defining the **core gameplay loop** and the game’s overall structure.
+J’ai rédigé le **Game Design Document (GDD)**, en me concentrant principalement sur la définition de la **boucle de gameplay principale** et sur la structure générale du jeu.
 
-To summarize:
+En résumé :
 
-- During the **day**, players explore large open areas filled with monsters, side quests, and a hidden dungeon.
-- At **night**, they set up camp to manage their characters: upgrading stats and equipment, leveling up, and learning new skills.
-- This day-night cycle repeats across **100 levels**, with a **boss** and a **village** every 10 levels. Villages provide new interactions and opportunities for upgrades.
-- Each region introduces a **unique environment** (forest, desert, mountains, etc.) with special mechanics tied to its terrain.
+- Durant la **journée**, les joueurs explorent de vastes zones ouvertes peuplées de monstres, de quêtes secondaires et d’un donjon caché.
+- La **nuit**, ils montent leur campement pour gérer leurs personnages : améliorer leurs statistiques, gérer de l’équipement, monter en niveau et apprendre de nouvelles compétences.
+- Ce cycle jour-nuit se répète sur un total de **100 niveaux**, avec un **boss** et un **village** tous les 10 niveaux. Les villages offrent de nouvelles interactions et des opportunités d’amélioration.
+- Chaque région propose un **environnement unique** (forêt, désert, montagne, etc.) accompagné de **mécaniques spécifiques** liées à son terrain.
 
-## Stat System
+## Système de Statistiques
 
-I implemented a **flexible stat system** that defines attributes such as health, damage, and speed.  
-The system is modular and designed to be easily expanded, allowing stats to dynamically change during gameplay to reflect buffs, debuffs, or environmental effects.
+J’ai mis en place un **système de statistiques flexible** qui définit des attributs tels que la santé, les dégâts et la vitesse.
+Ce système, conçu de manière **modulaire et extensible**, permet d’ajouter facilement de nouveaux paramètres et de faire évoluer les statistiques en temps réel pour refléter les effets de bonus, malus ou conditions environnementales.
 
-## Status Effect System
+## Système d’Effets de Statut
 
-I designed and implemented the **status effect system**, which serves as the foundation for all effects such as stat boosts, invulnerability, resistances, or damage over time (e.g., poison).
+J’ai conçu et implémenté le **système d’effets de statut**, qui constitue la base de tous les effets du jeu : amélioration de statistiques, invulnérabilité, résistances ou dégâts progressifs (comme un poison).
 
-Each effect can:
+Chaque effet peut :
 
-- Last for a defined duration or indefinitely.
-- Be applied to multiple entities (player characters or enemies).
-- Be created directly in the Godot editor using **Resources**, allowing new effects to be added without modifying code.
+- Durer pendant une période définie ou indéfiniment.
+- Être appliqué à plusieurs entités (personnages ou ennemis).
+- Être créé directement dans l’éditeur Godot via les **Resources** (ressources internes), ce qui permet d’ajouter de nouveaux effets sans modifier le code.
 
-Every status effect belongs to one of the following categories, making it easy to target, manage, or filter effects during gameplay:
+Chaque effet de statut appartient à l’une des catégories suivantes, ce qui facilite leur ciblage, leur gestion et leur filtrage en cours de jeu :
 
-- **BUFF:** Enhances an entity’s attributes (e.g., damage boost, invincibility).
-- **DEBUFF:** Weakens an entity (e.g., reduced damage, poison).
-- **SKILL:** Applied through a skill from a character or boss (e.g., _Sir Grognon’s taunt_, which grants damage reduction but reduces speed to 0).
-- **PENALTY:** Persistent negative effect that cannot be cleansed during the day unless specific items allow it (e.g., curse, exhaustion).
-- **ENVIRONMENT:** Caused by terrain or surroundings (e.g., movement slowdown in snow or mud, burn effect on lava).
+- **BUFF :** Renforce les attributs d’une entité (ex. : bonus de dégâts, invincibilité).
+- **DEBUFF :** Affaiblit une entité (ex. : baisse de dégâts, empoisonnement).
+- **SKILL :** Appliqué par une compétence d’un personnage ou d’un boss (ex. : _la provocation de Sir Grognon_, qui réduit les dégâts subis mais abaisse la vitesse à 0).
+- **PENALTY :** Effet négatif persistant, ne pouvant être supprimé durant la journée sauf à l’aide d’objets spécifiques (ex. : malédiction, épuisement).
+- **ENVIRONMENT :** Causé par le terrain ou l’environnement (ex. : ralentissement dans la neige ou la boue, brûlure sur la lave).
 
-This system provides a strong foundation for gameplay variety and will support future skill and combat mechanics.
+Ce système constitue une **base solide** et servira de socle aux futures mécaniques de compétences et de combat.
