@@ -3,6 +3,8 @@
   stylesheet: /assets/css/post.css
 ---
 
+{% assign months = site.data.months["full-name"] %}
+
 <div class="content">
   <div class="title">{{ page.title }}</div>
   {% if page.project-type %}
@@ -11,7 +13,19 @@
     </div>
   {% endif %}
   <div class="dates">
-    From {{ page.date | date: "%B %-d, %Y" }} to {{ page.end | date: "%B %-d, %Y" | default: "Today" }}
+    {% if page.lang == 'fr' %}
+      {% assign start = page.date | date: "%-d %B %Y" %}
+      {% assign end = page.end | date: "au %-d %B %Y" | default: "à Aujourd'hui" %}
+
+      {% comment %} Changes the english month to the french {% endcomment %}
+      {% for month in months %}
+        {% assign start = start | replace: month['en'] , month['fr'] %}
+        {% assign end = end | replace: month['en'] , month['fr'] %}
+      {% endfor %}
+      Du {{ start }} {{ end }}
+    {% else %}
+      From {{ page.date | date: "%B %-d, %Y" }} to {{ page.end | date: "%B %-d, %Y" | default: "Today" }}
+    {% endif %}
   </div>
   {% if page.tags.size > 0 %}
     <ul class="tag-list">

@@ -46,7 +46,7 @@
 ---
 
 {% assign string = site.data[page.lang].home %}
-{% assign dateFormat = "%B %-d, %Y" %}
+
 <!-- ----------------------------------------------------------------------------
   --------------------------------------------------------------------------------
   ---------------------------------- Section 1 -----------------------------------
@@ -105,7 +105,19 @@
             {% endif %}
           </div>
           <div class="card-date">
-            {{ post.date | date: dateFormat }} - {{ post.end | date: dateFormat | default: "Present" }}
+            {% assign months = site.data.months["full-name"] %}
+            {% assign dateFormat = "%B %-d, %Y" %}
+            {% if page.lang == 'fr' %}
+              {% assign dateFormat = "%-d %B %Y" %}
+            {% endif %}
+            {% assign startDate = post.date | date: dateFormat %}
+            {% assign endDate = post.end | date: dateFormat | default: string["date-default"] %}
+
+            {% for month in months %}
+              {% assign startDate = startDate | replace: month['en'] , month[page.lang] %}
+              {% assign endDate = endDate | replace: month['en'] , month[page.lang] %}
+            {% endfor %}
+            {{ startDate }} - {{ endDate }}
           </div>
           <div class="card-extract">
             <p>{{ post.description | strip }}</p>

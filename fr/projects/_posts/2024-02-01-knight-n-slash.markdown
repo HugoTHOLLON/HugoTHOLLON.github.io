@@ -3,7 +3,7 @@ layout: post
 title: "Knight 'n Slash"
 date: 2024-02-01
 categories: ["personal-project"]
-project-type: "Personal project"
+project-type: "projet Personnel"
 image-path: "/assets/images/projects/KnS_SirGrognon.png"
 image-alt: "Knight 'n slash character"
 tags: ["Godot engine", "GDScript", "Game Design"]

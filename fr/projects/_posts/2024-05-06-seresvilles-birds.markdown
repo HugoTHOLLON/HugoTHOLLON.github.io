@@ -4,7 +4,7 @@ title: "Seresville's birds"
 date: 2024-05-06
 end: 2024-08-03
 categories: ["personal-project", "best-project"]
-project-type: "Personal project"
+project-type: "Projet Personnel"
 image-path: "/assets/images/projects/home_oiseaux_de_seresville.webp"
 image-alt: "Game home page"
 tags: ["Godot engine", "GDScript"]

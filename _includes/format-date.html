@@ -1,5 +1,6 @@
 {% assign startVar = include.start %}
 {% assign endVar = include.end %}
+{% assign months = site.data.months["abbreviation"] %}
 
 {% if startVar %}
 
@@ -8,16 +9,25 @@
     {% assign start = startVar | date: "%Y" %}
     {% assign end = endVar | date: "%Y" %}
 
-    {% if start == end %}
+      {% if start == end %}
       {% comment %} Same year: display months {% endcomment %}
-      {{ startVar | date: "%b" | capitalize }} - {{ endVar | date: "%b %Y" | capitalize }}
+
+      {% assign start = startVar | date: "%b" | capitalize %}
+      {% assign end = endVar | date: "%b %Y" | capitalize %}
+      {% comment %} Changes the english month to the french {% endcomment %}
+      {% for month in months %}
+        {% assign start = start | replace: month['en'] , month[page.lang] %}
+        {% assign end = end | replace: month['en'] , month[page.lang] %}
+    {% endfor %}
+      {% comment %} display the date {% endcomment %}
+      {{ start }} - {{ end }}
     {% else %}
       {% comment %} Different years, display years {% endcomment %}
       {{ start }} - {{ end }}
     {% endif %}
 
   {% else %}
-    {{ startVar | date: "%Y" }} - Present
+    {{ startVar | date: "%Y" }} - {{ site.data[page.lang].home["date-default"] }}
   {% endif %}
 
 {% endif %}

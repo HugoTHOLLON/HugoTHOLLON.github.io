@@ -4,7 +4,7 @@ title: "Communicating Android and Python apps for IRIT"
 date: 2025-03-10
 end: 2025-05-02
 categories: internship best-project
-project-type: "Internship"
+project-type: "Stage"
 image-path: "/assets/images/projects/city_model_irit.webp"
 image-alt: "City model"
 tags:

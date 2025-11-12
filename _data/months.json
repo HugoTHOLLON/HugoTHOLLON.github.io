@@ -1,0 +1,30 @@
+{
+  "full-name": [
+    { "fr": "janvier", "en": "January" },
+    { "fr": "février", "en": "February" },
+    { "fr": "mars", "en": "March" },
+    { "fr": "avril", "en": "April" },
+    { "fr": "mai", "en": "May" },
+    { "fr": "juin", "en": "June" },
+    { "fr": "juillet", "en": "July" },
+    { "fr": "août", "en": "August" },
+    { "fr": "septembre", "en": "September" },
+    { "fr": "octobre", "en": "October" },
+    { "fr": "novembre", "en": "November" },
+    { "fr": "décembre", "en": "December" }
+  ],
+  "abbreviation": [
+    { "fr": "Janv", "en": "Jan" },
+    { "fr": "Févr", "en": "Feb" },
+    { "fr": "Mars", "en": "Mar" },
+    { "fr": "Avril", "en": "Apr" },
+    { "fr": "Mai", "en": "May" },
+    { "fr": "Juin", "en": "June" },
+    { "fr": "Juil", "en": "July" },
+    { "fr": "Août", "en": "Aug" },
+    { "fr": "Sept", "en": "Sept" },
+    { "fr": "Oct", "en": "Oct" },
+    { "fr": "Nov", "en": "Nov" },
+    { "fr": "Déc", "en": "Dec" }
+  ]
+}

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "E-Commerce website for BuildMyPC"
+title: "Site d'e-commerce pour BuildMyPC"
 date: 2024-11-04
 end: 2025-01-21
 categories: iut-project best-project
-project-type: "IUT project"
+project-type: "projet IUT"
 image-path: "/assets/images/projects/home_page_buildMyPC.webp"
-image-alt: "Website home page"
+image-alt: "Page d'accueil du site"
 tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Figma", "Scrum", "UML"]
-description: "Developed an e-commerce website for a fictional PC builder with PHP/MySQL backend and HTML/CSS/JS front end, featuring login, browsing, cart, and a simulated checkout, plus an admin dashboard. I served as Scrum Master coordinating a 5-person team."
+description: "J’ai développé un site e-commerce pour une entreprise fictive de fabrication de PC, avec un back-end en PHP/MySQL et un front-end en HTML/CSS/JS. Le site intègre l’authentification, la recherche d’articles, le panier, une simulation de paiement et un tableau de bord administrateur. En tant que Scrum Master, j’ai encadré une équipe de 5 personnes."
 ---
 
 # Context
