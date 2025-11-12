@@ -1,6 +1,6 @@
 [
   {
-    "name": "Languages",
+    "name": { "en": "Languages", "fr": "Langages" },
     "skills": [
       { "name": "Java", "image": "/assets/images/skills/java.png" },
       { "name": "SQL", "image": "/assets/images/skills/sql.png" },
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "name": "Tools",
+    "name": { "en": "Tools", "fr": "Outils" },
     "skills": [
       { "name": "VSCode", "image": "/assets/images/skills/vscode.png" },
       { "name": "Godot Engine", "image": "/assets/images/skills/godot.webp" },

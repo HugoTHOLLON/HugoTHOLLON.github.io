@@ -17,6 +17,9 @@
     "click-for-pdf-version": "cliquez ici pour voir la version pdf",
     "img-alt": "CV Hugo THOLLON"
   },
+  "portfolio": {
+    "see-project": "Voir le projet"
+  },
   "header": {
     "hugo-thollon": "Hugo THOLLON",
     "resume": "CV",

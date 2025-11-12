@@ -5,11 +5,11 @@ date: 2024-05-06
 end: 2024-08-03
 categories: ["personal-project", "best-project"]
 project-type: "Personal project"
-image-path: "/assets/images/projects/home_oiseaux_de_seresville_cropped.webp"
+image-path: "/assets/images/projects/home_oiseaux_de_seresville.webp"
 image-alt: "Game home page"
 tags: ["Godot engine", "GDScript"]
 description: |
-  Developed an interactive quiz game in Godot Engine for a bird exhibition. Players identify bird species by either their picture or song. I designed and programmed the game mechanics using GDScript, created the user interface, and integrated audio/image assets. The game was showcased at the exhibition and used by visitors to test their knowledge of local birds.
+  Developed an interactive quiz game in Godot Engine for a bird exhibition. Players identify bird species by either their picture or song. I designed and programmed the entire game. The game was showcased at the exhibition and used by visitors to test their knowledge of local birds.
 ---
 
 # The Game

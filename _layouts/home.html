@@ -208,7 +208,7 @@
   <div class="skill-list-container">
     {% for skillCateg in site.data.skills %}
       <div class="skill-category">
-        <div class="skill-categ-title">{{ skillCateg.name }}</div>
+        <div class="skill-categ-title">{{ skillCateg.name[page.lang] }}</div>
         <ul class="skill-list">
           {% for skill in skillCateg.skills %}
             <li>

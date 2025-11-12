@@ -16,6 +16,9 @@
     "click-for-pdf-version": "click here to view the pdf version",
     "img-alt": "Hugo THOLLON's resume"
   },
+  "portfolio": {
+    "see-project": "See project"
+  },
   "header": {
     "hugo-thollon": "Hugo THOLLON",
     "resume": "Resume",

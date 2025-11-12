@@ -3,9 +3,9 @@ title: Home
 layout: home
 ---
 
-Hello, I am a **Computer Science student** at the IUT of Blagnac in France, currently in my third year.
-I have a passion for video games and **game development**, and I am also an enthusiastic parkour practitioner.
+Bonjour, je suis **étudiant en informatique** en 3ème année de BUT à l’IUT de Blagnac en France.
+Je suis passionné par les jeux vidéo et le **développement de jeux**, je fait également du Parkour sur mon temps libre.
 
-Below, you will find a selection of my [best works](#best-work), along with my [education](#education), [skills](#skills), and [professional experience](#work-experience).  
-Additional **projects** are available in the [Portfolio](/{{ page.lang }}/portfolio) section.  
-My full **resume** can be found in the [Resume](/{{ page.lang }}/resume) section.
+Vous trouverez ci-dessous une sélection de mes [meilleurs projets](#best-work), ainsi que ma [formation](#education), mes [compétences](#skills) et mes [expériences professionnelle](#work-experience).  
+Vous trouverez d'autres projets que j'ai réalisé dans la section [Portfolio](/{{ page.lang }}/portfolio).  
+Vous pouvez accéder à mon CV depuis la section [CV](/{{ page.lang }}/cv).
