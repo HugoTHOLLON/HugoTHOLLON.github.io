@@ -4,7 +4,7 @@ title: "Site d'e-commerce pour BuildMyPC"
 date: 2024-11-04
 end: 2025-01-21
 categories: iut-project best-project
-project-type: "projet IUT"
+project-type: "Projet IUT"
 image-path: "/assets/images/projects/home_page_buildMyPC.webp"
 image-alt: "Page d'accueil du site"
 tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Figma", "Scrum", "UML"]
