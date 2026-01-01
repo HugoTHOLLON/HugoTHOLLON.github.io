@@ -15,7 +15,12 @@
 
 <section class="project-list">
   <div class="timeline">
-    {% assign projects = site.categories.projects | where: "lang", page.lang %}
+    {% assign all_projects = site.categories.projects | where: "lang", page.lang %}
+
+    {% assign unfinished = all_projects | where_exp: "p", "p.end == nil" | sort: "date" | reverse %}
+    {% assign finished = all_projects | where_exp: "p", "p.end != nil" | sort: "date" | reverse %}
+
+    {% assign projects = unfinished | concat: finished %}
     {% for project in projects %}
       {% assign left = forloop.index0 | modulo: 2 %}
       {% if left == 0 %}
