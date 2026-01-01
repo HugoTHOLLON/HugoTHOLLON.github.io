@@ -5,7 +5,7 @@ date: 2025-03-10
 end: 2025-05-02
 categories: internship best-project
 project-type: "Internship"
-image-path: "/assets/images/projects/city_model_irit.webp"
+image-path: "/assets/images/projects/irit_internship/city_model_irit.webp"
 image-alt: "City model"
 tags:
   [
@@ -47,11 +47,11 @@ The Android app is structured into three main states:
 - **Data reception state:** once connected, the app requests the device’s data (such as energy consumption values). The data is then displayed to the user. If the values are updated, the Raspberry Pi notifies the app automatically.
 - **Data editing state:** while connected, the user can change the streetlight operating mode (e.g., reducing brightness). When they do, the app sends a command to the Raspberry Pi, which updates the simulation accordingly.
 
-{% include place-figure.html src="/assets/images/projects/android_connection_screens_irit.png" alt="Android app connection screens" figure-nb="1" figure-text="The Android app screens when connecting to the Raspberry Pi" %}
+{% include place-figure.html src="/assets/images/projects/irit_internship/android_connection_screens_irit.png" alt="Android app connection screens" figure-nb="1" figure-text="The Android app screens when connecting to the Raspberry Pi" %}
 
-{% include place-figure.html src="/assets/images/projects/android_data_received_irit.png" alt="Android app data reading screens" figure-nb="2" figure-text="The Android app screens when receiving and displaying simulation data from the Raspberry Pi" %}
+{% include place-figure.html src="/assets/images/projects/irit_internship/android_data_received_irit.png" alt="Android app data reading screens" figure-nb="2" figure-text="The Android app screens when receiving and displaying simulation data from the Raspberry Pi" %}
 
-{% include place-figure.html src="/assets/images/projects/android_editor_irit.png" alt="Android app data edition screens" figure-nb="3" figure-text="The Android app screens when editing the streetlights operating mode (sending control commands)" %}
+{% include place-figure.html src="/assets/images/projects/irit_internship/android_editor_irit.png" alt="Android app data edition screens" figure-nb="3" figure-text="The Android app screens when editing the streetlights operating mode (sending control commands)" %}
 
 ## Python App
 
@@ -68,7 +68,7 @@ While I focused on the communication layer, I also designed the **software struc
 
 Below is the Python app class diagram. The **top section** shows the BLE-related classes, while the **bottom section** represents the (currently simulated) electronic control classes.
 
-{% include place-figure.html src="/assets/images/projects/python_class_diagram_irit.png" alt="Python app class diagram" figure-nb="4" figure-text="Python app class diagram" %}
+{% include place-figure.html src="/assets/images/projects/irit_internship/python_class_diagram_irit.png" alt="Python app class diagram" figure-nb="4" figure-text="Python app class diagram" %}
 
 # Development Process
 
@@ -76,7 +76,7 @@ To start the project, I first needed to understand how Bluetooth Low Energy (BLE
 
 I then designed the Android app by creating a mockup and user flow diagram with each screen and interaction. The final implementation followed this design closely, with additional improvements for error handling.
 
-{% include place-figure.html src="/assets/images/projects/android_mockup_irit.png" alt="Android app mockup/user flow diagram" figure-nb="5" figure-text="Android app mockup" %}
+{% include place-figure.html src="/assets/images/projects/irit_internship/android_mockup_irit.png" alt="Android app mockup/user flow diagram" figure-nb="5" figure-text="Android app mockup" %}
 
 The Python app was developed in parallel with the Android app to ensure smooth communication between the two. One of the main challenges was the limited and outdated documentation available for using Python with BlueZ via D-Bus. I overcame this by carefully studying the BlueZ API and experimenting with small test programs until I achieved a stable solution.
 
