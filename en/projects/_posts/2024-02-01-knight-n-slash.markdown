@@ -4,7 +4,7 @@ title: "Knight 'n Slash"
 date: 2024-02-01
 categories: ["personal-project"]
 project-type: "Personal project"
-image-path: "/assets/images/projects/KnS_SirGrognon.png"
+image-path: "/assets/images/projects/knight_n_slash/SirGrognon_KnS.png"
 image-alt: "Knight 'n slash character"
 tags: ["Godot engine", "GDScript", "Game Design"]
 description: |
