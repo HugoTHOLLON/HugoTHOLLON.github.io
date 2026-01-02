@@ -5,7 +5,7 @@ date: 2024-11-04
 end: 2025-01-21
 categories: iut-project best-project
 project-type: "Projet IUT"
-image-path: "/assets/images/projects/home_page_buildMyPC.webp"
+image-path: "/assets/images/projects/build_my_pc/home_page_buildMyPC.webp"
 image-alt: "Page d'accueil du site"
 tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Figma", "Scrum", "UML"]
 description: "J’ai développé un site e-commerce pour une entreprise fictive de fabrication de PC, avec un back-end en PHP/MySQL et un front-end en HTML/CSS/JS. Le site intègre l’authentification, la recherche de produits, le panier, une simulation de paiement et un tableau de bord administrateur. En tant que Scrum Master, j’ai encadré une équipe de 5 personnes."
@@ -55,11 +55,11 @@ J’ai assuré les rôles de **Scrum Master** et de **chef de projet** pour notr
 Avec l’accord du client, j’ai entièrement repensé le design du site sur **Figma** afin d’améliorer son identité visuelle.  
 J’ai élaboré la palette de couleurs à partir du nouveau logo et choisi un **thème sombre et vert** pour donner au site une esthétique moderne, inspirée du monde du gaming.
 
-{% include place-figure.html src="/assets/images/projects/previous_design_buildMyPC.png" alt="Ancien design du site web" figure-nb="1" figure-text="Ancien design du site" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/previous_design_buildMyPC.png" alt="Ancien design du site web" figure-nb="1" figure-text="Ancien design du site" %}
 
-{% include place-figure.html src="/assets/images/projects/logo_buildMyPC.webp" alt="Logo BuildMyPC" figure-nb="2" figure-text="Nouveau logo BuildMyPC" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/logo_buildMyPC.webp" alt="Logo BuildMyPC" figure-nb="2" figure-text="Nouveau logo BuildMyPC" %}
 
-{% include place-figure.html src="/assets/images/projects/figma_design_buildMyPC.png" alt="Nouveau design du site sur Figma" figure-nb="3" figure-text="Nouveau design réalisé sur Figma" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/figma_design_buildMyPC.png" alt="Nouveau design du site sur Figma" figure-nb="3" figure-text="Nouveau design réalisé sur Figma" %}
 
 ## Développement
 
@@ -104,7 +104,7 @@ _(Remarque : un administrateur peut également utiliser les outils réservés au
 J’ai participé à la conception de l’architecture de la base de données, notamment au **diagramme de classes UML**.
 (Certains éléments ne correspondent plus exactement à la version finale, mais le schéma reflète notre conception initiale.)
 
-{% include place-figure.html src="/assets/images/projects/db_class_diagram_buildMyPC.png" alt="Diagramme de classes de la base de données" figure-nb="4" figure-text="Diagramme de classes de la base de données" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/db_class_diagram_buildMyPC.png" alt="Diagramme de classes de la base de données" figure-nb="4" figure-text="Diagramme de classes de la base de données" %}
 
 # Résultats
 
@@ -122,36 +122,36 @@ L’intégralité du code source est disponible sur [GitHub](https://github.com/
 
 ## Accueil et catalogue produits
 
-{% include place-figure.html src="/assets/images/projects/home_page_wide_buildMyPC.png" alt="Page d’accueil" figure-nb="5" figure-text="Page d’accueil" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/home_page_wide_buildMyPC.png" alt="Page d’accueil" figure-nb="5" figure-text="Page d’accueil" %}
 
-{% include place-figure.html src="/assets/images/projects/product_catalog_buildMyPC.png" alt="Page du catalogue produits" figure-nb="6" figure-text="Page du catalogue produits (catégorie composants)" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/product_catalog_buildMyPC.png" alt="Page du catalogue produits" figure-nb="6" figure-text="Page du catalogue produits (catégorie composants)" %}
 
 ## Fiche produit
 
-{% include place-figure.html src="/assets/images/projects/product_details1_buildMyPC.png" alt="Page de détails produit" figure-nb="7" figure-text="Page de détails produit avec informations et avis client" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/product_details1_buildMyPC.png" alt="Page de détails produit" figure-nb="7" figure-text="Page de détails produit avec informations et avis client" %}
 
-{% include place-figure.html src="/assets/images/projects/product_details2_buildMyPC.png" alt="Page de détails produit" figure-nb="8" figure-text="Page de détails produit avec informations et avis client" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/product_details2_buildMyPC.png" alt="Page de détails produit" figure-nb="8" figure-text="Page de détails produit avec informations et avis client" %}
 
 ## Compte, panier et commande
 
-{% include place-figure.html src="/assets/images/projects/account_management_buildMyPC.png" alt="Gestion du compte" figure-nb="9" figure-text="Gestion du compte client" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/account_management_buildMyPC.png" alt="Gestion du compte" figure-nb="9" figure-text="Gestion du compte client" %}
 
-{% include place-figure.html src="/assets/images/projects/cart_buildMyPC.png" alt="Panier d’achat" figure-nb="10" figure-text="Panier du client" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/cart_buildMyPC.png" alt="Panier d’achat" figure-nb="10" figure-text="Panier du client" %}
 
-{% include place-figure.html src="/assets/images/projects/checkout_system_buildMyPC.png" alt="Système de commande" figure-nb="11" figure-text="Système de commande avec informations préremplies" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/checkout_system_buildMyPC.png" alt="Système de commande" figure-nb="11" figure-text="Système de commande avec informations préremplies" %}
 
 ## Adaptation mobile (Responsive)
 
-{% include place-figure.html src="/assets/images/projects/responsive_buildMyPC.png" alt="Menu responsive" figure-nb="12" figure-text="Page d’accueil sur mobile, menu ouvert et fermé" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/responsive_buildMyPC.png" alt="Menu responsive" figure-nb="12" figure-text="Page d’accueil sur mobile, menu ouvert et fermé" %}
 
 ## Tableaux de bord administrateur et employé {#admin-pages}
 
-{% include place-figure.html src="/assets/images/projects/admin_employee_manage_buildMyPC.png" alt="Page de gestion des employés" figure-nb="13" figure-text="Administrateur : gestion des employés" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/admin_employee_manage_buildMyPC.png" alt="Page de gestion des employés" figure-nb="13" figure-text="Administrateur : gestion des employés" %}
 
-{% include place-figure.html src="/assets/images/projects/admin_client_manage_buildMyPC.png" alt="Page de gestion des clients" figure-nb="14" figure-text="Administrateur : gestion des clients" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/admin_client_manage_buildMyPC.png" alt="Page de gestion des clients" figure-nb="14" figure-text="Administrateur : gestion des clients" %}
 
-{% include place-figure.html src="/assets/images/projects/admin_client_infos_buildMyPC.png" alt="Page d’informations client" figure-nb="15" figure-text="Administrateur : détails d’un client" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/admin_client_infos_buildMyPC.png" alt="Page d’informations client" figure-nb="15" figure-text="Administrateur : détails d’un client" %}
 
-{% include place-figure.html src="/assets/images/projects/promotion_management_buildMyPC.png" alt="Gestion des promotions" figure-nb="16" figure-text="Gestion des promotions (administrateur/employé)" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/promotion_management_buildMyPC.png" alt="Gestion des promotions" figure-nb="16" figure-text="Gestion des promotions (administrateur/employé)" %}
 
-{% include place-figure.html src="/assets/images/projects/product_creation_management_buildMyPC.png" alt="Création de produit" figure-nb="17" figure-text="Page de création de produit (avec la gestion en arrière-plan)" %}
+{% include place-figure.html src="/assets/images/projects/build_my_pc/product_creation_management_buildMyPC.png" alt="Création de produit" figure-nb="17" figure-text="Page de création de produit (avec la gestion en arrière-plan)" %}
