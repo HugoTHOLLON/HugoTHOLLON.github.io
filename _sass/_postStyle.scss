@@ -79,20 +79,11 @@ main {
 
     h1 {
       font-size: 1.8rem;
-      color: #31bcf4;
-      scroll-margin-top: 60px;
     }
 
-    h2 {
-      color: #31bcf4;
-      scroll-margin-top: 60px;
-    }
-
-    h3 {
-      color: #31bcf4;
-      scroll-margin-top: 60px;
-    }
-
+    h1,
+    h2,
+    h3,
     h4 {
       color: #31bcf4;
       scroll-margin-top: 60px;
@@ -131,6 +122,12 @@ main {
 
     ul {
       box-sizing: border-box;
+    }
+
+    .work-in-progress {
+      color: #31bcf4;
+      font-size: 2em;
+      text-align: center;
     }
   }
 }
