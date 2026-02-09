@@ -4,7 +4,7 @@ title: "Bomberman"
 date: 2026-01-07
 end: 2026-01-25
 categories: ["iut-project"]
-project-type: "IUT project"
+project-type: "projet IUT"
 image-path: "/assets/images/projects/bomberman/home_bomberman.webp"
 image-alt: "Game home page"
 tags: ["Godot engine", "GDScript", "Kanban"]
