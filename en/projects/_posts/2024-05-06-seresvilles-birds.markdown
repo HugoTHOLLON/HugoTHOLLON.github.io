@@ -46,4 +46,4 @@ It was played by **both children and adults**, helping visitors discover and tes
 
 # Demo
 
-Currently, the game is available for **Windows** and **Web**. You can play the online version [here](https://hugothollon.itch.io/les-oiseaux-de-seresville?password=birdsarecool){:target="\_blank"} (it might take some time to load).
+Currently, the game is available for **Windows** and **Web**. You can play the online version on [itch.io here](https://hugothollon.itch.io/les-oiseaux-de-seresville?password=birdsarecool){:target="\_blank"}. Keep in mind that it might take some time to load depending on your internet connexion quality.
