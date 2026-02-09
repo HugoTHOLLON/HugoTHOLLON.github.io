@@ -48,4 +48,4 @@ Le jeu a été présenté lors d’une **exposition à Mainvilliers**, organisé
 # Démo
 
 Le jeu est actuellement disponible pour **Windows** et **navigateur Web**.
-Vous pouvez essayer la version en ligne [ici](/projects/demos/les-oiseaux-de-seresville/game.html){:target="\_blank"}.
+Vous pouvez essayer la version en ligne [ici](https://hugothollon.itch.io/les-oiseaux-de-seresville?password=birdsarecoolgame.html){:target="\_blank"} (elle prendre un certain temps à charger).

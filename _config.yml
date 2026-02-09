@@ -64,10 +64,10 @@ collections:
 
 defaults:
   # No layout for the game
-  - scope:
-      path: "projects/demos"
-    values:
-      layout: null
+  # - scope:
+  #     path: "projects/demos"
+  #   values:
+  #     layout: null
 
   # Set lang for most files
   - scope:
