@@ -28,6 +28,10 @@ The core gameplay loop revolves around placing bombs strategically to clear obst
 
 The game features 2 levels and and a local multiplayer mode with split screen.
 
+{% include place-figure.html src="/assets/images/projects/bomberman/level1_bomberman.webp" alt="Bomberman gameplay" figure-nb="1" figure-text="Gameplay on the level 1" %}
+
+{% include place-figure.html src="/assets/images/projects/bomberman/level2_multi_bomberman.webp" alt="Multiplayer split screen" figure-nb="2" figure-text="Multiplayer screen" %}
+
 # My Contributions
 
 I was primarily responsible for the player character and most of the core interaction systems. My work focused on gameplay logic, entity interactions, and system integration.
@@ -48,6 +52,8 @@ My main contributions include:
 
 My role centered on making sure gameplay elements worked together reliably and were extensible, to ensure that future updates go smoothly and don't need extensive bug solving.
 
+{% include place-figure.html src="/assets/images/projects/bomberman/level2_bonus_pickup_bomberman.webp" alt="Bonus pickup" figure-nb="3" figure-text="Effect on bonus pickup (made by me)" %}
+
 # Demo
 
 The game is available to play on itch.io [here](https://hugothollon.itch.io/bomberman?secret=bQlxeKk8rU9e9VjkXvqbHFDRn00){:target="\_blank"}.  
@@ -59,7 +65,7 @@ The game is available to play on itch.io [here](https://hugothollon.itch.io/bomb
 
 - Raphaël Lamothe: [LinkedIn](https://www.linkedin.com/in/rapha%C3%ABl-lamothe/){:target="\_blank"}
 - Nicolas Ho: [LinkedIn](https://www.linkedin.com/in/nicodeh/){:target="\_blank"}
-- Naria Savary: [LinkedIn](https://www.linkedin.com/in/savarynaria/){:target="\_blank"}
+- Naria Savary: [GitHub](https://github.com/NariaReynhard){:target="\_blank"}
 
 **The assets**:
 

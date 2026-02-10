@@ -28,6 +28,10 @@ Le principe du gameplay principal repose sur le placement stratégique de bombes
 
 Le jeu comprend deux niveaux ainsi qu’un mode multijoueur local en écran splitté.
 
+{% include place-figure.html src="/assets/images/projects/bomberman/level1_bomberman.webp" alt="Gameplay bomberman" figure-nb="1" figure-text="Gameplay sur le niveau 1" %}
+
+{% include place-figure.html src="/assets/images/projects/bomberman/level2_multi_bomberman.webp" alt="Multijoueur écran splitté" figure-nb="2" figure-text="L'écran en mode multijoueur" %}
+
 # Mes contributions
 
 J'ai développé le personnage bomberman et d’une grande partie des systèmes d’interaction principaux. Mon travail s’est concentré sur la logique de gameplay, les interactions entre entités et l’intégration des différents systèmes.
@@ -48,6 +52,8 @@ Mes principales contributions :
 
 Mon rôle visait à garantir la fiabilité des interactions entre les différents éléments du jeu et leur extensibilité, afin de faciliter des évolutions futures sans avoir à multiplier les corrections de bugs.
 
+{% include place-figure.html src="/assets/images/projects/bomberman/level2_bonus_pickup_bomberman.webp" alt="Effet ramassage bonus" figure-nb="3" figure-text="Effet lors du ramassage d'un bonus (réalisé par moi)" %}
+
 # Demo
 
 Le jeu est jouable en anglais sur [itch.io ici](https://hugothollon.itch.io/bomberman?secret=bQlxeKk8rU9e9VjkXvqbHFDRn00){:target="\_blank"}.  
@@ -60,7 +66,7 @@ Gardez aussi à l'esprit que le jeu en lui même pourra prendre du temps à char
 
 - Raphaël Lamothe: [LinkedIn](https://www.linkedin.com/in/rapha%C3%ABl-lamothe/){:target="\_blank"}
 - Nicolas Ho: [LinkedIn](https://www.linkedin.com/in/nicodeh/){:target="\_blank"}
-- Naria Savary: [LinkedIn](https://www.linkedin.com/in/savarynaria/){:target="\_blank"}
+- Naria Savary: [GitHub](https://github.com/NariaReynhard){:target="\_blank"}
 
 **Les assets**:
 
