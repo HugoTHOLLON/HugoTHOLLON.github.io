@@ -129,6 +129,12 @@ main {
       font-size: 2em;
       text-align: center;
     }
+
+    .video {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
   }
 }
 
