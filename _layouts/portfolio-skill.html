@@ -1,0 +1,166 @@
+---
+  layout: default
+  stylesheet: /assets/css/portfolio.css
+  scripts: |
+    <script src="/assets/js/displayElementOnScroll.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        const timelineItem =  document.querySelectorAll(".timeline-item-container");
+        removeClassToElementsOnScrollVisible(timelineItem, "style-crystal-always-visible", true);
+        });
+    </script>
+---
+
+{% assign string = site.data[page.lang].portfolio %}
+
+<!-- -----------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
+  --------------------------------- Skill description ----------------------------
+  --------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------- -->
+{% assign skill = site.data.skillsBUT[page.skill] %}
+<section class="skill-description">
+  <img
+    src="{{skill.image}}"
+    alt="{{skill[page.lang].name}} icon"
+    class="skill-icon">
+
+  <div class="section-title">
+    Skill: {{ skill[page.lang].name }}
+  </div>
+
+  <div class="skill-subtitle">
+    {{ skill[page.lang].subtitle }}
+  </div>
+
+  <div class="skill-description">
+    {{ skill[page.lang].description }}
+  </div>
+</section>
+<!-- -----------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
+  ---------------------------------- Project list --------------------------------
+  --------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------- -->
+<section class="project-list">
+  <div class="section-title">
+    Associated projects
+  </div>
+
+  <div class="timeline">
+    {% assign all_projects = site.categories.projects | where: "lang", page.lang %}
+
+    {% assign unfinished = all_projects | where_exp: "p", "p.end == nil" | sort: "date" | reverse %}
+    {% assign finished = all_projects | where_exp: "p", "p.end != nil" | sort: "date" | reverse %}
+
+    {% assign projects = unfinished | concat: finished %}
+    {% for project in projects %}
+      {% assign left = forloop.index0 | modulo: 2 %}
+      {% if left == 0 %}
+        {% assign containerClass = "left" %}
+      {% else %}
+        {% assign containerClass = "right" %}
+      {% endif %}
+
+      <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content style-crystal-container no-hover">
+          {% include styleCrystals.html start=17 end=20 %}
+
+          <div class="project-content">
+            {% if project.image-path %}
+              <a class="project-image" href="{{ project.url }}">
+                <img src="{{ project.image-path }}" alt="{{ project.image-alt }}">
+              </a>
+            {% endif %}
+            <div class="project-container">
+              <h1 class="project-title">
+                <a href="{{ project.url }}">{{ project.title }}</a>
+              </h1>
+              <div class="project-type">{{ project.project-type }}</div>
+              <div class="project-description">
+                <p>{{ project.description | strip }}</p>
+              </div>
+              {% if project.tags.size > 0 %}
+                <ul class="project-tag-list">
+                  {% for tag in project.tags %}
+                    <li class="project-tag-item">
+                      {{ tag }}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+              <a class="project-link style-crystal-container" href="{{ project.url }}">
+                {% include styleCrystals.html start=5 end=8 %}
+                <div class="text">
+                  {{ string["see-project"] }} &rarr;
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <span class="timeline-date">
+          <span dir="ltr">
+            {% include format-date.html start=project.date end=project.end %}
+          </span>
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- -----------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
+  ---------------------------------- Custom css ----------------------------------
+  --------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------- -->
+<style>
+  section.skill-description {
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-family: "Orbitron"
+    , sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.8rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    padding: 10px;
+    background-color: rgb(104, 225, 255);
+    border-radius: 50%;
+  }
+
+  .skill-subtitle {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .skill-description {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 500px) {
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>
