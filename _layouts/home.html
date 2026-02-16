@@ -115,8 +115,8 @@
             {% assign endDate = post.end | date: dateFormat | default: string["date-default"] %}
 
             {% for month in months %}
-              {% assign startDate = startDate | replace: month['en'], month[page.lang] %}
-              {% assign endDate = endDate | replace: month['en'], month[page.lang] %}
+              {% assign startDate = startDate | replace: month['en'] , month[page.lang] %}
+              {% assign endDate = endDate | replace: month['en'] , month[page.lang] %}
             {% endfor %}
             {{ startDate }} - {{ endDate }}
           </div>
