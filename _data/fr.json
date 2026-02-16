@@ -19,7 +19,10 @@
     "img-alt": "CV Hugo THOLLON"
   },
   "portfolio": {
-    "see-project": "Voir le projet"
+    "see-project": "Voir le projet",
+    "skill-title": "Compétence: ",
+    "associated-projects": "Projets associés",
+    "no-associated-projects": "Aucun projet n'est associé à cette compétence"
   },
   "header": {
     "hugo-thollon": "Hugo THOLLON",

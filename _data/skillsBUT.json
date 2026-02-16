@@ -3,78 +3,96 @@
     "fr": {
       "name": "Réaliser",
       "subtitle": "Développement et Conception",
-      "description": "Conception et développement de solutions techniques robustes et adaptées aux besoins métiers."
+      "description": "Conception et développement de solutions techniques robustes et adaptées aux besoins métiers.",
+      "url": "/fr/competence/realiser"
     },
     "en": {
       "name": "Produce",
       "subtitle": "Development and Conception",
-      "description": "Conception and development of robust technical solutions suitable for business needs."
+      "description": "Conception and development of robust technical solutions suitable for business needs.",
+      "url": "/en/skill/produce"
     },
-    "image": "/assets/images/skills/iut/realiser.svg"
+    "image": "/assets/images/skills/iut/realiser.svg",
+    "id": "produce"
   },
   {
     "fr": {
       "name": "Optimiser",
       "subtitle": "Performance et Efficacité",
-      "description": "Proposer des applications informatiques optimisées et efficaces."
+      "description": "Proposer des applications informatiques optimisées et efficaces.",
+      "url": "/fr/competence/optimiser"
     },
     "en": {
       "name": "Optimize",
       "subtitle": "Perfomance and Efficiency",
-      "description": "Offer optimized and efficient applications."
+      "description": "Offer optimized and efficient applications.",
+      "url": "/en/skill/optimize"
     },
-    "image": "/assets/images/skills/iut/optimiser.svg"
+    "image": "/assets/images/skills/iut/optimiser.svg",
+    "id": "optimize"
   },
   {
     "fr": {
       "name": "Administrer",
       "subtitle": "Infrastructure et Systèmes",
-      "description": "Gestion, maintenance et optimisation des infrastructures systèmes et réseaux."
+      "description": "Gestion, maintenance et optimisation des infrastructures systèmes et réseaux.",
+      "url": "/fr/competence/administrer"
     },
     "en": {
       "name": "Administer",
       "subtitle": "Infrastructure and Systems",
-      "description": "Systems and networks infrastructure management, maintenance and optimisation."
+      "description": "Systems and networks infrastructure management, maintenance and optimisation.",
+      "url": "/en/skill/administer"
     },
-    "image": "/assets/images/skills/iut/administrer.svg"
+    "image": "/assets/images/skills/iut/administrer.svg",
+    "id": "administer"
   },
   {
     "fr": {
       "name": "Gérer",
       "subtitle": "Données et Pilotage",
-      "description": "Administrer et exploiter les données de l'entreprise pour permettre un bon pilotage de l'entreprise."
+      "description": "Administrer et exploiter les données de l'entreprise pour permettre un bon pilotage de l'entreprise.",
+      "url": "/fr/competence/gerer"
     },
     "en": {
       "name": "Manage",
       "subtitle": "Data and Management",
-      "description": "Administer and use the company data for efficient decision-making."
+      "description": "Administer and use the company data for efficient decision-making.",
+      "url": "/en/skill/manage"
     },
-    "image": "/assets/images/skills/iut/gerer.svg"
+    "image": "/assets/images/skills/iut/gerer.svg",
+    "id": "manage"
   },
   {
     "fr": {
       "name": "Conduire",
       "subtitle": "Organisation et Coordination",
-      "description": "Piloter un projet informatique avec des méthodes classiques ou agiles."
+      "description": "Piloter un projet informatique avec des méthodes classiques ou agiles.",
+      "url": "/fr/competence/conduire"
     },
     "en": {
       "name": "Lead",
       "subtitle": "Organisation and Coordination",
-      "description": "Lead an IT project with classical or agile methods."
+      "description": "Lead an IT project with classical or agile methods.",
+      "url": "/en/skill/lead"
     },
-    "image": "/assets/images/skills/iut/conduire.svg"
+    "image": "/assets/images/skills/iut/conduire.svg",
+    "id": "lead"
   },
   {
     "fr": {
       "name": "Collaborer",
       "subtitle": "Communication et Travail d'équipe",
-      "description": "Travailler efficacement dans une équipe informatique."
+      "description": "Travailler efficacement dans une équipe informatique.",
+      "url": "/fr/competence/collaborer"
     },
     "en": {
       "name": "Collaborate",
       "subtitle": "Communication and Teamwork",
-      "description": "Work efficiently in an IT team."
+      "description": "Work efficiently in an IT team.",
+      "url": "/en/skill/collaborate"
     },
-    "image": "/assets/images/skills/iut/collaborer.svg"
+    "image": "/assets/images/skills/iut/collaborer.svg",
+    "id": "collaborate"
   }
 ]

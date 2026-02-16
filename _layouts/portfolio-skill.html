@@ -26,7 +26,7 @@
     class="skill-icon">
 
   <div class="section-title">
-    Skill: {{ skill[page.lang].name }}
+    {{ string['skill-title'] }} {{ skill[page.lang].name }}
   </div>
 
   <div class="skill-subtitle">
@@ -43,74 +43,79 @@
   --------------------------------------------------------------------------------
   ----------------------------------------------------------------------------- -->
 <section class="project-list">
+  {% assign skill_projects = site.categories[skill.id] | where: "lang", page.lang %}
+
   <div class="section-title">
-    Associated projects
+    {{ string['associated-projects'] }}
   </div>
 
-  <div class="timeline">
-    {% assign all_projects = site.categories.projects | where: "lang", page.lang %}
+  {% if skill_projects.size > 0 %}
 
-    {% assign unfinished = all_projects | where_exp: "p", "p.end == nil" | sort: "date" | reverse %}
-    {% assign finished = all_projects | where_exp: "p", "p.end != nil" | sort: "date" | reverse %}
+    {% assign unfinished = skill_projects | where_exp: "p", "p.end == nil" | sort: "date" | reverse %}
+    {% assign finished = skill_projects | where_exp: "p", "p.end != nil" | sort: "date" | reverse %}
 
-    {% assign projects = unfinished | concat: finished %}
-    {% for project in projects %}
-      {% assign left = forloop.index0 | modulo: 2 %}
-      {% if left == 0 %}
-        {% assign containerClass = "left" %}
-      {% else %}
-        {% assign containerClass = "right" %}
-      {% endif %}
+    <div class="project-list-container">
 
-      <div class="timeline-item-container {{ containerClass }} style-crystal-always-visible">
-        <div class="timeline-dot"></div>
+      {% assign projects = unfinished | concat: finished %}
+      {% for post in projects %}
+        <a class="card" href="{{post.url}}">
 
-        <div class="timeline-content style-crystal-container no-hover">
-          {% include styleCrystals.html start=17 end=20 %}
-
-          <div class="project-content">
-            {% if project.image-path %}
-              <a class="project-image" href="{{ project.url }}">
-                <img src="{{ project.image-path }}" alt="{{ project.image-alt }}">
-              </a>
-            {% endif %}
-            <div class="project-container">
-              <h1 class="project-title">
-                <a href="{{ project.url }}">{{ project.title }}</a>
-              </h1>
-              <div class="project-type">{{ project.project-type }}</div>
-              <div class="project-description">
-                <p>{{ project.description | strip }}</p>
-              </div>
-              {% if project.tags.size > 0 %}
-                <ul class="project-tag-list">
-                  {% for tag in project.tags %}
-                    <li class="project-tag-item">
-                      {{ tag }}
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-
-              <a class="project-link style-crystal-container" href="{{ project.url }}">
-                {% include styleCrystals.html start=5 end=8 %}
-                <div class="text">
-                  {{ string["see-project"] }} &rarr;
-                </div>
-              </a>
+          {% if post.image-path %}
+            <img
+              class="card-image"
+              src="{{ post.image-path }}"
+              alt="{{ post.image-alt }}">
+          {% endif %}
+          <div class="card-content">
+            <div class="card-title">
+              {{ post.title }}
             </div>
+
+            <div class="card-project-type">
+              {% if post.project-type %}
+                {{ post.project-type }}
+              {% endif %}
+            </div>
+
+            <div class="card-date">
+              {% assign months = site.data.months["full-name"] %}
+              {% assign dateFormat = "%B %-d, %Y" %}
+              {% if page.lang == 'fr' %}
+                {% assign dateFormat = "%-d %B %Y" %}
+              {% endif %}
+              {% assign startDate = post.date | date: dateFormat %}
+              {% assign endDate = post.end | date: dateFormat | default: string["date-default"] %}
+
+              {% for month in months %}
+                {% assign startDate = startDate | replace: month['en'], month[page.lang] %}
+                {% assign endDate = endDate | replace: month['en'], month[page.lang] %}
+              {% endfor %}
+              {{ startDate }} - {{ endDate }}
+            </div>
+
+            <div class="card-extract">
+              <p>{{ post.description | strip }}</p>
+            </div>
+
+            {% if post.tags.size > 0 %}
+              <ul class="card-tags">
+                {% for tag in post.tags %}
+                  <li class="card-tag-item">
+                    {{ tag }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </div>
+        </a>
+      {% endfor %}
+    </div>
 
-        </div>
-
-        <span class="timeline-date">
-          <span dir="ltr">
-            {% include format-date.html start=project.date end=project.end %}
-          </span>
-        </span>
-      </div>
-    {% endfor %}
-  </div>
+  {% else %}
+    <div class="no-projects">
+      {{ string['no-associated-projects'] }}
+    </div>
+  {% endif %}
 </section>
 
 <!-- -----------------------------------------------------------------------------
@@ -119,6 +124,10 @@
   --------------------------------------------------------------------------------
   ----------------------------------------------------------------------------- -->
 <style>
+  main {
+    min-height: 100vh;
+  }
+
   section.skill-description {
     margin-top: 30px;
     align-items: center;
@@ -162,5 +171,131 @@
     .section-title {
       font-size: 2rem;
     }
+  }
+
+
+  /* *********************************************************
+    *********************************************************
+    *********************************************************
+    ********************************************************* */
+
+  section.project-list {
+    margin-bottom: 70px;
+  }
+  section.project-list .section-title {
+    margin-bottom: 30px;
+  }
+
+  .no-projects {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+
+  .project-list-container {
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 40px;
+    width: 100%;
+    display: grid;
+    gap: 30px;
+
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    justify-items: center;
+  }
+
+  .card {
+    max-width: 430px;
+    border: solid rgba(42, 208, 248, 1) 4px;
+    border-radius: 15px;
+    /* background: linear-gradient(to bottom right, #39b5f2, #00a9ff); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    color: black;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: box-shadow 0.5s
+    , opacity 1s
+    , filter 1s
+    , transform 1s;
+
+    opacity: 1;
+    transform: translateY(0);
+    box-sizing: border-box;
+    overflow: hidden;
+
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .card.off-screen {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+
+  .card-image {
+    max-width: 100%;
+    align-self: center;
+    object-fit: contain;
+  }
+
+  .card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #31bcf4;
+  }
+
+  .card-project-type {
+    margin-top: 5px;
+    font-size: 1.1rem;
+    color: #31bcf4;
+  }
+
+  .card-date {
+    margin-top: 10px;
+  }
+
+  .card-extract {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .card-extract p {
+    margin: 0;
+  }
+
+  .card-tags {
+    margin: auto 0 0;
+    padding: 0;
+
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
+  }
+
+  .card-tag-item {
+    font-size: 0.85rem;
+    color: white;
+    background-color: #39b5f2;
+    padding: 5px 10px;
+    border-radius: 9999px;
+    font-weight: bold;
   }
 </style>

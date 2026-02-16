@@ -1,7 +1,7 @@
 <div class="skill-category">
-  <ul class="skill-iut-list">
+  <div class="skill-iut-list">
     {% for skill in site.data.skillsBUT %}
-      <li class="skill-iut-container">
+      <a class="skill-iut-container" href="{{skill[page.lang].url}}">
         <img
           src="{{skill.image}}"
           alt="{{skill[page.lang].name}} icon"
@@ -15,9 +15,9 @@
         <div class="skill-iut-description">
           {{ skill[page.lang].description }}
         </div>
-      </li>
+      </a>
     {% endfor %}
-  </ul>
+  </div>
 </div>
 
 <style>
@@ -45,6 +45,8 @@
 
     text-align: center;
     font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
 
     transition: all 1.5s;
 

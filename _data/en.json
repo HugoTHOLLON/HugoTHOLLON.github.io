@@ -18,7 +18,10 @@
     "img-alt": "Hugo THOLLON's resume"
   },
   "portfolio": {
-    "see-project": "See project"
+    "see-project": "See project",
+    "skill-title": "Skill: ",
+    "associated-projects": "Associated projects",
+    "no-associated-projects": "No projects are associated to this skill"
   },
   "header": {
     "hugo-thollon": "Hugo THOLLON",
