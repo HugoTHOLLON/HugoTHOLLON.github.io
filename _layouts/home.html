@@ -218,6 +218,8 @@
   <div class="section-title">{{ string["skills-title"] }}</div>
 
   <div class="skill-list-container">
+    {% include but-skills.html %}
+
     {% for skillCateg in site.data.skills %}
       <div class="skill-category">
         <div class="skill-categ-title">{{ skillCateg.name[page.lang] }}</div>

@@ -1,0 +1,80 @@
+[
+  {
+    "fr": {
+      "name": "Réaliser",
+      "subtitle": "Développement et Conception",
+      "description": "Conception et développement de solutions techniques robustes et adaptées aux besoins métiers."
+    },
+    "en": {
+      "name": "Produce",
+      "subtitle": "Development and Conception",
+      "description": "Conception and development of robust technical solutions suitable for business needs."
+    },
+    "image": "/assets/images/skills/iut/realiser.svg"
+  },
+  {
+    "fr": {
+      "name": "Optimiser",
+      "subtitle": "Performance et Efficacité",
+      "description": "Proposer des applications informatiques optimisées et efficaces."
+    },
+    "en": {
+      "name": "Optimize",
+      "subtitle": "Perfomance and Efficiency",
+      "description": "Offer optimized and efficient applications."
+    },
+    "image": "/assets/images/skills/iut/optimiser.svg"
+  },
+  {
+    "fr": {
+      "name": "Administrer",
+      "subtitle": "Infrastructure et Systèmes",
+      "description": "Gestion, maintenance et optimisation des infrastructures systèmes et réseaux."
+    },
+    "en": {
+      "name": "Administer",
+      "subtitle": "Infrastructure and Systems",
+      "description": "Systems and networks infrastructure management, maintenance and optimisation."
+    },
+    "image": "/assets/images/skills/iut/administrer.svg"
+  },
+  {
+    "fr": {
+      "name": "Gérer",
+      "subtitle": "Données et Pilotage",
+      "description": "Administrer et exploiter les données de l'entreprise pour permettre un bon pilotage de l'entreprise."
+    },
+    "en": {
+      "name": "Manage",
+      "subtitle": "Data and Management",
+      "description": "Administer and use the company data for efficient decision-making."
+    },
+    "image": "/assets/images/skills/iut/gerer.svg"
+  },
+  {
+    "fr": {
+      "name": "Conduire",
+      "subtitle": "Organisation et Coordination",
+      "description": "Piloter un projet informatique avec des méthodes classiques ou agiles."
+    },
+    "en": {
+      "name": "Lead",
+      "subtitle": "Organisation and Coordination",
+      "description": "Lead an IT project with classical or agile methods."
+    },
+    "image": "/assets/images/skills/iut/conduire.svg"
+  },
+  {
+    "fr": {
+      "name": "Collaborer",
+      "subtitle": "Communication et Travail d'équipe",
+      "description": "Travailler efficacement dans une équipe informatique."
+    },
+    "en": {
+      "name": "Collaborate",
+      "subtitle": "Communication and Teamwork",
+      "description": "Work efficiently in an IT team."
+    },
+    "image": "/assets/images/skills/iut/collaborer.svg"
+  }
+]
