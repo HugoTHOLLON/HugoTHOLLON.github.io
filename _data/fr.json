@@ -22,7 +22,8 @@
     "see-project": "Voir le projet",
     "skill-title": "Compétence: ",
     "associated-projects": "Projets associés",
-    "no-associated-projects": "Aucun projet n'est associé à cette compétence"
+    "no-associated-projects": "Aucun projet n'est associé à cette compétence",
+    "see-other-skills": "Voir les autres compétences"
   },
   "header": {
     "hugo-thollon": "Hugo THOLLON",

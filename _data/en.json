@@ -21,7 +21,8 @@
     "see-project": "See project",
     "skill-title": "Skill: ",
     "associated-projects": "Associated projects",
-    "no-associated-projects": "No projects are associated to this skill"
+    "no-associated-projects": "No projects are associated to this skill",
+    "see-other-skills": "See the other skills"
   },
   "header": {
     "hugo-thollon": "Hugo THOLLON",
