@@ -3,7 +3,7 @@ layout: post
 title: "Pathfinding algorithm study"
 date: 2025-10-01
 end: 2025-12-11
-categories: iut-project
+categories: iut-project produce optimize collaborate
 project-type: "IUT project"
 image-path: "/assets/images/projects/pathfinding_study/dijkstra_vs_astar.png"
 image-alt: "City model"

@@ -3,7 +3,7 @@ layout: post
 title: "Applications Android et Python communicant en BLE pour l'IRIT"
 date: 2025-03-10
 end: 2025-05-02
-categories: internship best-project
+categories: internship best-project produce administer manage
 project-type: "Stage"
 image-path: "/assets/images/projects/irit_internship/city_model_irit.webp"
 image-alt: "Maquette de ville connectée"

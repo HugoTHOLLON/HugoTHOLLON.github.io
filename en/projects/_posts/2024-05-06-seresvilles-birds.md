@@ -3,7 +3,7 @@ layout: post
 title: "Seresville's birds"
 date: 2024-05-06
 end: 2024-08-03
-categories: ["personal-project", "best-project"]
+categories: ["personal-project", "best-project", "produce", "optimize"]
 project-type: "Personal project"
 image-path: "/assets/images/projects/seresville_birds/home_seresville_birds.webp"
 image-alt: "Game home page"

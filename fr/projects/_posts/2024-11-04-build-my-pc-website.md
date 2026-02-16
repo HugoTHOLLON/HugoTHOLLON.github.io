@@ -3,7 +3,7 @@ layout: post
 title: "Site d'e-commerce pour BuildMyPC"
 date: 2024-11-04
 end: 2025-01-21
-categories: iut-project best-project
+categories: iut-project best-project produce administer manage lead collaborate
 project-type: "Projet IUT"
 image-path: "/assets/images/projects/build_my_pc/home_page_buildMyPC.webp"
 image-alt: "Page d'accueil du site"

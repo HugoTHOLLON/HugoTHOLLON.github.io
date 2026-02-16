@@ -2,7 +2,7 @@
 layout: post
 title: "Knight 'n Slash"
 date: 2024-02-01
-categories: ["personal-project"]
+categories: ["personal-project", "produce", "lead", "collaborate"]
 project-type: "Projet Personnel"
 image-path: "/assets/images/projects/knight_n_slash/SirGrognon_KnS.png"
 image-alt: "Knight 'n slash character"

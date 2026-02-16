@@ -3,7 +3,7 @@ layout: post
 title: "Communicating Android and Python apps for IRIT"
 date: 2025-03-10
 end: 2025-05-02
-categories: internship best-project
+categories: internship best-project produce administer manage
 project-type: "Internship"
 image-path: "/assets/images/projects/irit_internship/city_model_irit.webp"
 image-alt: "City model"

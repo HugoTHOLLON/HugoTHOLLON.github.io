@@ -3,7 +3,7 @@ layout: post
 title: "Bomberman"
 date: 2026-01-07
 end: 2026-01-25
-categories: ["iut-project"]
+categories: ["iut-project", "produce", "lead", "collaborate"]
 project-type: "projet IUT"
 image-path: "/assets/images/projects/bomberman/home_bomberman.webp"
 image-alt: "Game home page"
