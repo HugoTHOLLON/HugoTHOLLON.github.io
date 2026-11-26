@@ -249,7 +249,7 @@ main {
       justify-items: center;
 
       .card {
-        height: fit-content;
+        // height: fit-content;
         max-width: 400px;
         border: solid rgba(42, 208, 248, 1) 8px;
         border-radius: 15px;
@@ -257,6 +257,7 @@ main {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         z-index: 1;
         color: white;
+        text-decoration: none;
 
         display: flex;
         flex-direction: column;
@@ -280,14 +281,12 @@ main {
         }
 
         .card-image {
-          padding: 0;
-          img {
-            max-width: 100%;
-            object-fit: contain;
-          }
+          max-width: 100%;
+          object-fit: contain;
         }
 
         .card-content {
+          height: 100%;
           display: flex;
           flex-direction: column;
           padding: 10px;
@@ -295,23 +294,7 @@ main {
           .card-title {
             font-size: 1.2rem;
             font-weight: bold;
-
-            a {
-              color: white;
-
-              text-decoration: underline;
-
-              text-decoration-color: transparent;
-              /*for opera and mozilla support*/
-              -webkit-text-decoration-color: transparent;
-              -moz-text-decoration-color: transparent;
-
-              transition: text-decoration-color 0.5s;
-
-              &:hover {
-                text-decoration-color: currentColor;
-              }
-            }
+            color: white;
           }
 
           .card-project-type {
@@ -324,8 +307,32 @@ main {
 
           .card-extract {
             margin-top: 10px;
+            margin-bottom: 15px;
             p {
               margin: 0;
+            }
+          }
+
+          .card-tags {
+            margin: 0;
+            padding: 0;
+            margin-top: auto;
+
+            list-style-type: none;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+
+            .card-tag-item {
+              font-size: 0.85rem;
+              color: #39b5f2;
+              padding: 5px 10px;
+              border-radius: 9999px;
+              background: white;
+              font-weight: bold;
             }
           }
 

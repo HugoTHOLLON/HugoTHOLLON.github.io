@@ -110,3 +110,16 @@ defaults:
       type: "work_experience"
     values:
       lang: "fr"
+
+  # Make the paths for posts shorter
+  - scope:
+      path: "en/projects/_posts"
+      type: "posts"
+    values:
+      permalink: /en/project/:title/
+
+  - scope:
+      path: "fr/projects/_posts"
+      type: "posts"
+    values:
+      permalink: /fr/project/:title/
